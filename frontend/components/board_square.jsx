@@ -30,8 +30,8 @@ class BoardSquare extends Component {
         position: 'absolute',
         top: 0,
         left: 0,
-        height: '50px',
-        width: '50px',
+        height: '100%',
+        width: '100%',
         zIndex: 1,
         opacity: 0.5,
         backgroundColor: color,
@@ -44,7 +44,9 @@ class BoardSquare extends Component {
     const black = (x + y) % 2 === 1;
 
     return connectDropTarget(
-      <div style={{ position: 'relative' }}>
+      <div style={{ position: 'relative',
+        width: '100%',
+        height: '100%' }}>
         <Square black={black}>
           {this.props.children}
         </Square>

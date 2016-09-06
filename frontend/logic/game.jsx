@@ -1,8 +1,11 @@
-let knightPosition = [1, 7];
+let board = {
+  knightPosition: [4,4]
+};
+
 let observer = null;
 
 function emitChange() {
-  observer(knightPosition);
+  observer(board);
 }
 
 export function observe(o) {
@@ -15,7 +18,7 @@ export function observe(o) {
 }
 
 export function canMoveKnight(toX, toY) {
-  const [x, y] = knightPosition;
+  const [x, y] = board.knightPosition;
   const dx = toX - x;
   const dy = toY - y;
 
@@ -24,6 +27,6 @@ export function canMoveKnight(toX, toY) {
 }
 
 export function moveKnight(toX, toY) {
-  knightPosition = [toX, toY];
+  board.knightPosition = [toX, toY];
   emitChange();
 }
