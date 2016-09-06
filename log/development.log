@@ -1,0 +1,1762 @@
+
+
+Started GET "/" for ::1 at 2016-09-06 13:25:48 -0400
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /Users/robtaussig/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/railties-4.2.6/lib/rails/templates/rails/welcome/index.html.erb (2.1ms)
+Completed 200 OK in 23ms (Views: 13.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-09-06 13:34:18 -0400
+Processing by StaticPagesController#root as HTML
+  Rendered static_pages/root.html within layouts/application (0.6ms)
+Completed 200 OK in 1194ms (Views: 1193.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/plays.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-09-06 13:34:20 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-09-06 13:34:20 -0400
+
+
+Started GET "/assets/static_pages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-09-06 13:34:20 -0400
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for ::1 at 2016-09-06 13:34:20 -0400
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for ::1 at 2016-09-06 13:34:20 -0400
+
+
+Started GET "/assets/bundle.self-875c81d507f97e826eac62163b67b037286dcb0ee9ae19908db0057dcfa67d2e.js?body=1" for ::1 at 2016-09-06 13:34:20 -0400
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for ::1 at 2016-09-06 13:34:20 -0400
+
+
+Started GET "/assets/plays.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-09-06 13:34:20 -0400
+
+
+Started GET "/assets/static_pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-09-06 13:34:20 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-09-06 13:34:20 -0400
+
+
+Started GET "/assets/bundle.js.map" for ::1 at 2016-09-06 13:34:25 -0400
+
+
+Started GET "/" for ::1 at 2016-09-06 13:35:50 -0400
+Processing by StaticPagesController#root as HTML
+  Rendered static_pages/root.html within layouts/application (0.1ms)
+Completed 200 OK in 38ms (Views: 37.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bundle.js.map" for ::1 at 2016-09-06 13:35:51 -0400
+
+
+Started GET "/" for ::1 at 2016-09-06 13:39:12 -0400
+Processing by StaticPagesController#root as HTML
+  Rendered static_pages/root.html within layouts/application (0.1ms)
+Completed 200 OK in 314ms (Views: 313.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bundle.self-b0d4b7b1804e056823541a14ba558b7287672eb8eb9a5807f23c4984862c6152.js?body=1" for ::1 at 2016-09-06 13:39:12 -0400
+
+
+Started GET "/assets/bundle.js.map" for ::1 at 2016-09-06 13:39:13 -0400
+
+
+Started GET "/" for ::1 at 2016-09-06 13:42:50 -0400
+Processing by StaticPagesController#root as HTML
+  Rendered static_pages/root.html within layouts/application (0.1ms)
+Completed 200 OK in 438ms (Views: 436.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-09-06 13:42:51 -0400
+
+
+Started GET "/assets/static_pages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-09-06 13:42:51 -0400
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for ::1 at 2016-09-06 13:42:51 -0400
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for ::1 at 2016-09-06 13:42:51 -0400
+
+
+Started GET "/assets/static_pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-09-06 13:42:51 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-09-06 13:42:51 -0400
+
+
+Started GET "/assets/plays.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-09-06 13:42:51 -0400
+
+
+Started GET "/assets/plays.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-09-06 13:42:51 -0400
+
+
+Started GET "/assets/bundle.self-7371335b213be7c3f243790ec94d104da6abb083e83db3218d40c8e3d380ef95.js?body=1" for ::1 at 2016-09-06 13:42:51 -0400
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for ::1 at 2016-09-06 13:42:51 -0400
+
+
+Started GET "/assets/bundle.js.map" for ::1 at 2016-09-06 13:42:51 -0400
+
+
+Started GET "/board" for ::1 at 2016-09-06 13:43:04 -0400
+
+ActionController::RoutingError (No route matches [GET] "/board"):
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/robtaussig/.rbenv/versions/2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/robtaussig/.rbenv/versions/2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/robtaussig/.rbenv/versions/2.1.2/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/robtaussig/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /Users/robtaussig/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.0ms)
+  Rendered /Users/robtaussig/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (9.8ms)
+  Rendered /Users/robtaussig/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/robtaussig/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (43.8ms)
+  Rendered /Users/robtaussig/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/robtaussig/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/robtaussig/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/robtaussig/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/robtaussig/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (39.4ms)
+  Rendered /Users/robtaussig/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/robtaussig/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.8ms)
+  Rendered /Users/robtaussig/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (65.6ms)
+
+
+Started GET "/assets/bundle.js.map" for ::1 at 2016-09-06 13:43:06 -0400
+
+
+Started GET "/" for ::1 at 2016-09-06 13:43:07 -0400
+Processing by StaticPagesController#root as HTML
+  Rendered static_pages/root.html within layouts/application (0.0ms)
+Completed 200 OK in 16ms (Views: 15.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/plays.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-09-06 13:43:07 -0400
+
+
+Started GET "/assets/static_pages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-09-06 13:43:07 -0400
+
+
+Started GET "/assets/bundle.self-7371335b213be7c3f243790ec94d104da6abb083e83db3218d40c8e3d380ef95.js?body=1" for ::1 at 2016-09-06 13:43:07 -0400
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for ::1 at 2016-09-06 13:43:07 -0400
+
+
+Started GET "/assets/static_pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-09-06 13:43:07 -0400
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for ::1 at 2016-09-06 13:43:07 -0400
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for ::1 at 2016-09-06 13:43:07 -0400
+
+
+Started GET "/assets/plays.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-09-06 13:43:07 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-09-06 13:43:07 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-09-06 13:43:07 -0400
+
+
+Started GET "/assets/bundle.js.map" for ::1 at 2016-09-06 13:43:07 -0400
+
+
+Started GET "/" for ::1 at 2016-09-06 13:43:08 -0400
+Processing by StaticPagesController#root as HTML
+  Rendered static_pages/root.html within layouts/application (0.0ms)
+Completed 200 OK in 16ms (Views: 15.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/static_pages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-09-06 13:43:09 -0400
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for ::1 at 2016-09-06 13:43:09 -0400
+
+
+Started GET "/assets/bundle.self-7371335b213be7c3f243790ec94d104da6abb083e83db3218d40c8e3d380ef95.js?body=1" for ::1 at 2016-09-06 13:43:09 -0400
+
+
+Started GET "/assets/plays.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-09-06 13:43:09 -0400
+
+
+Started GET "/assets/plays.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-09-06 13:43:09 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-09-06 13:43:09 -0400
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for ::1 at 2016-09-06 13:43:09 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-09-06 13:43:09 -0400
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for ::1 at 2016-09-06 13:43:09 -0400
+
+
+Started GET "/assets/static_pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-09-06 13:43:09 -0400
+
+
+Started GET "/assets/bundle.js.map" for ::1 at 2016-09-06 13:43:09 -0400
+
+
+Started GET "/" for ::1 at 2016-09-06 13:43:23 -0400
+Processing by StaticPagesController#root as HTML
+  Rendered static_pages/root.html within layouts/application (0.0ms)
+Completed 200 OK in 18ms (Views: 17.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/plays.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-09-06 13:43:23 -0400
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for ::1 at 2016-09-06 13:43:23 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-09-06 13:43:23 -0400
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for ::1 at 2016-09-06 13:43:23 -0400
+
+
+Started GET "/assets/static_pages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-09-06 13:43:23 -0400
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for ::1 at 2016-09-06 13:43:23 -0400
+
+
+Started GET "/assets/bundle.self-7371335b213be7c3f243790ec94d104da6abb083e83db3218d40c8e3d380ef95.js?body=1" for ::1 at 2016-09-06 13:43:23 -0400
+
+
+Started GET "/assets/plays.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-09-06 13:43:23 -0400
+
+
+Started GET "/assets/static_pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-09-06 13:43:23 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-09-06 13:43:23 -0400
+
+
+Started GET "/assets/bundle.js.map" for ::1 at 2016-09-06 13:43:24 -0400
+
+
+Started GET "/" for ::1 at 2016-09-06 13:43:25 -0400
+Processing by StaticPagesController#root as HTML
+  Rendered static_pages/root.html within layouts/application (0.0ms)
+Completed 200 OK in 179ms (Views: 178.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/plays.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-09-06 13:43:25 -0400
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for ::1 at 2016-09-06 13:43:25 -0400
+
+
+Started GET "/assets/bundle.self-99cd166621f5b6f91bb387940a16f17232dab8524fbef0f46c83ecc82462b09f.js?body=1" for ::1 at 2016-09-06 13:43:25 -0400
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for ::1 at 2016-09-06 13:43:25 -0400
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for ::1 at 2016-09-06 13:43:25 -0400
+
+
+Started GET "/assets/static_pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-09-06 13:43:25 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-09-06 13:43:25 -0400
+
+
+Started GET "/assets/static_pages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-09-06 13:43:25 -0400
+
+
+Started GET "/assets/plays.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-09-06 13:43:25 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-09-06 13:43:25 -0400
+
+
+Started GET "/assets/bundle.js.map" for ::1 at 2016-09-06 13:43:26 -0400
+
+
+Started GET "/" for ::1 at 2016-09-06 13:43:31 -0400
+Processing by StaticPagesController#root as HTML
+  Rendered static_pages/root.html within layouts/application (0.0ms)
+Completed 200 OK in 389ms (Views: 388.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-09-06 13:43:32 -0400
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for ::1 at 2016-09-06 13:43:32 -0400
+
+
+Started GET "/assets/bundle.self-3d51fdac58f640d7fec2365c46033889a001893a5d906ca26146e2749248f7e9.js?body=1" for ::1 at 2016-09-06 13:43:32 -0400
+
+
+Started GET "/assets/plays.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-09-06 13:43:32 -0400
+
+
+Started GET "/assets/static_pages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-09-06 13:43:32 -0400
+
+
+Started GET "/assets/plays.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-09-06 13:43:32 -0400
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for ::1 at 2016-09-06 13:43:32 -0400
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for ::1 at 2016-09-06 13:43:32 -0400
+
+
+Started GET "/assets/static_pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-09-06 13:43:32 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-09-06 13:43:32 -0400
+
+
+Started GET "/assets/bundle.js.map" for ::1 at 2016-09-06 13:43:32 -0400
+
+
+Started GET "/" for ::1 at 2016-09-06 13:56:15 -0400
+Processing by StaticPagesController#root as HTML
+  Rendered static_pages/root.html within layouts/application (0.0ms)
+Completed 200 OK in 270ms (Views: 270.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/plays.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-09-06 13:56:15 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-09-06 13:56:15 -0400
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for ::1 at 2016-09-06 13:56:15 -0400
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for ::1 at 2016-09-06 13:56:15 -0400
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for ::1 at 2016-09-06 13:56:15 -0400
+
+
+Started GET "/assets/plays.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-09-06 13:56:15 -0400
+
+
+Started GET "/assets/static_pages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-09-06 13:56:15 -0400
+
+
+Started GET "/assets/bundle.self-df81d47710febe6696411236a2899a836e10afee7388afcf1e7d4d12631b1957.js?body=1" for ::1 at 2016-09-06 13:56:15 -0400
+
+
+Started GET "/assets/static_pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-09-06 13:56:15 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-09-06 13:56:15 -0400
+
+
+Started GET "/assets/bundle.js.map" for ::1 at 2016-09-06 13:56:16 -0400
+
+
+Started GET "/" for ::1 at 2016-09-06 13:56:45 -0400
+Processing by StaticPagesController#root as HTML
+  Rendered static_pages/root.html within layouts/application (0.1ms)
+Completed 200 OK in 311ms (Views: 310.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/plays.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-09-06 13:56:46 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-09-06 13:56:46 -0400
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for ::1 at 2016-09-06 13:56:46 -0400
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for ::1 at 2016-09-06 13:56:46 -0400
+
+
+Started GET "/assets/static_pages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-09-06 13:56:46 -0400
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for ::1 at 2016-09-06 13:56:46 -0400
+
+
+Started GET "/assets/bundle.self-8de2477b350e0e37ca286e855950bd69134484c24b300bede4bc3e71d8e90fc5.js?body=1" for ::1 at 2016-09-06 13:56:46 -0400
+
+
+Started GET "/assets/plays.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-09-06 13:56:46 -0400
+
+
+Started GET "/assets/static_pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-09-06 13:56:46 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-09-06 13:56:46 -0400
+
+
+Started GET "/assets/bundle.js.map" for ::1 at 2016-09-06 13:56:46 -0400
+
+
+Started GET "/" for ::1 at 2016-09-06 13:57:06 -0400
+Processing by StaticPagesController#root as HTML
+  Rendered static_pages/root.html within layouts/application (0.0ms)
+Completed 200 OK in 16ms (Views: 15.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/static_pages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-09-06 13:57:06 -0400
+
+
+Started GET "/assets/plays.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-09-06 13:57:06 -0400
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for ::1 at 2016-09-06 13:57:06 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-09-06 13:57:06 -0400
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for ::1 at 2016-09-06 13:57:06 -0400
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for ::1 at 2016-09-06 13:57:06 -0400
+
+
+Started GET "/assets/bundle.self-8de2477b350e0e37ca286e855950bd69134484c24b300bede4bc3e71d8e90fc5.js?body=1" for ::1 at 2016-09-06 13:57:06 -0400
+
+
+Started GET "/assets/plays.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-09-06 13:57:06 -0400
+
+
+Started GET "/assets/static_pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-09-06 13:57:06 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-09-06 13:57:06 -0400
+
+
+Started GET "/assets/bundle.js.map" for ::1 at 2016-09-06 13:57:07 -0400
+
+
+Started GET "/" for ::1 at 2016-09-06 14:00:25 -0400
+Processing by StaticPagesController#root as HTML
+  Rendered static_pages/root.html within layouts/application (0.1ms)
+Completed 200 OK in 381ms (Views: 380.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/plays.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-09-06 14:00:26 -0400
+
+
+Started GET "/assets/static_pages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-09-06 14:00:26 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-09-06 14:00:26 -0400
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for ::1 at 2016-09-06 14:00:26 -0400
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for ::1 at 2016-09-06 14:00:26 -0400
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for ::1 at 2016-09-06 14:00:26 -0400
+
+
+Started GET "/assets/bundle.self-8d47a42137da8e56a4127d676b13b6c8d14e272bcc30a203be367eff53258e9f.js?body=1" for ::1 at 2016-09-06 14:00:26 -0400
+
+
+Started GET "/assets/plays.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-09-06 14:00:26 -0400
+
+
+Started GET "/assets/static_pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-09-06 14:00:26 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-09-06 14:00:26 -0400
+
+
+Started GET "/assets/bundle.js.map" for ::1 at 2016-09-06 14:00:26 -0400
+
+
+Started GET "/" for ::1 at 2016-09-06 14:02:22 -0400
+Processing by StaticPagesController#root as HTML
+  Rendered static_pages/root.html within layouts/application (0.0ms)
+Completed 200 OK in 374ms (Views: 373.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/plays.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-09-06 14:02:23 -0400
+
+
+Started GET "/assets/bundle.self-77b3b33b97dc9f636bad96b44638b97475d378ddada868e8f141a3a746b92047.js?body=1" for ::1 at 2016-09-06 14:02:23 -0400
+
+
+Started GET "/assets/static_pages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-09-06 14:02:23 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-09-06 14:02:23 -0400
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for ::1 at 2016-09-06 14:02:23 -0400
+
+
+Started GET "/assets/plays.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-09-06 14:02:23 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-09-06 14:02:23 -0400
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for ::1 at 2016-09-06 14:02:23 -0400
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for ::1 at 2016-09-06 14:02:23 -0400
+
+
+Started GET "/assets/static_pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-09-06 14:02:23 -0400
+
+
+Started GET "/assets/bundle.js.map" for ::1 at 2016-09-06 14:02:23 -0400
+
+
+Started GET "/" for ::1 at 2016-09-06 14:04:30 -0400
+Processing by StaticPagesController#root as HTML
+  Rendered static_pages/root.html within layouts/application (0.0ms)
+Completed 200 OK in 296ms (Views: 295.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bundle.self-239dadcf9d264e78573435279fe61daae4a106443e496b9844b3f3fbe28a16f9.js?body=1" for ::1 at 2016-09-06 14:04:31 -0400
+
+
+Started GET "/assets/plays.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-09-06 14:04:31 -0400
+
+
+Started GET "/assets/static_pages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-09-06 14:04:31 -0400
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for ::1 at 2016-09-06 14:04:31 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-09-06 14:04:31 -0400
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for ::1 at 2016-09-06 14:04:31 -0400
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for ::1 at 2016-09-06 14:04:31 -0400
+
+
+Started GET "/assets/plays.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-09-06 14:04:31 -0400
+
+
+Started GET "/assets/static_pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-09-06 14:04:31 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-09-06 14:04:31 -0400
+
+
+Started GET "/assets/bundle.js.map" for ::1 at 2016-09-06 14:04:31 -0400
+
+
+Started GET "/" for ::1 at 2016-09-06 14:10:18 -0400
+Processing by StaticPagesController#root as HTML
+  Rendered static_pages/root.html within layouts/application (0.0ms)
+Completed 200 OK in 342ms (Views: 341.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bundle.self-c890674c20bd9b4bc9e1488d1ae6426fb6b24ad952a20ab056b8c10a70de5acd.js?body=1" for ::1 at 2016-09-06 14:10:18 -0400
+
+
+Started GET "/assets/bundle.js.map" for ::1 at 2016-09-06 14:10:19 -0400
+
+
+Started GET "/" for ::1 at 2016-09-06 14:11:11 -0400
+Processing by StaticPagesController#root as HTML
+  Rendered static_pages/root.html within layouts/application (0.0ms)
+Completed 200 OK in 371ms (Views: 370.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/plays.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-09-06 14:11:12 -0400
+
+
+Started GET "/assets/static_pages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-09-06 14:11:12 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-09-06 14:11:12 -0400
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for ::1 at 2016-09-06 14:11:12 -0400
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for ::1 at 2016-09-06 14:11:12 -0400
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for ::1 at 2016-09-06 14:11:12 -0400
+
+
+Started GET "/assets/bundle.self-1671e398c168d5f72eb6bcf79e51b77c07d93628601b8ecb3bd295d8a69e2a80.js?body=1" for ::1 at 2016-09-06 14:11:12 -0400
+
+
+Started GET "/assets/plays.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-09-06 14:11:12 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-09-06 14:11:12 -0400
+
+
+Started GET "/assets/static_pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-09-06 14:11:12 -0400
+
+
+Started GET "/assets/bundle.js.map" for ::1 at 2016-09-06 14:11:12 -0400
+
+
+Started GET "/" for ::1 at 2016-09-06 14:13:21 -0400
+Processing by StaticPagesController#root as HTML
+  Rendered static_pages/root.html within layouts/application (0.0ms)
+Completed 200 OK in 298ms (Views: 297.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/plays.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-09-06 14:13:22 -0400
+
+
+Started GET "/assets/static_pages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-09-06 14:13:22 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-09-06 14:13:22 -0400
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for ::1 at 2016-09-06 14:13:22 -0400
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for ::1 at 2016-09-06 14:13:22 -0400
+
+
+Started GET "/assets/bundle.self-dc73579b139bcf68f96d894128f38ad3b62cb02083b4d5d11a34ab6ef283b7ea.js?body=1" for ::1 at 2016-09-06 14:13:22 -0400
+
+
+Started GET "/assets/plays.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-09-06 14:13:22 -0400
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for ::1 at 2016-09-06 14:13:22 -0400
+
+
+Started GET "/assets/static_pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-09-06 14:13:22 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-09-06 14:13:22 -0400
+
+
+Started GET "/" for ::1 at 2016-09-06 14:13:23 -0400
+Processing by StaticPagesController#root as HTML
+  Rendered static_pages/root.html within layouts/application (0.0ms)
+Completed 200 OK in 14ms (Views: 13.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/static_pages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-09-06 14:13:24 -0400
+
+
+Started GET "/assets/plays.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-09-06 14:13:24 -0400
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for ::1 at 2016-09-06 14:13:24 -0400
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for ::1 at 2016-09-06 14:13:24 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-09-06 14:13:24 -0400
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for ::1 at 2016-09-06 14:13:24 -0400
+
+
+Started GET "/assets/bundle.self-dc73579b139bcf68f96d894128f38ad3b62cb02083b4d5d11a34ab6ef283b7ea.js?body=1" for ::1 at 2016-09-06 14:13:24 -0400
+
+
+Started GET "/assets/plays.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-09-06 14:13:24 -0400
+
+
+Started GET "/assets/static_pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-09-06 14:13:24 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-09-06 14:13:24 -0400
+
+
+Started GET "/assets/bundle.js.map" for ::1 at 2016-09-06 14:13:26 -0400
+
+
+Started GET "/" for ::1 at 2016-09-06 14:15:13 -0400
+Processing by StaticPagesController#root as HTML
+  Rendered static_pages/root.html within layouts/application (0.0ms)
+Completed 200 OK in 298ms (Views: 297.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/plays.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-09-06 14:15:14 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-09-06 14:15:14 -0400
+
+
+Started GET "/assets/static_pages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-09-06 14:15:14 -0400
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for ::1 at 2016-09-06 14:15:14 -0400
+
+
+Started GET "/assets/bundle.self-7a6727cff6da1757811f1b9b677a9af97501096e235fffc2237ad5a3531b260a.js?body=1" for ::1 at 2016-09-06 14:15:14 -0400
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for ::1 at 2016-09-06 14:15:14 -0400
+
+
+Started GET "/assets/plays.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-09-06 14:15:14 -0400
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for ::1 at 2016-09-06 14:15:14 -0400
+
+
+Started GET "/assets/static_pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-09-06 14:15:14 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-09-06 14:15:14 -0400
+
+
+Started GET "/assets/bundle.js.map" for ::1 at 2016-09-06 14:15:15 -0400
+
+
+Started GET "/" for ::1 at 2016-09-06 14:16:00 -0400
+Processing by StaticPagesController#root as HTML
+  Rendered static_pages/root.html within layouts/application (0.0ms)
+Completed 200 OK in 18ms (Views: 17.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/plays.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-09-06 14:16:00 -0400
+
+
+Started GET "/assets/static_pages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-09-06 14:16:00 -0400
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for ::1 at 2016-09-06 14:16:00 -0400
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for ::1 at 2016-09-06 14:16:00 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-09-06 14:16:00 -0400
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for ::1 at 2016-09-06 14:16:00 -0400
+
+
+Started GET "/assets/bundle.self-dc73579b139bcf68f96d894128f38ad3b62cb02083b4d5d11a34ab6ef283b7ea.js?body=1" for ::1 at 2016-09-06 14:16:00 -0400
+
+
+Started GET "/assets/plays.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-09-06 14:16:00 -0400
+
+
+Started GET "/assets/static_pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-09-06 14:16:00 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-09-06 14:16:00 -0400
+
+
+Started GET "/assets/bundle.js.map" for ::1 at 2016-09-06 14:16:01 -0400
+
+
+Started GET "/" for ::1 at 2016-09-06 14:16:55 -0400
+Processing by StaticPagesController#root as HTML
+  Rendered static_pages/root.html within layouts/application (0.0ms)
+Completed 200 OK in 347ms (Views: 345.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bundle.self-b8f514b6336d625989a4761bcba704bb59a4de72737ba90ae43596efacdadd60.js?body=1" for ::1 at 2016-09-06 14:16:56 -0400
+
+
+Started GET "/assets/plays.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-09-06 14:16:56 -0400
+
+
+Started GET "/assets/static_pages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-09-06 14:16:56 -0400
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for ::1 at 2016-09-06 14:16:56 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-09-06 14:16:56 -0400
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for ::1 at 2016-09-06 14:16:56 -0400
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for ::1 at 2016-09-06 14:16:56 -0400
+
+
+Started GET "/assets/static_pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-09-06 14:16:56 -0400
+
+
+Started GET "/assets/plays.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-09-06 14:16:56 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-09-06 14:16:56 -0400
+
+
+Started GET "/assets/bundle.js.map" for ::1 at 2016-09-06 14:16:57 -0400
+
+
+Started GET "/" for ::1 at 2016-09-06 14:17:06 -0400
+Processing by StaticPagesController#root as HTML
+  Rendered static_pages/root.html within layouts/application (0.0ms)
+Completed 200 OK in 356ms (Views: 355.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/plays.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-09-06 14:17:07 -0400
+
+
+Started GET "/assets/static_pages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-09-06 14:17:07 -0400
+
+
+Started GET "/assets/bundle.self-97b1483785fc4703d20f84118f122e8a8734f06bef01ebeebe13941dd86f73d1.js?body=1" for ::1 at 2016-09-06 14:17:07 -0400
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for ::1 at 2016-09-06 14:17:07 -0400
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for ::1 at 2016-09-06 14:17:07 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-09-06 14:17:07 -0400
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for ::1 at 2016-09-06 14:17:07 -0400
+
+
+Started GET "/assets/plays.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-09-06 14:17:07 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-09-06 14:17:07 -0400
+
+
+Started GET "/assets/static_pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-09-06 14:17:07 -0400
+
+
+Started GET "/assets/bundle.js.map" for ::1 at 2016-09-06 14:17:07 -0400
+
+
+Started GET "/" for ::1 at 2016-09-06 14:17:10 -0400
+Processing by StaticPagesController#root as HTML
+  Rendered static_pages/root.html within layouts/application (0.0ms)
+Completed 200 OK in 14ms (Views: 13.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/static_pages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-09-06 14:17:10 -0400
+
+
+Started GET "/assets/plays.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-09-06 14:17:10 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-09-06 14:17:10 -0400
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for ::1 at 2016-09-06 14:17:10 -0400
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for ::1 at 2016-09-06 14:17:10 -0400
+
+
+Started GET "/assets/bundle.self-97b1483785fc4703d20f84118f122e8a8734f06bef01ebeebe13941dd86f73d1.js?body=1" for ::1 at 2016-09-06 14:17:10 -0400
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for ::1 at 2016-09-06 14:17:10 -0400
+
+
+Started GET "/assets/plays.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-09-06 14:17:10 -0400
+
+
+Started GET "/assets/static_pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-09-06 14:17:10 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-09-06 14:17:10 -0400
+
+
+Started GET "/assets/bundle.js.map" for ::1 at 2016-09-06 14:17:10 -0400
+
+
+Started GET "/" for ::1 at 2016-09-06 14:17:30 -0400
+Processing by StaticPagesController#root as HTML
+  Rendered static_pages/root.html within layouts/application (0.0ms)
+Completed 200 OK in 14ms (Views: 13.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/plays.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-09-06 14:17:31 -0400
+
+
+Started GET "/assets/static_pages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-09-06 14:17:31 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-09-06 14:17:31 -0400
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for ::1 at 2016-09-06 14:17:31 -0400
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for ::1 at 2016-09-06 14:17:31 -0400
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for ::1 at 2016-09-06 14:17:31 -0400
+
+
+Started GET "/assets/bundle.self-97b1483785fc4703d20f84118f122e8a8734f06bef01ebeebe13941dd86f73d1.js?body=1" for ::1 at 2016-09-06 14:17:31 -0400
+
+
+Started GET "/assets/plays.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-09-06 14:17:31 -0400
+
+
+Started GET "/assets/static_pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-09-06 14:17:31 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-09-06 14:17:31 -0400
+
+
+Started GET "/assets/bundle.js.map" for ::1 at 2016-09-06 14:17:31 -0400
+
+
+Started GET "/" for ::1 at 2016-09-06 14:17:34 -0400
+Processing by StaticPagesController#root as HTML
+  Rendered static_pages/root.html within layouts/application (0.0ms)
+Completed 200 OK in 327ms (Views: 326.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/plays.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-09-06 14:17:34 -0400
+
+
+Started GET "/assets/static_pages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-09-06 14:17:34 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-09-06 14:17:34 -0400
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for ::1 at 2016-09-06 14:17:34 -0400
+
+
+Started GET "/assets/bundle.self-996822864ef7c9610faca0ab46e59862a21f79ed0db7a6857a2bb9f4c97f8fdd.js?body=1" for ::1 at 2016-09-06 14:17:34 -0400
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for ::1 at 2016-09-06 14:17:34 -0400
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for ::1 at 2016-09-06 14:17:34 -0400
+
+
+Started GET "/assets/plays.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-09-06 14:17:34 -0400
+
+
+Started GET "/assets/static_pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-09-06 14:17:34 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-09-06 14:17:34 -0400
+
+
+Started GET "/assets/bundle.js.map" for ::1 at 2016-09-06 14:17:35 -0400
+
+
+Started GET "/" for ::1 at 2016-09-06 14:18:09 -0400
+Processing by StaticPagesController#root as HTML
+  Rendered static_pages/root.html within layouts/application (0.0ms)
+Completed 200 OK in 309ms (Views: 308.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/plays.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-09-06 14:18:09 -0400
+
+
+Started GET "/assets/static_pages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-09-06 14:18:09 -0400
+
+
+Started GET "/assets/bundle.self-6259ae695e0d5bfac98bb02a1ca3ba736767706d7f85dcbf37656a04e1c7b49f.js?body=1" for ::1 at 2016-09-06 14:18:09 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-09-06 14:18:10 -0400
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for ::1 at 2016-09-06 14:18:10 -0400
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for ::1 at 2016-09-06 14:18:10 -0400
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for ::1 at 2016-09-06 14:18:10 -0400
+
+
+Started GET "/assets/plays.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-09-06 14:18:10 -0400
+
+
+Started GET "/assets/static_pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-09-06 14:18:10 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-09-06 14:18:10 -0400
+
+
+Started GET "/assets/bundle.js.map" for ::1 at 2016-09-06 14:18:10 -0400
+
+
+Started GET "/" for ::1 at 2016-09-06 14:19:10 -0400
+Processing by StaticPagesController#root as HTML
+  Rendered static_pages/root.html within layouts/application (0.0ms)
+Completed 200 OK in 400ms (Views: 399.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/plays.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-09-06 14:19:11 -0400
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for ::1 at 2016-09-06 14:19:11 -0400
+
+
+Started GET "/assets/static_pages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-09-06 14:19:11 -0400
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for ::1 at 2016-09-06 14:19:11 -0400
+
+
+Started GET "/assets/bundle.self-992bc15a495cbae9694531d4074485c547c1fdbe72afa79bb90c4b74faf63a1e.js?body=1" for ::1 at 2016-09-06 14:19:11 -0400
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for ::1 at 2016-09-06 14:19:11 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-09-06 14:19:11 -0400
+
+
+Started GET "/assets/plays.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-09-06 14:19:11 -0400
+
+
+Started GET "/assets/static_pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-09-06 14:19:11 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-09-06 14:19:11 -0400
+
+
+Started GET "/assets/bundle.js.map" for ::1 at 2016-09-06 14:19:11 -0400
+
+
+Started GET "/" for ::1 at 2016-09-06 14:25:03 -0400
+Processing by StaticPagesController#root as HTML
+  Rendered static_pages/root.html within layouts/application (0.0ms)
+Completed 200 OK in 350ms (Views: 349.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bundle.self-f84e1ee66d8c75054e0198fb841f73e770aa0c4d0d8614eb2cd858ab58ca08cf.js?body=1" for ::1 at 2016-09-06 14:25:04 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-09-06 14:25:04 -0400
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for ::1 at 2016-09-06 14:25:04 -0400
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for ::1 at 2016-09-06 14:25:04 -0400
+
+
+Started GET "/assets/static_pages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-09-06 14:25:04 -0400
+
+
+Started GET "/assets/plays.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-09-06 14:25:04 -0400
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for ::1 at 2016-09-06 14:25:04 -0400
+
+
+Started GET "/assets/plays.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-09-06 14:25:04 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-09-06 14:25:04 -0400
+
+
+Started GET "/assets/static_pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-09-06 14:25:04 -0400
+
+
+Started GET "/assets/bundle.js.map" for ::1 at 2016-09-06 14:25:04 -0400
+
+
+Started GET "/" for ::1 at 2016-09-06 14:25:32 -0400
+Processing by StaticPagesController#root as HTML
+  Rendered static_pages/root.html within layouts/application (0.1ms)
+Completed 200 OK in 331ms (Views: 330.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/plays.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-09-06 14:25:33 -0400
+
+
+Started GET "/assets/static_pages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-09-06 14:25:33 -0400
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for ::1 at 2016-09-06 14:25:33 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-09-06 14:25:33 -0400
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for ::1 at 2016-09-06 14:25:33 -0400
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for ::1 at 2016-09-06 14:25:33 -0400
+
+
+Started GET "/assets/bundle.self-563f3949d3db0d664b1f8597a4f4030117b2bc1e5e76e3e48c6feaceb24417a6.js?body=1" for ::1 at 2016-09-06 14:25:33 -0400
+
+
+Started GET "/assets/plays.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-09-06 14:25:33 -0400
+
+
+Started GET "/assets/static_pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-09-06 14:25:33 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-09-06 14:25:33 -0400
+
+
+Started GET "/assets/bundle.js.map" for ::1 at 2016-09-06 14:25:33 -0400
+
+
+Started GET "/" for ::1 at 2016-09-06 14:27:05 -0400
+Processing by StaticPagesController#root as HTML
+  Rendered static_pages/root.html within layouts/application (0.0ms)
+Completed 200 OK in 364ms (Views: 363.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/plays.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-09-06 14:27:06 -0400
+
+
+Started GET "/assets/static_pages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-09-06 14:27:06 -0400
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for ::1 at 2016-09-06 14:27:06 -0400
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for ::1 at 2016-09-06 14:27:06 -0400
+
+
+Started GET "/assets/plays.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-09-06 14:27:06 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-09-06 14:27:06 -0400
+
+
+Started GET "/assets/bundle.self-c0492da175bffa5b4bffa67eae59c43de5264f21e5949cfdf10da9ab1a3aa6df.js?body=1" for ::1 at 2016-09-06 14:27:06 -0400
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for ::1 at 2016-09-06 14:27:06 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-09-06 14:27:06 -0400
+
+
+Started GET "/assets/static_pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-09-06 14:27:06 -0400
+
+
+Started GET "/assets/bundle.js.map" for ::1 at 2016-09-06 14:27:06 -0400
+
+
+Started GET "/" for ::1 at 2016-09-06 14:32:26 -0400
+Processing by StaticPagesController#root as HTML
+  Rendered static_pages/root.html within layouts/application (0.1ms)
+Completed 200 OK in 340ms (Views: 339.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bundle.self-ae5a536f7b1984da52fc8d52a39735f91cdd8fb4e7d5787c8e42a74e035a57ad.js?body=1" for ::1 at 2016-09-06 14:32:27 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-09-06 14:32:27 -0400
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for ::1 at 2016-09-06 14:32:27 -0400
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for ::1 at 2016-09-06 14:32:27 -0400
+
+
+Started GET "/assets/static_pages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-09-06 14:32:27 -0400
+
+
+Started GET "/assets/plays.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-09-06 14:32:27 -0400
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for ::1 at 2016-09-06 14:32:27 -0400
+
+
+Started GET "/assets/plays.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-09-06 14:32:27 -0400
+
+
+Started GET "/assets/static_pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-09-06 14:32:27 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-09-06 14:32:27 -0400
+
+
+Started GET "/assets/bundle.js.map" for ::1 at 2016-09-06 14:32:28 -0400
+
+
+Started GET "/" for ::1 at 2016-09-06 14:48:52 -0400
+Processing by StaticPagesController#root as HTML
+  Rendered static_pages/root.html within layouts/application (0.1ms)
+Completed 200 OK in 439ms (Views: 437.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/plays.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-09-06 14:48:53 -0400
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for ::1 at 2016-09-06 14:48:53 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-09-06 14:48:53 -0400
+
+
+Started GET "/assets/bundle.self-ccc87dea7f904bf8a9a5dac41774eac340e10960b6dd4251202dc278f6c6cc54.js?body=1" for ::1 at 2016-09-06 14:48:53 -0400
+
+
+Started GET "/assets/static_pages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-09-06 14:48:53 -0400
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for ::1 at 2016-09-06 14:48:53 -0400
+
+
+Started GET "/assets/plays.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-09-06 14:48:53 -0400
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for ::1 at 2016-09-06 14:48:53 -0400
+
+
+Started GET "/assets/static_pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-09-06 14:48:53 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-09-06 14:48:53 -0400
+
+
+Started GET "/assets/bundle.js.map" for ::1 at 2016-09-06 14:48:53 -0400
+
+
+Started GET "/" for ::1 at 2016-09-06 14:49:17 -0400
+Processing by StaticPagesController#root as HTML
+  Rendered static_pages/root.html within layouts/application (0.0ms)
+Completed 200 OK in 17ms (Views: 16.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/plays.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-09-06 14:49:17 -0400
+
+
+Started GET "/assets/static_pages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-09-06 14:49:17 -0400
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for ::1 at 2016-09-06 14:49:17 -0400
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for ::1 at 2016-09-06 14:49:17 -0400
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for ::1 at 2016-09-06 14:49:17 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-09-06 14:49:17 -0400
+
+
+Started GET "/assets/bundle.self-ccc87dea7f904bf8a9a5dac41774eac340e10960b6dd4251202dc278f6c6cc54.js?body=1" for ::1 at 2016-09-06 14:49:17 -0400
+
+
+Started GET "/assets/plays.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-09-06 14:49:17 -0400
+
+
+Started GET "/assets/static_pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-09-06 14:49:17 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-09-06 14:49:17 -0400
+
+
+Started GET "/assets/bundle.js.map" for ::1 at 2016-09-06 14:49:18 -0400
+
+
+Started GET "/" for ::1 at 2016-09-06 14:50:09 -0400
+Processing by StaticPagesController#root as HTML
+  Rendered static_pages/root.html within layouts/application (0.1ms)
+Completed 200 OK in 384ms (Views: 383.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/plays.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-09-06 14:50:10 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-09-06 14:50:10 -0400
+
+
+Started GET "/assets/static_pages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-09-06 14:50:10 -0400
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for ::1 at 2016-09-06 14:50:10 -0400
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for ::1 at 2016-09-06 14:50:10 -0400
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for ::1 at 2016-09-06 14:50:10 -0400
+
+
+Started GET "/assets/bundle.self-832f9f39cdfb4bb9a12ae6500ca031d48003d4d00534dec10860d8bbed9db541.js?body=1" for ::1 at 2016-09-06 14:50:10 -0400
+
+
+Started GET "/assets/plays.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-09-06 14:50:10 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-09-06 14:50:10 -0400
+
+
+Started GET "/assets/static_pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-09-06 14:50:10 -0400
+
+
+Started GET "/assets/bundle.js.map" for ::1 at 2016-09-06 14:50:10 -0400
+
+
+Started GET "/" for ::1 at 2016-09-06 14:51:35 -0400
+Processing by StaticPagesController#root as HTML
+  Rendered static_pages/root.html within layouts/application (0.0ms)
+Completed 200 OK in 32ms (Views: 31.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/plays.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-09-06 14:51:35 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-09-06 14:51:35 -0400
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for ::1 at 2016-09-06 14:51:35 -0400
+
+
+Started GET "/assets/static_pages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-09-06 14:51:35 -0400
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for ::1 at 2016-09-06 14:51:35 -0400
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for ::1 at 2016-09-06 14:51:35 -0400
+
+
+Started GET "/assets/bundle.self-832f9f39cdfb4bb9a12ae6500ca031d48003d4d00534dec10860d8bbed9db541.js?body=1" for ::1 at 2016-09-06 14:51:35 -0400
+
+
+Started GET "/assets/plays.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-09-06 14:51:35 -0400
+
+
+Started GET "/assets/static_pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-09-06 14:51:35 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-09-06 14:51:35 -0400
+
+
+Started GET "/assets/bundle.js.map" for ::1 at 2016-09-06 14:51:36 -0400
+
+
+Started GET "/" for ::1 at 2016-09-06 15:00:00 -0400
+Processing by StaticPagesController#root as HTML
+  Rendered static_pages/root.html within layouts/application (0.0ms)
+Completed 200 OK in 368ms (Views: 367.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/plays.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-09-06 15:00:01 -0400
+
+
+Started GET "/assets/static_pages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-09-06 15:00:01 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-09-06 15:00:01 -0400
+
+
+Started GET "/assets/bundle.self-b136025a6e9907a2d9596c6b8c6e40a1986b62d5476952197b20f2a39ced94b7.js?body=1" for ::1 at 2016-09-06 15:00:01 -0400
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for ::1 at 2016-09-06 15:00:01 -0400
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for ::1 at 2016-09-06 15:00:01 -0400
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for ::1 at 2016-09-06 15:00:01 -0400
+
+
+Started GET "/assets/static_pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-09-06 15:00:01 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-09-06 15:00:01 -0400
+
+
+Started GET "/assets/plays.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-09-06 15:00:01 -0400
+
+
+Started GET "/assets/bundle.js.map" for ::1 at 2016-09-06 15:00:01 -0400
+
+
+Started GET "/" for ::1 at 2016-09-06 15:00:49 -0400
+Processing by StaticPagesController#root as HTML
+  Rendered static_pages/root.html within layouts/application (0.0ms)
+Completed 200 OK in 368ms (Views: 367.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/plays.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-09-06 15:00:50 -0400
+
+
+Started GET "/assets/static_pages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-09-06 15:00:50 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-09-06 15:00:50 -0400
+
+
+Started GET "/assets/bundle.self-ca8723560ade97d15d758f5b8780ae83b9b73ca9dd0da65d30612e7f82a99b20.js?body=1" for ::1 at 2016-09-06 15:00:50 -0400
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for ::1 at 2016-09-06 15:00:50 -0400
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for ::1 at 2016-09-06 15:00:50 -0400
+
+
+Started GET "/assets/plays.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-09-06 15:00:50 -0400
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for ::1 at 2016-09-06 15:00:50 -0400
+
+
+Started GET "/assets/static_pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-09-06 15:00:50 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-09-06 15:00:50 -0400
+
+
+Started GET "/assets/bundle.js.map" for ::1 at 2016-09-06 15:00:50 -0400
+
+
+Started GET "/" for ::1 at 2016-09-06 15:03:01 -0400
+Processing by StaticPagesController#root as HTML
+  Rendered static_pages/root.html within layouts/application (0.0ms)
+Completed 200 OK in 397ms (Views: 397.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/plays.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-09-06 15:03:02 -0400
+
+
+Started GET "/assets/static_pages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-09-06 15:03:02 -0400
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for ::1 at 2016-09-06 15:03:02 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-09-06 15:03:02 -0400
+
+
+Started GET "/assets/bundle.self-e7ddd82aa87a016c3e8a9fedc411610dd823d382e4097424dbabb589f6f4f41c.js?body=1" for ::1 at 2016-09-06 15:03:02 -0400
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for ::1 at 2016-09-06 15:03:02 -0400
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for ::1 at 2016-09-06 15:03:02 -0400
+
+
+Started GET "/assets/plays.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-09-06 15:03:02 -0400
+
+
+Started GET "/assets/static_pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-09-06 15:03:02 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-09-06 15:03:02 -0400
+
+
+Started GET "/assets/bundle.js.map" for ::1 at 2016-09-06 15:03:03 -0400
+
+
+Started GET "/" for ::1 at 2016-09-06 15:03:15 -0400
+Processing by StaticPagesController#root as HTML
+  Rendered static_pages/root.html within layouts/application (0.0ms)
+Completed 200 OK in 17ms (Views: 16.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/plays.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-09-06 15:03:15 -0400
+
+
+Started GET "/assets/static_pages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-09-06 15:03:15 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-09-06 15:03:15 -0400
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for ::1 at 2016-09-06 15:03:15 -0400
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for ::1 at 2016-09-06 15:03:15 -0400
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for ::1 at 2016-09-06 15:03:15 -0400
+
+
+Started GET "/assets/bundle.self-e7ddd82aa87a016c3e8a9fedc411610dd823d382e4097424dbabb589f6f4f41c.js?body=1" for ::1 at 2016-09-06 15:03:15 -0400
+
+
+Started GET "/assets/plays.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-09-06 15:03:15 -0400
+
+
+Started GET "/assets/static_pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-09-06 15:03:15 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-09-06 15:03:15 -0400
+
+
+Started GET "/assets/bundle.js.map" for ::1 at 2016-09-06 15:03:15 -0400
+
+
+Started GET "/" for ::1 at 2016-09-06 15:03:17 -0400
+Processing by StaticPagesController#root as HTML
+  Rendered static_pages/root.html within layouts/application (0.0ms)
+Completed 200 OK in 26ms (Views: 25.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/static_pages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-09-06 15:03:18 -0400
+
+
+Started GET "/assets/plays.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-09-06 15:03:18 -0400
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for ::1 at 2016-09-06 15:03:18 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-09-06 15:03:18 -0400
+
+
+Started GET "/assets/bundle.self-ca8723560ade97d15d758f5b8780ae83b9b73ca9dd0da65d30612e7f82a99b20.js?body=1" for ::1 at 2016-09-06 15:03:18 -0400
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for ::1 at 2016-09-06 15:03:18 -0400
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for ::1 at 2016-09-06 15:03:18 -0400
+
+
+Started GET "/assets/plays.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-09-06 15:03:18 -0400
+
+
+Started GET "/assets/static_pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-09-06 15:03:18 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-09-06 15:03:18 -0400
+
+
+Started GET "/assets/bundle.js.map" for ::1 at 2016-09-06 15:03:18 -0400
+
+
+Started GET "/" for ::1 at 2016-09-06 15:07:39 -0400
+Processing by StaticPagesController#root as HTML
+  Rendered static_pages/root.html within layouts/application (0.0ms)
+Completed 200 OK in 414ms (Views: 413.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/plays.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-09-06 15:07:40 -0400
+
+
+Started GET "/assets/bundle.self-dbd23a1e87eb6f76de98c96b88528fc3d1e351a12e1f053e8072eede8f95db27.js?body=1" for ::1 at 2016-09-06 15:07:40 -0400
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for ::1 at 2016-09-06 15:07:40 -0400
+
+
+Started GET "/assets/static_pages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-09-06 15:07:40 -0400
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for ::1 at 2016-09-06 15:07:40 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-09-06 15:07:40 -0400
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for ::1 at 2016-09-06 15:07:40 -0400
+
+
+Started GET "/assets/plays.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-09-06 15:07:40 -0400
+
+
+Started GET "/assets/static_pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-09-06 15:07:40 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-09-06 15:07:40 -0400
+
+
+Started GET "/assets/bundle.js.map" for ::1 at 2016-09-06 15:07:40 -0400
+
+
+Started GET "/" for ::1 at 2016-09-06 15:07:43 -0400
+Processing by StaticPagesController#root as HTML
+  Rendered static_pages/root.html within layouts/application (0.0ms)
+Completed 200 OK in 14ms (Views: 13.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/plays.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-09-06 15:07:43 -0400
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for ::1 at 2016-09-06 15:07:43 -0400
+
+
+Started GET "/assets/static_pages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-09-06 15:07:43 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-09-06 15:07:43 -0400
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for ::1 at 2016-09-06 15:07:43 -0400
+
+
+Started GET "/assets/bundle.self-dbd23a1e87eb6f76de98c96b88528fc3d1e351a12e1f053e8072eede8f95db27.js?body=1" for ::1 at 2016-09-06 15:07:43 -0400
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for ::1 at 2016-09-06 15:07:43 -0400
+
+
+Started GET "/assets/plays.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-09-06 15:07:43 -0400
+
+
+Started GET "/assets/static_pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-09-06 15:07:43 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-09-06 15:07:43 -0400
+
+
+Started GET "/assets/bundle.js.map" for ::1 at 2016-09-06 15:07:43 -0400
+
+
+Started GET "/" for ::1 at 2016-09-06 15:08:22 -0400
+Processing by StaticPagesController#root as HTML
+  Rendered static_pages/root.html within layouts/application (0.0ms)
+Completed 200 OK in 413ms (Views: 412.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/plays.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-09-06 15:08:23 -0400
+
+
+Started GET "/assets/bundle.self-2e928d745680232618cdd032e664e866bd5fe1fdb18c6b6ad092d36ba7777458.js?body=1" for ::1 at 2016-09-06 15:08:23 -0400
+
+
+Started GET "/assets/static_pages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-09-06 15:08:23 -0400
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for ::1 at 2016-09-06 15:08:23 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-09-06 15:08:23 -0400
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for ::1 at 2016-09-06 15:08:23 -0400
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for ::1 at 2016-09-06 15:08:23 -0400
+
+
+Started GET "/assets/plays.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-09-06 15:08:23 -0400
+
+
+Started GET "/assets/static_pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-09-06 15:08:23 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-09-06 15:08:23 -0400
+
+
+Started GET "/assets/bundle.js.map" for ::1 at 2016-09-06 15:08:24 -0400
+
+
+Started GET "/" for ::1 at 2016-09-06 15:08:26 -0400
+Processing by StaticPagesController#root as HTML
+  Rendered static_pages/root.html within layouts/application (0.0ms)
+Completed 200 OK in 15ms (Views: 14.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for ::1 at 2016-09-06 15:08:26 -0400
+
+
+Started GET "/assets/plays.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-09-06 15:08:26 -0400
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for ::1 at 2016-09-06 15:08:26 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-09-06 15:08:26 -0400
+
+
+Started GET "/assets/static_pages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-09-06 15:08:26 -0400
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for ::1 at 2016-09-06 15:08:26 -0400
+
+
+Started GET "/assets/bundle.self-2e928d745680232618cdd032e664e866bd5fe1fdb18c6b6ad092d36ba7777458.js?body=1" for ::1 at 2016-09-06 15:08:26 -0400
+
+
+Started GET "/assets/plays.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-09-06 15:08:26 -0400
+
+
+Started GET "/assets/static_pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-09-06 15:08:26 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-09-06 15:08:26 -0400
+
+
+Started GET "/assets/bundle.js.map" for ::1 at 2016-09-06 15:08:26 -0400
+
+
+Started GET "/" for ::1 at 2016-09-06 15:12:56 -0400
+Processing by StaticPagesController#root as HTML
+  Rendered static_pages/root.html within layouts/application (0.1ms)
+Completed 200 OK in 475ms (Views: 474.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/plays.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-09-06 15:12:57 -0400
+
+
+Started GET "/assets/static_pages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-09-06 15:12:57 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-09-06 15:12:57 -0400
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for ::1 at 2016-09-06 15:12:57 -0400
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for ::1 at 2016-09-06 15:12:57 -0400
+
+
+Started GET "/assets/bundle.self-c7d62f84c2ebc346edd0c814466acdbe83b0b7787c5b0793e5390b88aebd03df.js?body=1" for ::1 at 2016-09-06 15:12:57 -0400
+
+
+Started GET "/assets/plays.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-09-06 15:12:57 -0400
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for ::1 at 2016-09-06 15:12:57 -0400
+
+
+Started GET "/assets/static_pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-09-06 15:12:57 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-09-06 15:12:57 -0400
+
+
+Started GET "/assets/bundle.js.map" for ::1 at 2016-09-06 15:12:57 -0400
