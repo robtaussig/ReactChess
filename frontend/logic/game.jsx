@@ -234,6 +234,7 @@ function checkObstruction (toX, toY, from = board.selectedSquare, pieces = board
 
 function castleRook (toX, toY) {
   move(toX, toY, toX > 4 ? [7, toY] : [0, toY]);
+  SpecialMoves.currentSide = SpecialMoves.currentSide === 'w' ? 'b' : 'w';
 }
 
 function checkEnPassant (toX, toY, from) {
