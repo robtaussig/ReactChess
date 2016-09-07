@@ -42,7 +42,6 @@ class BoardSquare extends Component {
   render() {
     const { x, y, connectDropTarget, isOver, canDrop } = this.props;
     const black = (x + y) % 2 === 1;
-
     return connectDropTarget(
       <div style={{ position: 'relative',
         width: '100%',

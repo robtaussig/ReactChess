@@ -10,8 +10,8 @@ export default class Home extends Component {
     this.unobserve = observe(this.handleChange.bind(this));
   }
 
-  handleChange(knightPosition) {
-    const nextState = knightPosition ;
+  handleChange(board) {
+    const nextState = board ;
     if (this.state) {
       this.setState(nextState);
     } else {
@@ -24,7 +24,7 @@ export default class Home extends Component {
   }
 
   render() {
-    const { knightPosition } = this.state;
+    const board = this.state.pieces;
     return (
       <div>
         <div style={{
@@ -32,7 +32,7 @@ export default class Home extends Component {
             height: '80vmin',
             border: '1px solid gray'
           }}>
-          <Board knightPosition={knightPosition} />
+          <Board board={board} />
         </div>
       </div>
     );

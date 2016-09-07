@@ -1,10 +1,26 @@
 import React, { Component, PropTypes } from 'react';
 import { ItemTypes } from '../../constants/item_types';
 import { DragSource } from 'react-dnd';
+import { setSelected } from '../../logic/game';
 
-const knightSource = {
+
+
+const pieceSource = {
   beginDrag(props) {
-    return {};
+    setSelected(props);
+    // Return the data describing the dragged item
+    const piece = { piece: props };
+    return piece;
+  },
+
+  endDrag(props, monitor, component) {
+    if (!monitor.didDrop()) {
+      return;
+    }
+
+    // When dropped on a compatible target, do something
+    const item = monitor.getItem();
+    const dropResult = monitor.getDropResult();
   }
 };
 
@@ -42,4 +58,4 @@ Knight.propTypes = {
   isDragging: PropTypes.bool.isRequired
 };
 
-export default DragSource(ItemTypes.KNIGHT, knightSource, collect)(Knight);
+export default DragSource(ItemTypes.KNIGHT, pieceSource, collect)(Knight);

@@ -26,32 +26,33 @@ class Board extends Component {
     );
   }
 
-  // parsePiece (x,y) {
-  //
-  //     let piece;
-  //     let color;
-  //
-  //     if (piece === 'p') {
-  //       return <Pawn color={color} pos={[x,y]} type='pawn'/>;
-  //     } else if (piece === 'r') {
-  //       return <Rook color={color} pos={[x,y]} type='rook'/>;
-  //     } else if (piece === 'n') {
-  //       return <Knight color={color} pos={[x,y]} type='knight'/>;
-  //     } else if (piece === 'b') {
-  //       return <Bishop color={color} pos={[x,y]} type='bishop'/>;
-  //     } else if (piece === 'q') {
-  //       return <Queen color={color} pos={[x,y]} type='queen'/>;
-  //     } else if (piece === 'k') {
-  //       return <King color={color} pos={[x,y]} type='king'/>;
-  //     }
-  //
-  // }
+  parsePiece (x,y) {
+
+    let piece, color;
+    if (this.props.board) {
+      if (this.props.board[y][x][0] !== 'n-l') {
+        piece = this.props.board[y][x][0][2];
+        color = this.props.board[y][x][0][0] === 'w' ? 'white' : 'black';
+      }
+
+        if (piece === 'p') {
+          return <Pawn color={color} pos={[x,y]} type='pawn'/>;
+        } else if (piece === 'r') {
+          return <Rook color={color} pos={[x,y]} type='rook'/>;
+        } else if (piece === 'n') {
+          return <Knight color={color} pos={[x,y]} type='knight'/>;
+        } else if (piece === 'b') {
+          return <Bishop color={color} pos={[x,y]} type='bishop'/>;
+        } else if (piece === 'q') {
+          return <Queen color={color} pos={[x,y]} type='queen'/>;
+        } else if (piece === 'k') {
+          return <King color={color} pos={[x,y]} type='king'/>;
+        }
+    }
+  }
 
   renderPiece(x, y) {
-    const [knightX, knightY] = this.props.knightPosition;
-    if (x === knightX && y === knightY) {
-      return <Knight />;
-    }
+    return this.parsePiece(x,y);
   }
 
   handleSquareClick(toX, toY) {
