@@ -39,7 +39,7 @@ class Knight extends Component {
         fontSize: '9vmin',
         textAlign: 'center',
         lineHeight: '10vmin',
-        fill: this.props.color,
+        color: this.props.color,
         backgroundColor: 'transparent',
         fontWeight: 'bold',
         cursor: 'pointer'
@@ -55,4 +55,4 @@ Knight.propTypes = {
   isDragging: PropTypes.bool.isRequired
 };
 
-export default DragSource(ItemTypes.PIECE, pieceSource, collect)(Knight);
+export default DragSource(ItemTypes.KNIGHT, pieceSource, collect)(Knight);

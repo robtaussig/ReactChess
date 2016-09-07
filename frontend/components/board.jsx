@@ -32,7 +32,7 @@ class Board extends Component {
     if (this.props.board) {
       if (this.props.board[y][x][0] !== 'n-l') {
         piece = this.props.board[y][x][0][2];
-        color = this.props.board[y][x][0][0] === 'w' ? 'white' : 'black';
+        color = this.props.board[y][x][0][0] === 'w' ? '#1057b7' : '#000';
       }
 
         if (piece === 'p') {
@@ -72,6 +72,8 @@ class Board extends Component {
         width: '100%',
         height: '100%',
         display: 'flex',
+        borderRight: '2px solid #000',
+        borderBottom: '2px solid #000',
         flexWrap: 'wrap'
       }}>
         {squares}

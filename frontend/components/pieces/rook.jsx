@@ -1,10 +1,23 @@
 import React, { Component, PropTypes } from 'react';
 import { ItemTypes } from '../../constants/item_types';
 import { DragSource } from 'react-dnd';
+import { setSelected } from '../../logic/game';
 
-const rookSource = {
+const pieceSource = {
   beginDrag(props) {
-    return {pieceId: props.id};
+    setSelected(props);
+    const piece = { piece: props };
+    return piece;
+  },
+
+  endDrag(props, monitor, component) {
+    if (!monitor.didDrop()) {
+      return;
+    }
+
+    // When dropped on a compatible target, do something
+    const item = monitor.getItem();
+    const dropResult = monitor.getDropResult();
   }
 };
 
@@ -26,6 +39,7 @@ class Rook extends Component {
         fontSize: '9vmin',
         textAlign: 'center',
         lineHeight: '10vmin',
+        color: this.props.color,
         backgroundColor: 'transparent',
         fontWeight: 'bold',
         cursor: 'pointer'
@@ -41,4 +55,4 @@ Rook.propTypes = {
   isDragging: PropTypes.bool.isRequired
 };
 
-export default DragSource(ItemTypes.KNIGHT, rookSource, collect)(Rook);
+export default DragSource(ItemTypes.ROOK, pieceSource, collect)(Rook);

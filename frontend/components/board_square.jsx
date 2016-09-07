@@ -57,4 +57,4 @@ class BoardSquare extends Component {
   }
 }
 
-export default DropTarget(ItemTypes.PIECE, squareTarget, collect)(BoardSquare);
+export default DropTarget(ItemTypes.PIECES, squareTarget, collect)(BoardSquare);

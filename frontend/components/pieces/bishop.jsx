@@ -33,18 +33,19 @@ class Bishop extends Component {
 
   render() {
     const { connectDragSource, isDragging } = this.props;
+
     return connectDragSource(
       <div style={{
         opacity: isDragging ? 0.5 : 1,
         fontSize: '9vmin',
         textAlign: 'center',
         lineHeight: '10vmin',
-        fill: this.props.color,
+        color: this.props.color,
         backgroundColor: 'transparent',
         fontWeight: 'bold',
         cursor: 'pointer'
       }}>
-        {this.props.color === 'white' ? '♗' : '♝'}
+        ♝
       </div>
     );
   }
@@ -55,4 +56,4 @@ Bishop.propTypes = {
   isDragging: PropTypes.bool.isRequired
 };
 
-export default DragSource(ItemTypes.PIECE, pieceSource, collect)(Bishop);
+export default DragSource(ItemTypes.BISHOP, pieceSource, collect)(Bishop);
