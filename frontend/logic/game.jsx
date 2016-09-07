@@ -1,5 +1,6 @@
 import { queenMoves, bishopMoves, rookMoves } from './sliding_pieces.js';
 import { knightMoves, kingMoves } from './stepping_pieces.js';
+const SpecialMoves = require('./special_moves');
 
 let board = {
   pieces: [
@@ -40,16 +41,16 @@ export function canMove(toX, toY, pieces = board.pieces, from = board.selectedSq
   return false;
 }
 
-function checkPawnCaptures (toX, toY) {
-  const [x, y] = board.selectedSquare;
-  const color = board.pieces[y][x][0][0];
+function checkPawnCaptures (toX, toY, pawn = board.selectedSquare, pieces = board.pieces) {
+  const [x, y] = pawn;
+  const color = pieces[y][x][0][0];
   const dX = toX - x;
   const dY = toY - y;
   if (color === 'w' && dY > 0 || color === 'b' && dY< 0) {
     return false;
   } else if (Math.abs(dX) === 1 && Math.abs(dY) === 1 &&
-    board.pieces[toY][toX][0][0] !== color &&
-    board.pieces[toY][toX][0][0] !== 'n') {
+    pieces[toY][toX][0][0] !== color &&
+    pieces[toY][toX][0][0] !== 'n') {
       return true;
     }
   return false;
@@ -88,14 +89,14 @@ function findAttackers (king, testBoard, enemyColor) {
           }
         }
       }
+       else if (piece[2] === 'p' && king && Math.abs(j - king[0]) === 1 &&
+          Math.abs(i - king[1]) === 1 && piece[0] === enemyColor) {
+        return true;
+      } else if (piece[2] === 'n' && king && piece[0] === enemyColor &&
+          knightMoves([i, j],king[1], king[0])) {
+        return true;
+      }
     }
-  }
-  return false;
-}
-
-function threatenedKing (moves, king) {
-  for (let i=0; i<moves.length;i++) {
-    if (JSON.stringify(moves[i]) === JSON.stringify(king)) return true;
   }
   return false;
 }
@@ -130,38 +131,6 @@ function findKing (afterMove,color) {
   }
 }
 
-function findAllPieces (afterMove,color) {
-  const allPieces = [];
-  for (let i=0; i<=7;i++) {
-    for (let j=0; j<=7;j++) {
-      if (afterMove[i][j][0][0] === color) {
-        allPieces.push([j, i]);
-      }
-    }
-  }
-  return allPieces;
-}
-
-function findLegalMoves (afterMove, pieces) {
-  const legalMoves = [];
-  pieces.forEach(piece => {
-    legalMovesByPiece(afterMove,piece).forEach(el=>legalMoves.push(el));
-  });
-  return legalMoves;
-}
-
-function legalMovesByPiece (afterMove,piece) {
-  const legalPieceMoves = [];
-  for (let i=0; i<=7;i++) {
-    for (let j=0; j<=7;j++) {
-      if (checkMove(j, i, afterMove, piece)) {
-        legalPieceMoves.push([j, i]);
-      }
-    }
-  }
-  return legalPieceMoves;
-}
-
 function checkMove (toX, toY, afterMove, from) {
   let pos = from;
   let piece = afterMove[pos[1]][pos[0]][0];
@@ -184,7 +153,11 @@ function checkMove (toX, toY, afterMove, from) {
     }
   } else if (piece[2] === 'k') {
     if (checkObstruction(toX, toY)) {
-      return kingMoves(pos,toX, toY);
+      if (checkCastle(pos, toX, toY)) {
+        return true;
+      } else {
+        return kingMoves(pos,toX, toY);
+      }
     }
   } else if (piece[2] === 'p') {
     if (checkPawnCaptures(toX, toY)) {
@@ -200,6 +173,15 @@ function checkPawnObstruction (toX, toY) {
     return false;
   }
   return true;
+}
+
+function checkCastle (pos, toX, toY) {
+  let color = board.pieces[pos[1]][pos[0]][0][0];
+  if (toX === 2 && toY === pos[1] && checkObstruction (toX - 1, toY)) {
+    return SpecialMoves[color].castleQueenSideStatus;
+  } else if (toX === 6 && toY === pos[1] && checkObstruction (toX, toY)) {
+    return SpecialMoves[color].castleKingSideStatus;
+  }
 }
 
 function checkObstruction (toX, toY, from = board.selectedSquare, pieces = board.pieces) {
@@ -238,6 +220,17 @@ function checkObstruction (toX, toY, from = board.selectedSquare, pieces = board
   }
 }
 
+function castleRook (toX, toY) {
+  move(toX, toY, toX > 4 ? [7, toY] : [0, toY]);
+}
+
+function checkEnPassant (toX, toY, from) {
+  const [x, y] = board.selectedSquare;
+  const color = board.pieces[y][x][0][0];
+  SpecialMoves[color].enPassant = {status: false, pos: []};
+  
+}
+
 function pawnMoves (toX, toY) {
   const [x, y] = board.selectedSquare;
   const color = board.pieces[y][x][0][0];
@@ -250,9 +243,27 @@ function pawnMoves (toX, toY) {
   );
 }
 
-export function move(toX, toY) {
-  let selected = board.selectedSquare;
+export function move(toX, toY, from = board.selectedSquare) {
+  let selected = from;
   let start = board.pieces[selected[1]][selected[0]][0];
+  if (start[2] === 'k') {
+    if (Math.abs(toX - selected[0]) === 2) {
+      castleRook(toX > selected[0] ? 5 : 3, selected[1]);
+    }
+    SpecialMoves[start[0]].castleKingSideStatus = false;
+    SpecialMoves[start[0]].castleQueenSideStatus = false;
+  } else if (start[2] === 'r') {
+    if (selected[0] === 0) {
+      SpecialMoves[start[0]].castleQueenSideStatus = false;
+    } else if (selected[0] === 7) {
+      SpecialMoves[start[0]].castleKingSideStatus = false;
+    }
+  }
+  if (start[2] === 'p' && Math.abs(selected[1] - toY) === 2) {
+    checkEnPassant(toX, toY, selected);
+  } else {
+    SpecialMoves[start[0]].enPassant = {status: false, pos: []};
+  }
   board.pieces[toY][toX][0] = start;
   board.pieces[selected[1]][selected[0]][0] = 'nil';
 
