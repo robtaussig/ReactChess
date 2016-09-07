@@ -60,21 +60,37 @@ function notInCheck (toX, toY, from = board.selectedSquare) {
   let testBoard = dupe(board.pieces);
   let afterMove = testMove(testBoard, from, [toX, toY]);
   let king = findKing(afterMove,color);
-  let attackers = findAttackers(king);
-  return true;
-  // let [x, y] = from;
-  // let color = board.pieces[y][x][0][0];
-  // let testBoard = dupe(board.pieces);
-  // let afterMove = testMove(testBoard, [x, y], [toX, toY]);
-  // let king = findKing(afterMove,color);
-  // let oppPieces = findAllPieces(afterMove,color === 'w' ? 'b' : 'w');
-  // let legalOppMoves = findLegalMoves(afterMove,oppPieces);
-  // if (threatenedKing(legalOppMoves,king)) {
-  //   debugger
-  //   return false;
-  // } else {
-  //   return true;
-  // }
+  if (findAttackers(king,afterMove,color==='w'?'b':'w')) {
+    return false;
+  } else {
+    return true;
+  }
+}
+
+function findAttackers (king, testBoard, enemyColor) {
+  for (let i=0;i<testBoard.length;i++) {
+    for (let j=0;j<testBoard[i].length;j++) {
+      let piece = testBoard[j][i][0];
+      if (piece[0] === enemyColor && king && piece[2] !== 'p' && piece[2] !== 'n') {
+        if(checkObstruction(king[1], king[0], [i, j], testBoard)) {
+          if (i === king[1] || j === king[0]) {
+            if (piece[2] === 'q' || piece[2] === 'r') {
+              return true;
+            } else {
+              return false;
+            }
+          } else {
+            if (piece[2] === 'q' || piece[2] === 'b') {
+              return true;
+            } else {
+              return false;
+            }
+          }
+        }
+      }
+    }
+  }
+  return false;
 }
 
 function threatenedKing (moves, king) {
@@ -186,33 +202,33 @@ function checkPawnObstruction (toX, toY) {
   return true;
 }
 
-function checkObstruction (toX, toY) {
-  const [x, y] = board.selectedSquare;
-  const color = board.pieces[y][x][0][0];
+function checkObstruction (toX, toY, from = board.selectedSquare, pieces = board.pieces) {
+  const [x, y] = from;
+  const color = pieces[y][x][0][0];
   const dX = toX - x;
   const dY = toY - y;
   const xStep = dX / Math.abs(dX);
   const yStep = dY / Math.abs(dY);
   if (dX === 0 && dY !== 0) {
     for (let i = 1; i <= Math.abs(dY);i++) {
-      if (board.pieces[y+(yStep*i)][x][0][0] === color ||
-        (board.pieces[y+(yStep*i)][x][0][0] !== 'n' && i < Math.abs(dY))) {
+      if (pieces[y+(yStep*i)][x][0][0] === color ||
+        (pieces[y+(yStep*i)][x][0][0] !== 'n' && i < Math.abs(dY))) {
         return false;
       }
     }
     return true;
   } else if (dY === 0  && dX !== 0) {
     for (let i = 1; i <= Math.abs(dX);i++) {
-      if (board.pieces[y][x+(xStep*i)][0][0] === color ||
-        (board.pieces[y][x+(xStep*i)][0][0] !== 'n' && i < Math.abs(dY))) {
+      if (pieces[y][x+(xStep*i)][0][0] === color ||
+        (pieces[y][x+(xStep*i)][0][0] !== 'n' && i < Math.abs(dY))) {
         return false;
       }
     }
     return true;
   } else if (Math.abs(dX) / Math.abs(dY) === 1) {
     for (let i = 1; i <= Math.abs(dX);i++) {
-      if (board.pieces[y+(yStep*i)][x+(xStep*i)][0][0] === color ||
-        (board.pieces[y+(yStep*i)][x+(xStep*i)][0][0] !== 'n' && i < Math.abs(dX))) {
+      if (pieces[y+(yStep*i)][x+(xStep*i)][0][0] === color ||
+        (pieces[y+(yStep*i)][x+(xStep*i)][0][0] !== 'n' && i < Math.abs(dX))) {
         return false;
       }
     }
