@@ -36,25 +36,27 @@ export function setSelected(piece) {
 export function canMove(toX, toY) {
   let pos = board.selected;
   let piece = board.pieces[pos[1]][pos[0]][0];
+  console.log(piece);
+  if (piece[2] === 'n') {
+    return knightMoves(toX, toY);
+  }
 }
 
-export function canMoveKnight(toX, toY) {
-  const [x, y] = board.knightPosition;
+function knightMoves(toX, toY) {
+  const [x, y] = board.selected;
   const dx = toX - x;
   const dy = toY - y;
-  let pos = board.selected;
-  let piece = board.pieces[pos[1]][pos[0]][0];
-
   return (Math.abs(dx) === 2 && Math.abs(dy) === 1) ||
          (Math.abs(dx) === 1 && Math.abs(dy) === 2);
 }
 
-export function moveKnight(toX, toY) {
-  board.knightPosition = [toX, toY];
-  emitChange();
-}
-
 export function move(toX, toY) {
-  board.knightPosition = [toX, toY];
+  let selected = board.selected;
+  console.log(selected);
+  let start = board.pieces[selected[1]][selected[0]][0];
+  console.log(start);
+  board.pieces[toY][toX][0] = start;
+  board.pieces[selected[1]][selected[0]][0] = 'nil';
+
   emitChange();
 }

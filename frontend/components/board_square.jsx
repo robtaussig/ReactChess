@@ -1,17 +1,17 @@
 import React, { Component, PropTypes } from 'react';
 import Square from './square';
-import { canMoveKnight, moveKnight } from '../logic/game';
+import { canMove, move } from '../logic/game';
 import { ItemTypes } from '../constants/item_types';
 import { DropTarget } from 'react-dnd';
 
 const squareTarget = {
 
   canDrop(props) {
-    return canMoveKnight(props.x, props.y);
+    return canMove(props.x, props.y);
   },
 
   drop(props) {
-    moveKnight(props.x, props.y);
+    move(props.x, props.y);
   }
 };
 
@@ -56,12 +56,5 @@ class BoardSquare extends Component {
     );
   }
 }
-
-BoardSquare.propTypes = {
-  x: PropTypes.number.isRequired,
-  y: PropTypes.number.isRequired,
-  isOver: PropTypes.bool.isRequired,
-  canDrop: PropTypes.bool.isRequired
-};
 
 export default DropTarget(ItemTypes.KNIGHT, squareTarget, collect)(BoardSquare);

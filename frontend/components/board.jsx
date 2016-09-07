@@ -9,7 +9,7 @@ import Rook from './pieces/rook';
 import Queen from './pieces/queen';
 import King from './pieces/king';
 import BoardSquare from './board_square';
-import { canMoveKnight, moveKnight } from '../logic/game';
+import { canMove, move } from '../logic/game';
 
 class Board extends Component {
   renderSquare(i) {
@@ -56,8 +56,8 @@ class Board extends Component {
   }
 
   handleSquareClick(toX, toY) {
-    if (canMoveKnight(toX, toY)) {
-      moveKnight(toX, toY);
+    if (canMove(toX, toY)) {
+      move(toX, toY);
     }
   }
 
