@@ -3,12 +3,9 @@ import { ItemTypes } from '../../constants/item_types';
 import { DragSource } from 'react-dnd';
 import { setSelected } from '../../logic/game';
 
-
-
 const pieceSource = {
   beginDrag(props) {
     setSelected(props);
-    // Return the data describing the dragged item
     const piece = { piece: props };
     return piece;
   },
@@ -58,4 +55,4 @@ Knight.propTypes = {
   isDragging: PropTypes.bool.isRequired
 };
 
-export default DragSource(ItemTypes.KNIGHT, pieceSource, collect)(Knight);
+export default DragSource(ItemTypes.PIECE, pieceSource, collect)(Knight);

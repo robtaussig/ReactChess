@@ -1,10 +1,23 @@
 import React, { Component, PropTypes } from 'react';
 import { ItemTypes } from '../../constants/item_types';
 import { DragSource } from 'react-dnd';
+import { setSelected } from '../../logic/game';
 
-const bishopSource = {
+const pieceSource = {
   beginDrag(props) {
-    return {pieceId: props.id};
+    setSelected(props);
+    const piece = { piece: props };
+    return piece;
+  },
+
+  endDrag(props, monitor, component) {
+    if (!monitor.didDrop()) {
+      return;
+    }
+
+    // When dropped on a compatible target, do something
+    const item = monitor.getItem();
+    const dropResult = monitor.getDropResult();
   }
 };
 
@@ -26,6 +39,7 @@ class Bishop extends Component {
         fontSize: '9vmin',
         textAlign: 'center',
         lineHeight: '10vmin',
+        fill: this.props.color,
         backgroundColor: 'transparent',
         fontWeight: 'bold',
         cursor: 'pointer'
@@ -41,4 +55,4 @@ Bishop.propTypes = {
   isDragging: PropTypes.bool.isRequired
 };
 
-export default DragSource(ItemTypes.KNIGHT, bishopSource, collect)(Bishop);
+export default DragSource(ItemTypes.PIECE, pieceSource, collect)(Bishop);
