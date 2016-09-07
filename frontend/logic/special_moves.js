@@ -1,4 +1,5 @@
 module.exports = {
+  currentSide:'w',
   'w': {
     castleQueenSideStatus: true,
     castleKingSideStatus: true,
