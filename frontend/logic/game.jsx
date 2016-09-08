@@ -1,6 +1,7 @@
 import { queenMoves, bishopMoves, rookMoves } from './sliding_pieces.js';
 import { knightMoves, kingMoves } from './stepping_pieces.js';
 const SpecialMoves = require('./special_moves');
+const MoveRules = require('./move_rules');
 
 let board = {
   pieces: [
@@ -19,7 +20,7 @@ let board = {
 let observer = null;
 
 function emitChange() {
-  observer(board);
+  observer(board,SpecialMoves.currentSide);
 }
 
 export function observe(o) {
@@ -233,8 +234,10 @@ function checkObstruction (toX, toY, from = board.selectedSquare, pieces = board
 }
 
 function castleRook (toX, toY) {
-  move(toX, toY, toX > 4 ? [7, toY] : [0, toY]);
-  SpecialMoves.currentSide = SpecialMoves.currentSide === 'w' ? 'b' : 'w';
+  let start = toX > 4 ? [7, toY] : [0, toY];
+  let piece = board.pieces[start[1]][start[0]][0];
+  board.pieces[toY][toX][0] = piece;
+  board.pieces[start[1]][start[0]][0] = 'nil';
 }
 
 function checkEnPassant (toX, toY, from) {
