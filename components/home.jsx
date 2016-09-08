@@ -10,7 +10,8 @@ export default class Home extends Component {
   constructor(props) {
     super(props);
     this.unobserve = observe(this.handleChange.bind(this));
-    MoveStore.addEventListener(this.receiveMove);
+    MoveStore.addListener(this.receiveMove.bind(this));
+    this.checkmate = false;
   }
 
   handleChange(board,specialMoves) {
@@ -25,10 +26,15 @@ export default class Home extends Component {
     }
   }
 
-  receiveMove(moveData) {
+  setCheckmate() {
+    this.setState({checkmate:true});
+  }
+
+  receiveMove() {
+    let move = MoveStore.fetchMove();
     switch (true) {
-      case moveData.checkmate:
-        debugger
+      case move.checkmate:
+        this.setCheckmate();
         break;
       case moveData.castle:
         debugger
@@ -43,7 +49,7 @@ export default class Home extends Component {
   }
 
   sendMove(moveData) {
-    
+
   }
 
   componentWillUnmount() {
@@ -51,15 +57,22 @@ export default class Home extends Component {
   }
 
   render() {
+    let _display = "";
+    if (this.state.checkmate) {
+      _display = "Checkmate!";
+    }
     const board = this.state.pieces;
     return (
       <div>
-        <div style={{
-            width: '80vmin',
-            height: '80vmin',
-            border: '1px solid gray'
-          }}>
-          <Board board={board} />
+        <div>
+          <div style={{
+              width: '80vmin',
+              height: '80vmin',
+              border: '1px solid gray'
+            }}>
+            <Board board={board} />
+          </div>
+          {_display}
         </div>
       </div>
     );
