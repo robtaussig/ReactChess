@@ -45,12 +45,14 @@ module.exports = {
           if(this.checkObstruction(king[1], king[0], [i, j], testBoard)) {
             if (i === king[1] || j === king[0]) {
               if (piece[2] === 'q' || piece[2] === 'r') {
+                console.log(`attacked by a queen or rook at ${testBoard[j][i][0]}`);
                 return true;
               } else {
                 return false;
               }
             } else {
               if (piece[2] === 'q' || piece[2] === 'b') {
+                console.log(`attacked by a queen or bishop at ${testBoard[j][i][0]}`);
                 return true;
               } else {
                 return false;
@@ -60,9 +62,11 @@ module.exports = {
         }
          else if (piece[2] === 'p' && king && Math.abs(j - king[0]) === 1 &&
             Math.abs(i - king[1]) === 1 && piece[0] === enemyColor) {
+              console.log(`attacked by a pawn at ${testBoard[j][i][0]}`);
           return true;
         } else if (piece[2] === 'n' && king && piece[0] === enemyColor &&
             knightMoves([i, j],king[1], king[0])) {
+              console.log(`attacked by a knight at ${testBoard[j][i][0]}`);
           return true;
         }
       }
@@ -163,8 +167,8 @@ module.exports = {
     const color = pieces[y][x][0][0];
     const dX = toX - x;
     const dY = toY - y;
-    const xStep = dX / Math.abs(dX);
-    const yStep = dY / Math.abs(dY);
+    const xStep = dX / Math.abs(dX) || 0;
+    const yStep = dY / Math.abs(dY) || 0;
     if (dX === 0 && dY !== 0) {
       for (let i = 1; i <= Math.abs(dY);i++) {
         if (pieces[y+(yStep*i)][x][0][0] === color ||
@@ -172,14 +176,16 @@ module.exports = {
           return false;
         }
       }
+      console.log(x,y,color,dX,dY,xStep,yStep,1);
       return true;
     } else if (dY === 0  && dX !== 0) {
       for (let i = 1; i <= Math.abs(dX);i++) {
         if (pieces[y][x+(xStep*i)][0][0] === color ||
-          (pieces[y][x+(xStep*i)][0][0] !== 'n' && i < Math.abs(dY))) {
+          (pieces[y][x+(xStep*i)][0][0] !== 'n' && i < Math.abs(dX))) {
           return false;
         }
       }
+      console.log(x,y,color,dX,dY,xStep,yStep,2);
       return true;
     } else if (Math.abs(dX) / Math.abs(dY) === 1) {
       for (let i = 1; i <= Math.abs(dX);i++) {
@@ -188,6 +194,8 @@ module.exports = {
           return false;
         }
       }
+      console.log(x,y,color,dX,dY,xStep,yStep,3);
+
       return true;
     } else {
       return false;
