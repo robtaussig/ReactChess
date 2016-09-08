@@ -71,7 +71,7 @@ export function move(toX, toY, from = board.selectedSquare, pieces = board.piece
     start = 'b-q';
   }
   pieces[toY][toX][0] = start;
-  pieces[selected[1]][selected[0]][0] = 'nil';
+  pieces[selected[1]][selected[0]][0] = 'n-l';
 
   emitChange();
 }

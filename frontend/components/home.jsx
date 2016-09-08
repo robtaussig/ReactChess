@@ -20,6 +20,9 @@ export default class Home extends Component {
     } else {
       this.state = nextState;
     }
+    if (currentSide === 'b') {
+      MoveActions.fetchMove(board,currentSide,3);
+    }
   }
 
   receiveMove(from, to) {

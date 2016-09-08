@@ -45,14 +45,12 @@ module.exports = {
           if(this.checkObstruction(king[1], king[0], [i, j], testBoard)) {
             if (i === king[1] || j === king[0]) {
               if (piece[2] === 'q' || piece[2] === 'r') {
-                console.log(`attacked by a queen or rook at ${testBoard[j][i][0]}`);
                 return true;
               } else {
                 return false;
               }
             } else {
               if (piece[2] === 'q' || piece[2] === 'b') {
-                console.log(`attacked by a queen or bishop at ${testBoard[j][i][0]}`);
                 return true;
               } else {
                 return false;
@@ -62,11 +60,9 @@ module.exports = {
         }
          else if (piece[2] === 'p' && king && Math.abs(j - king[0]) === 1 &&
             Math.abs(i - king[1]) === 1 && piece[0] === enemyColor) {
-              console.log(`attacked by a pawn at ${testBoard[j][i][0]}`);
           return true;
         } else if (piece[2] === 'n' && king && piece[0] === enemyColor &&
             knightMoves([i, j],king[1], king[0])) {
-              console.log(`attacked by a knight at ${testBoard[j][i][0]}`);
           return true;
         }
       }
@@ -78,7 +74,7 @@ module.exports = {
     let selected = from;
     let start = testBoard[selected[1]][selected[0]][0];
     testBoard[to[1]][to[0]][0] = start;
-    testBoard[selected[1]][selected[0]][0] = 'nil';
+    testBoard[selected[1]][selected[0]][0] = 'n-l';
     return testBoard;
   },
 
@@ -176,7 +172,6 @@ module.exports = {
           return false;
         }
       }
-      console.log(x,y,color,dX,dY,xStep,yStep,1);
       return true;
     } else if (dY === 0  && dX !== 0) {
       for (let i = 1; i <= Math.abs(dX);i++) {
@@ -185,7 +180,6 @@ module.exports = {
           return false;
         }
       }
-      console.log(x,y,color,dX,dY,xStep,yStep,2);
       return true;
     } else if (Math.abs(dX) / Math.abs(dY) === 1) {
       for (let i = 1; i <= Math.abs(dX);i++) {
@@ -194,7 +188,6 @@ module.exports = {
           return false;
         }
       }
-      console.log(x,y,color,dX,dY,xStep,yStep,3);
 
       return true;
     } else {
@@ -206,7 +199,7 @@ module.exports = {
     let start = toX > 4 ? [7, toY] : [0, toY];
     let piece = pieces[start[1]][start[0]][0];
     pieces[toY][toX][0] = piece;
-    pieces[start[1]][start[0]][0] = 'nil';
+    pieces[start[1]][start[0]][0] = 'n-l';
   },
 
   checkEnPassant (toX, toY, from, pieces) {
@@ -224,7 +217,7 @@ module.exports = {
   },
 
   captureEnPassant (x, y, pieces) {
-    pieces[y][x][0] = 'nil';
+    pieces[y][x][0] = 'n-l';
   },
 
   pawnMoves (toX, toY, from, pieces) {
