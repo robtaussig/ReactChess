@@ -10,7 +10,7 @@ function findBestMove (board,specMoves,depth) {
 
   let bestMove = null;
   moves.forEach(move => {
-    let currentNode = new BoardNode(move,board,specMoves,depth,0,null,[]);
+    let currentNode = new BoardNode(move,board,specMoves,depth);
     console.log(currentNode.score);
     bestMove = bestMove ?
       (currentNode.score > bestMove.score ?
@@ -75,26 +75,106 @@ const PIECE_VALUES = {
 };
 
 class BoardNode {
-  constructor(move,pieces,specialMoves,depth,score,parent = null, memo = []) {
+  constructor(move,pieces,specialMoves,depth) {
     this.move = move;
-    this.pieces = pieces;
+    this.board = testMove(dupe(pieces),move[0],move[1]);
     this.specialMoves = specialMoves;
     this.side = specialMoves.currentSide;
-    this.depth = depth - 1;
-    this.score = score;
-    this.parent = parent;
-    this.memo = memo;
-
-    this.evaluateMove();
+    this.score = this.alphaBetaMax(-1/0, 1/0, depth, this.board, this.side);
   }
 
-  evaluateMove () {
-    let newBoard = testMove(dupe(this.pieces),this.move[0],this.move[1]);
-    let ownPieces = findAllPieces(newBoard,this.side);
-    let otherPieces = findAllPieces(newBoard,this.side === 'w' ? 'b' : 'w');
-    let materialScore = this.evalMaterial(newBoard, ownPieces, otherPieces);
-    let positionalScore = this.evalPosition(newBoard, ownPieces);
-    this.score = materialScore + positionalScore;
+  // beginEval () {
+  //
+    // let ownPieces = findAllPieces(this.newBoard,this.side);
+    // let otherPieces = findAllPieces(this.newBoard,this.side === 'w' ? 'b' : 'w');
+    // let materialScore = this.evalMaterial(this.newBoard, ownPieces, otherPieces);
+    // let positionalScore = this.evalPosition(this.newBoard, ownPieces);
+    // this.score += materialScore + positionalScore;
+  // }
+
+  evaluate (board, side) {
+    let ownPieces = findAllPieces(board,side);
+    let otherPieces = findAllPieces(board,side === 'w' ? 'b' : 'w');
+    let materialScore = this.evalMaterial(board, ownPieces, otherPieces);
+    let positionalScore = this.evalPosition(board, ownPieces);
+    return materialScore + positionalScore;
+  }
+
+  alphaBetaMax(alpha, beta, depthLeft, board, side ) {
+    if ( depthLeft === 0 ) {
+      return this.evaluate(board, side);
+    }
+
+    let moves = parseMoveClusters(
+                findAllPieces(board,side)
+                .map(piece=> findAllLegalMovesByPiece(piece,board,this.specialMoves))
+              );
+
+    for (let move of moves) {
+      this.nodes += 1;
+      let newBoard = testMove(dupe(board),move[0],move[1]);
+      let score = this.alphaBetaMin(
+        alpha, beta, depthLeft - 1, newBoard, side === 'w' ? 'b' : 'w'
+      );
+      if ( score >= beta ) {
+        return beta;   // fail hard beta-cutoff
+      }
+      if ( score > alpha ) {
+        alpha = score; // alpha acts like max in MiniMax
+      }
+    }
+    return alpha;
+  }
+
+  alphaBetaMin( alpha, beta, depthLeft, board, side ) {
+     if ( depthLeft === 0 ) {
+       return -this.evaluate(board, side);
+     }
+
+     let moves = parseMoveClusters(
+                 findAllPieces(board,side)
+                 .map(piece=> findAllLegalMovesByPiece(piece,board,this.specialMoves))
+               );
+
+     for ( let move of moves) {
+       let newBoard = testMove(dupe(board),move[0],move[1]);
+       let score = this.alphaBetaMax(
+         alpha, beta, depthLeft - 1, newBoard, side === 'w' ? 'b' : 'w'
+       );
+       if ( score <= alpha ) {
+         return alpha; // fail hard alpha-cutoff
+       }
+       if( score < beta ) {
+         beta = score; // beta acts like min in MiniMax
+       }
+     }
+     return beta;
+  }
+
+  // negaMax (depth) {
+  //   if (depth === 0) {
+  //     return this.evaluate(this.pieces);
+  //   }
+  //   let max = -1/0;
+  //
+  // }
+
+  createTree () {
+    let responseNodes =
+      parseMoveClusters(
+        findAllPieces(this.newBoard,this.specialMoves.currentSide)
+          .map(piece => {
+            return findAllLegalMovesByPiece(piece,this.newBoard,this.specialMoves);
+      })).map(response => {
+            return new BoardNode(response,
+              this.newBoard,
+              this.specialMoves,
+              this.depth,
+              -this.score,
+              this,
+              this.memo
+            );
+          });
   }
 
   evalMaterial (board, ownPieces, otherPieces) {
@@ -152,7 +232,6 @@ class BoardNode {
     value += (
       20 * (0.25 / (Math.abs(3.5 - posY) * (Math.abs(3.5 - posX))))
     );
-    console.log(posY,posX,value);
     return value;
   }
 
