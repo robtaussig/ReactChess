@@ -20,6 +20,8 @@ module.exports = {
       },1000);
       if (e.data && e.data.checkmate) {
         that.receiveCheckmate(e.data.side);
+      } else if (e.data && e.data.move) {
+        that.receiveMove(e.data.move);
       }
       worker.terminate();
     };
@@ -33,6 +35,9 @@ module.exports = {
   },
 
   receiveMove (move) {
-
+    AppDispatcher.dispatch({
+      actionType: MoveConstants.MOVE_RECEIVED,
+      data: move
+    });
   }
 };

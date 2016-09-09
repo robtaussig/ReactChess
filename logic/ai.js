@@ -178,11 +178,11 @@ function checkMove (toX, toY, pieces, from) {
     }
   } else if (piece[2] === 'k') {
     if (checkObstruction(toX, toY, pos, pieces)) {
-      if (checkCastle(pos, toX, toY, pieces)) {
-        return true;
-      } else {
+      // if (checkCastle(pos, toX, toY, pieces)) {
+      //   return true;
+      // } else {
         return kingMoves(pos,toX, toY);
-      }
+      // }
     }
   } else if (piece[2] === 'p') {
     if (checkPawnCaptures(toX, toY, pos, pieces)) {
@@ -200,19 +200,19 @@ function checkPawnObstruction (toX, toY, pieces) {
   return true;
 }
 
-function checkCastle (pos, toX, toY, pieces) {
-  let king = [pos[1],pos[0]];
-  let color = pieces[pos[1]][pos[0]][0][0];
-  if (toX === 2 && toY === pos[1] && checkObstruction(toX - 1, toY, pos, pieces) &&
-      notInCheck(toX + 1, toY, pos, pieces) &&
-      !findAttackers(king, pieces, color === 'w' ? 'b' : 'w')) {
-    return specialMoves[color].castleQueenSideStatus;
-  } else if (toX === 6 && toY === pos[1] && checkObstruction(toX, toY, pos, pieces) &&
-      notInCheck(toX - 1, toY, pos, pieces) &&
-      !findAttackers(king, pieces, color === 'w' ? 'b' : 'w')) {
-    return specialMoves[color].castleKingSideStatus;
-  }
-}
+// function checkCastle (pos, toX, toY, pieces) {
+//   let king = [pos[1],pos[0]];
+//   let color = pieces[pos[1]][pos[0]][0][0];
+//   if (toX === 2 && toY === pos[1] && checkObstruction(toX - 1, toY, pos, pieces) &&
+//       notInCheck(toX + 1, toY, pos, pieces) &&
+//       !findAttackers(king, pieces, color === 'w' ? 'b' : 'w')) {
+//     return specialMoves[color].castleQueenSideStatus;
+//   } else if (toX === 6 && toY === pos[1] && checkObstruction(toX, toY, pos, pieces) &&
+//       notInCheck(toX - 1, toY, pos, pieces) &&
+//       !findAttackers(king, pieces, color === 'w' ? 'b' : 'w')) {
+//     return specialMoves[color].castleKingSideStatus;
+//   }
+// }
 
 function checkObstruction (toX, toY, from, pieces) {
   const [x, y] = from;
@@ -283,7 +283,7 @@ function pawnMoves (toX, toY, from, pieces) {
   const dy = color === 'w' ? toY - y : y - toY;
   return (
     (dx === 0 && dy === -1) ||
-    (y === 6 && dy === -2 && dx === 0) ||
-    (y === 1 && dy === -2 && dx === 0)
+    (y === 6 && dy === -2 && dx === 0 && pieces[5][x][0][0] === 'n') ||
+    (y === 1 && dy === -2 && dx === 0 && pieces[2][x][0][0] === 'n')
   );
 }

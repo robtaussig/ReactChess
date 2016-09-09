@@ -65,7 +65,7 @@ module.exports = {
     const dX = toX - x;
     const dY = toY - y;
     const enPassant = this.specialMoves[color].enPassant;
-    if (color === 'w' && dY > 0 || color === 'b' && dY< 0) {
+    if (color === 'w' && dY > 0 || color === 'b' && dY < 0) {
       return false;
     } else if (Math.abs(dX) === 1 && Math.abs(dY) === 1 &&
       pieces[toY][toX][0][0] !== color &&
@@ -282,8 +282,8 @@ module.exports = {
     const dy = color === 'w' ? toY - y : y - toY;
     return (
       (dx === 0 && dy === -1) ||
-      (y === 6 && dy === -2 && dx === 0) ||
-      (y === 1 && dy === -2 && dx === 0)
+      (y === 6 && dy === -2 && dx === 0 && pieces[5][x][0][0] === 'n') ||
+      (y === 1 && dy === -2 && dx === 0 && pieces[2][x][0][0] === 'n')
     );
   }
 };

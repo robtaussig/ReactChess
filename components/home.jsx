@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import Board from './board';
-import { observe } from '../logic/game';
+import { observe, makeComputerMove } from '../logic/game';
 const MoveActions = require('../actions/move_actions.js');
 const MoveStore = require('../stores/move_store.js');
 
@@ -31,25 +31,20 @@ export default class Home extends Component {
   }
 
   receiveMove() {
-    let move = MoveStore.fetchMove();
+    let move = MoveStore.currentMove();
     switch (true) {
       case move.checkmate:
         this.setCheckmate();
         break;
-      case moveData.castle:
+      case move.castle:
         debugger
         break;
-      case moveData.enPassant:
+      case move.enPassant:
         debugger
         break;
       default:
-        this.sendMove(moveData);
-
+        makeComputerMove(move.move);
     }
-  }
-
-  sendMove(moveData) {
-
   }
 
   componentWillUnmount() {

@@ -6,5 +6,6 @@ self.onmessage = function (e) {
   let depth = e.data.data.depth;
   let bestMove = findBestMove(testBoard,specMoves,depth);
   let workerResult = 'Message received!';
-  postMessage(bestMove);
+  let moveData = Object.assign({move: [], checkmate: false, enPassant: false, castle: false},bestMove);
+  postMessage(moveData);
 };

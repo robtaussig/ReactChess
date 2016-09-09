@@ -16,7 +16,7 @@ function findBestMove (board,specMoves,depth) {
       (currentNode.score > bestMove.score ?
         currentNode : bestMove) : currentNode;
   });
-  debugger
+  return {move: bestMove.move};
 }
 
 function findAllPieces (board,color) {
@@ -211,8 +211,7 @@ class BoardNode {
       right = posX === 7 ? null : (posX + 1),
       yDir = king.side === 'w' ?
       (posY === 0 ? null : (posY - 1)) : (posY === 7 ? null : (posY + 1));
-
-    [left, posX, right].forEach(xCoord => {
+    [left, posX, right].filter(el=>el).forEach(xCoord => {
       let testSquare = board[yDir][xCoord][0];
       if (testSquare[0] === king.side) {
         if (testSquare[2] === 'p') {

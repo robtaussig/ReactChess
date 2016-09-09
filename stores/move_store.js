@@ -7,7 +7,7 @@ let _currentData = {
   move: [],
   castle: false,
   enPassant: false,
-  checkMate: false
+  checkmate: false
 };
 
 function _resetMove (move) {
@@ -32,7 +32,7 @@ function _setEnPassant (move) {
   _currentData.castle = false;
 }
 
-MoveStore.fetchMove = function () {
+MoveStore.currentMove = function () {
   return _currentData;
 };
 

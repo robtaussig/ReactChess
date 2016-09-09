@@ -20,6 +20,10 @@ function emitChange() {
   observer(board,MoveRules.specialMoves);
 }
 
+export function makeComputerMove(cpuMove) {
+  move(cpuMove[1][0],cpuMove[1][1],cpuMove[0]);
+}
+
 export function observe(o) {
   if (observer) {
     throw new Error('Multiple observers not implemented.');
