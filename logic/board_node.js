@@ -5,18 +5,18 @@ function findBestMove (board,specMoves,depth) {
                 findAllPieces(board,specMoves.currentSide)
                 .map(piece=> findAllLegalMovesByPiece(piece,board,specMoves))
               );
-
+  console.log(moves.length);
   if (moves.length === 0) return {checkmate: true, side: specMoves.currentSide};
 
   let bestMove = null;
   moves.forEach(move => {
     let currentNode = new BoardNode(move,board,specMoves,depth,0,null,[]);
-    console.log(currentNode.score);
+    // console.log(currentNode.score);
     bestMove = bestMove ?
       (currentNode.score > bestMove.score ?
         currentNode : bestMove) : currentNode;
   });
-  console.log(bestMove.score);
+  // console.log(bestMove.score);
   return {move: bestMove.move};
 }
 
@@ -33,14 +33,60 @@ function findAllPieces (board,color) {
   return returnPieces;
 }
 
-function findAllLegalMovesByPiece (piece,board,specMoves) {
-  let allMoves = [];
+function findAllLegalMovesByPiece (piece, board, specMoves) {
+  let allSquares = [];
+  let allMoves;
   for (let i=0;i<8;i++) {
     for (let j=0;j<8;j++) {
-      if (canMove(j,i,board,piece.pos,specMoves)){
-        allMoves.push([[piece.pos[0],piece.pos[1]],[j,i]]);
-      }
+      allSquares.push([j,i]);
     }
+  }
+  if (piece.type === 'r') {
+    allMoves = allSquares.filter(square=> {
+      return rookMoves(piece.pos, square[0], square[1]);
+    }).filter(square=> {
+      return canMove(square[0], square[1], board, piece.pos,specMoves);
+    }).map(move => [piece.pos,move]);
+  }
+
+  if (piece.type === 'n') {
+    allMoves = allSquares.filter(square=> {
+      return knightMoves(piece.pos, square[0], square[1]);
+    }).filter(square=> {
+      return canMove(square[0], square[1], board, piece.pos,specMoves);
+    }).map(move => [piece.pos,move]);
+  }
+
+  if (piece.type === 'b') {
+    allMoves = allSquares.filter(square=> {
+      return bishopMoves(piece.pos, square[0], square[1]);
+    }).filter(square=> {
+      return canMove(square[0], square[1], board, piece.pos,specMoves);
+    }).map(move => [piece.pos,move]);
+  }
+
+  if (piece.type === 'q') {
+    allMoves = allSquares.filter(square=> {
+      return queenMoves(piece.pos, square[0], square[1]);
+    }).filter(square=> {
+      return canMove(square[0], square[1], board, piece.pos,specMoves);
+    }).map(move => [piece.pos,move]);
+  }
+
+  if (piece.type === 'p') {
+    allMoves = allSquares.filter(square=> {
+      return pawnMoves(square[0], square[1], piece.pos, board);
+    }).filter(square=> {
+      return canMove(square[0], square[1], board, piece.pos,specMoves);
+    }).map(move => [piece.pos,move]);
+  }
+
+  if (piece.type === 'k') {
+    allMoves = allSquares.filter(square=> {
+      return kingMoves(piece.pos, square[0], square[1]);
+    }).filter(square=> {
+      return canMove(square[0], square[1], board, piece.pos,specMoves);
+    }).map(move => [piece.pos,move]);
   }
   return allMoves;
 }
@@ -161,7 +207,7 @@ class BoardNode {
     value += (
       20 * (0.25 / (Math.abs(3.5 - posY) * (Math.abs(3.5 - posX))))
     );
-    console.log(posY,posX,value);
+    // console.log(posY,posX,value);
     return value;
   }
 
