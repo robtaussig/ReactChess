@@ -5,7 +5,6 @@ function findBestMove (board,specMoves,depth) {
                 findAllPieces(board,specMoves.currentSide)
                 .map(piece=> findAllLegalMovesByPiece(piece,board,specMoves))
               );
-  console.log(moves.length);
   if (moves.length === 0) return {checkmate: true, side: specMoves.currentSide};
 
   let bestMove = null;
@@ -123,6 +122,7 @@ const PIECE_VALUES = {
 class BoardNode {
   constructor(move,pieces,specialMoves,depth,score,parent = null, memo = []) {
     this.move = move;
+    console.log(this.move);
     this.pieces = pieces;
     this.specialMoves = specialMoves;
     this.side = specialMoves.currentSide;
@@ -165,11 +165,21 @@ class BoardNode {
 
   defended (board, piece) {
     //Can use the findAttacker method but with own side to check for defended status
-    return findAttackers (piece.pos, board, piece.side)[0];
+    let defended = findAttackers(piece.pos, board, piece.side, true)[0];
+    if (defended) {
+      return 1;
+    } else {
+      return 0;
+    }
   }
 
   leastValuableAttacker (board, piece) {
-    return PIECE_VALUES[findAttackers (piece.pos, board, piece.side)[1]];
+    let lvA = findAttackers (piece.pos, board, piece.side === 'w' ? 'b' : 'w', false);
+    if (lvA[0] && lvA[0][0]) {
+      return PIECE_VALUES[lvA[0][1]];
+    } else {
+      return 0;
+    }
   }
 
   evalPiecePositionalValue (piece,board) {
@@ -207,13 +217,23 @@ class BoardNode {
     value += (
       20 * (0.25 / (Math.abs(3.5 - posY) * (Math.abs(3.5 - posX))))
     );
+    let lvA = this.leastValuableAttacker (board, pawn);
+    if (lvA > 0) {
+      value -= Math.max(PIECE_VALUES[pawn.type] - lvA * (this.defended(board,pawn)),0);
+    }
     // console.log(posY,posX,value);
     return value;
   }
 
   rookPositionalValue (rook,board) {
     let moves = findAllLegalMovesByPiece (rook,board,this.specialMoves);
-    return moves.length * 10;
+    let value = 0;
+
+    let lvA = this.leastValuableAttacker (board, rook);
+    if (lvA > 0) {
+      value -= Math.max(PIECE_VALUES[rook.type] - lvA * (this.defended(board,rook)),0);
+    }
+    return moves.length * 10 + value;
   }
 
   knightPositionalValue (knight,board) {
@@ -224,21 +244,36 @@ class BoardNode {
         10 * (0.25 / Math.abs(3.5 - move[1][1]) * (Math.abs(3.5 - move[1][0])))
       );
     });
+    let lvA = this.leastValuableAttacker (board, knight);
+    if (lvA > 0) {
+      value -= Math.max(PIECE_VALUES[knight.type] - lvA * (this.defended(board,knight)),0);
+    }
+
     return value;
   }
 
   bishopPositionalValue (bishop,board) {
     let value = 0;
     let moves = findAllLegalMovesByPiece (bishop,board,this.specialMoves);
+    let lvA = this.leastValuableAttacker (board, bishop);
+    if (lvA > 0) {
+      value -= Math.max(PIECE_VALUES[bishop.type] - lvA * (this.defended(board,bishop)),0);
+      console.log(PIECE_VALUES[bishop.type] - lvA * (this.defended(board,bishop)));
+    }
 
-    return moves.length * 10;
+    return moves.length * 10 + value;
   }
 
   queenPositionalValue (queen,board) {
     let value = 0;
     let moves = findAllLegalMovesByPiece (queen,board,this.specialMoves);
+    let lvA = this.leastValuableAttacker (board, queen);
+    if (queen.pos[0] === 5 && queen.pos[1] === 6) debugger
+    if (lvA > 0) {
+      value -= Math.max(PIECE_VALUES[queen.type] - lvA * (this.defended(board,queen)),0);
+    }
 
-    return moves.length * 5;
+    return moves.length * 5 + value;
   }
 
   kingPositionalValue (king,board) {

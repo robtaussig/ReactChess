@@ -87,26 +87,26 @@ function notInCheck (toX, toY, from, pieces) {
   let testBoard = dupe(pieces);
   let afterMove = testMove(testBoard, from, [toX, toY]);
   let king = findKing(afterMove,color); //[y,x];
-  if (findAttackers(king,afterMove,color==='w'?'b':'w').length > 0) {
+  if (findAttackers(king,afterMove,color==='w'?'b':'w',false).length > 0) {
     return false;
   } else {
     return true;
   }
 }
 
-function findAttackers (piece, board, enemyColor) {
+function findAttackers (piece, board, colorToCheck, sameSide) {
   if (!piece) return false;
-  let yDir = enemyColor === 'w' ? piece[1] + 1 : piece[1] - 1;
+  let yDir = colorToCheck === 'w' ? piece[1] + 1 : piece[1] - 1;
   let left = piece[0] - 1;
   let right = piece[0] + 1;
   let returnResult = [];
   // console.log('yDir' + yDir + 'left' + left + 'right' + right)
   //test for pawns
   if (left >= 0 && left <= 7 && yDir >= 0 && yDir <= 7 &&
-    board[yDir][left][0] === `${enemyColor}-p`) {
-    return [true,'p'];
+    board[yDir][left][0] === `${colorToCheck}-p`) {
+    return ([true,'p']);
   } else if (right >= 0 && right <= 7 && yDir >= 0 && yDir <= 7 &&
-    board[yDir][right][0] === `${enemyColor}-p`) {
+    board[yDir][right][0] === `${colorToCheck}-p`) {
     returnResult.push([true, 'p']);
   }
   //test for knights
@@ -114,7 +114,7 @@ function findAttackers (piece, board, enemyColor) {
     let x = piece[0] + coord[0];
     let y = piece[1] + coord[1];
     if (x >= 0 && x <=7 && y >= 0 && y <= 7) {
-      if (board[y][x][0] === `${enemyColor}-n`) {
+      if (board[y][x][0] === `${colorToCheck}-n`) {
         returnResult.push([true, 'n']);
       }
     }
@@ -124,11 +124,11 @@ function findAttackers (piece, board, enemyColor) {
     let x = piece[0] + step[0],
       y = piece[1] + step[1];
     while (x >= 0 && x <= 7 && y >= 0 && y <= 7) {
-      if (board[y][x][0] === `${enemyColor}-b` &&
-        checkObstruction(x, y, piece, board)) {
+      if (board[y][x][0] === `${colorToCheck}-b` &&
+        checkObstruction(x,y,piece,board,sameSide)) {
         returnResult.push([true, 'b']);
-      } else if (board[y][x][0] === `${enemyColor}-q` &&
-        checkObstruction(x, y, piece, board)) {
+      } else if (board[y][x][0] === `${colorToCheck}-q` &&
+        checkObstruction(x,y,piece,board,sameSide)) {
         returnResult.push([true, 'q']);
       }
       x += step[0];
@@ -140,24 +140,25 @@ function findAttackers (piece, board, enemyColor) {
     let x = piece[0] + step[0],
       y = piece[1] + step[1];
     while (x >= 0 && x <= 7 && y >= 0 && y <= 7) {
-      if (board[y][x][0] === `${enemyColor}-r` &&
-        checkObstruction(x, y, piece, board)) {
+      if (board[y][x][0] === `${colorToCheck}-r` &&
+        checkObstruction(x,y,piece,board,sameSide)) {
         returnResult.push([true, 'r']);
-      } else if (board[y][x][0] === `${enemyColor}-q` &&
-        checkObstruction(x, y, piece, board)) {
+      } else if (board[y][x][0] === `${colorToCheck}-q` &&
+        checkObstruction(x,y,piece,board,sameSide)) {
         returnResult.push([true,'q']);
       }
       x += step[0];
       y += step[1];
     }
   });
+
   //test for king
   [[0,1],[0,-1],[-1,0],[1,0],[1,1],[1,-1],[-1,1],[-1,-1]].forEach(coord => {
     let x = piece[0] + coord[0];
     let y = piece[1] + coord[1];
     if (x >= 0 && x <= 7 && y >= 0 && y <= 7) {
-      if (board[y][x][0] === `${enemyColor}-k`) {
-        return [true, 'k'];
+      if (board[y][x][0] === `${colorToCheck}-k`) {
+        return returnResult.push([true, 'k']);
       }
     }
   });
@@ -246,16 +247,16 @@ function checkCastle (pos, toX, toY, pieces) {
   let color = pieces[pos[1]][pos[0]][0][0];
   if (toX === 2 && toY === pos[1] && checkObstruction(toX - 1, toY, pos, pieces) &&
       notInCheck(toX + 1, toY, pos, pieces) &&
-      findAttackers(king, pieces, color === 'w' ? 'b' : 'w').length === 0) {
+      findAttackers(king, pieces, color === 'w' ? 'b' : 'w',false).length === 0) {
     return specialMoves[color].castleQueenSideStatus;
   } else if (toX === 6 && toY === pos[1] && checkObstruction(toX, toY, pos, pieces) &&
       notInCheck(toX - 1, toY, pos, pieces) &&
-      findAttackers(king, pieces, color === 'w' ? 'b' : 'w').length === 0) {
+      findAttackers(king, pieces, color === 'w' ? 'b' : 'w',false).length === 0) {
     return specialMoves[color].castleKingSideStatus;
   }
 }
 
-function checkObstruction (toX, toY, from, pieces) {
+function checkObstruction (toX, toY, from, pieces, sameSide = false) {
   const [x, y] = from;
   const color = pieces[y][x][0][0];
   const dX = toX - x;
@@ -264,7 +265,7 @@ function checkObstruction (toX, toY, from, pieces) {
   const yStep = dY / Math.abs(dY) || 0;
   if (dX === 0 && dY !== 0) {
     for (let i = 1; i <= Math.abs(dY);i++) {
-      if (pieces[y+(yStep*i)][x][0][0] === color ||
+      if (pieces[y+(yStep*i)][x][0][0] === color && !sameSide ||
         (pieces[y+(yStep*i)][x][0][0] !== 'n' && i < Math.abs(dY))) {
         return false;
       }
@@ -272,7 +273,7 @@ function checkObstruction (toX, toY, from, pieces) {
     return true;
   } else if (dY === 0  && dX !== 0) {
     for (let i = 1; i <= Math.abs(dX);i++) {
-      if (pieces[y][x+(xStep*i)][0][0] === color ||
+      if (pieces[y][x+(xStep*i)][0][0] === color && !sameSide ||
         (pieces[y][x+(xStep*i)][0][0] !== 'n' && i < Math.abs(dX))) {
         return false;
       }
@@ -280,7 +281,7 @@ function checkObstruction (toX, toY, from, pieces) {
     return true;
   } else if (Math.abs(dX) / Math.abs(dY) === 1) {
     for (let i = 1; i <= Math.abs(dX);i++) {
-      if (pieces[y+(yStep*i)][x+(xStep*i)][0][0] === color ||
+      if (pieces[y+(yStep*i)][x+(xStep*i)][0][0] === color && !sameSide ||
         (pieces[y+(yStep*i)][x+(xStep*i)][0][0] !== 'n' && i < Math.abs(dX))) {
         return false;
       }
