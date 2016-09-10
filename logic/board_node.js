@@ -117,6 +117,15 @@ class BoardNode {
     return ownScore;
   }
 
+  defended (board, piece) {
+    //Can use the findAttacker method but with own side to check for defended status
+    return findAttackers (piece.pos, board, piece.side)[0];
+  }
+
+  leastValuableAttacker (board, piece) {
+    return PIECE_VALUES[findAttackers (piece.pos, board, piece.side)[1]];
+  }
+
   evalPiecePositionalValue (piece,board) {
     let value = 0;
     switch (piece.type) {

@@ -86,43 +86,78 @@ function notInCheck (toX, toY, from, pieces) {
   let testBoard = dupe(pieces);
   let afterMove = testMove(testBoard, from, [toX, toY]);
   let king = findKing(afterMove,color);
-  if (findAttackers(king,afterMove,color==='w'?'b':'w')) {
+  if (findAttackers(king,afterMove,color==='w'?'b':'w')[0]) {
     return false;
   } else {
     return true;
   }
 }
 
-function findAttackers (king, testBoard, enemyColor) {
-  for (let i=0;i<testBoard.length;i++) {
-    for (let j=0;j<testBoard[i].length;j++) {
-      let piece = testBoard[j][i][0];
-      if (piece[0] === enemyColor && king && piece[2] !== 'p' && piece[2] !== 'n') {
-        if(checkObstruction(king[1], king[0], [i, j], testBoard)) {
-          if (i === king[1] || j === king[0]) {
-            if (piece[2] === 'q' || piece[2] === 'r') {
-              return true;
-            } else {
-              return false;
-            }
-          } else {
-            if (piece[2] === 'q' || piece[2] === 'b') {
-              return true;
-            } else {
-              return false;
-            }
-          }
-        }
-      }
-       else if (piece[2] === 'p' && king && Math.abs(j - king[0]) === 1 &&
-          Math.abs(i - king[1]) === 1 && piece[0] === enemyColor) {
-        return true;
-      } else if (piece[2] === 'n' && king && piece[0] === enemyColor &&
-          knightMoves([i, j],king[1], king[0])) {
-        return true;
+function findAttackers (piece, board, enemyColor) {
+  if (!piece) return false;
+
+  let yDir = enemyColor === 'w' ? piece[1] + 1 : piece[1] - 1;
+  let left = piece[0] === 0 ? null : piece[0] - 1;
+  let right = piece[0] === 7 ? null : piece[0] + 1;
+  let queen = false;
+  //test for pawns
+  if (left && board[yDir] && board[yDir][left][0] === `${enemyColor}-p`) {
+    return [true,'p'];
+  } else if (right && board[yDir] && board[yDir][right][0] === `${enemyColor}-p`) {
+    return [true, 'p'];
+  }
+  //test for knights
+  [[1,2],[1,-2],[-1,2],[-1,-2],[2,1],[2,-1],[-2,1],[-2,-1]].forEach(coord => {
+    if (board[coord[0]]) {
+      if (board[coord[0]][coord[1]] === [`${enemyColor}-n`]) {
+        return [true, 'n'];
       }
     }
+  });
+  //test for bishops/queens
+  [[1,1],[1,-1],[-1,1],[-1,-1]].forEach(step => {
+    let x = piece[0] + step[0],
+      y = piece[1] + step[1];
+    while (x > 0 && x < 8 && y > 0 && y < 8) {
+      if (board[y][x] === [`${enemyColor}-b`] &&
+        checkObstruction(x, y, piece, board)) {
+        return [true, 'b'];
+      } else if (board[y][x] === [`${enemyColor}-q`] &&
+        checkObstruction(x, y, piece, board)) {
+        queen = true;
+      }
+      x += step[0];
+      y += step[1];
+    }
+  });
+  //test for rooks/queens
+  [[0,1],[0,-1],[-1,0],[1,0]].forEach(step => {
+    let x = piece[0] + step[0],
+      y = piece[1] + step[1];
+    while (x > 0 && x < 8 && y > 0 && y < 8) {
+      if (board[y][x] === [`${enemyColor}-r`] &&
+        checkObstruction(x, y, piece, board)) {
+        return [true, 'r'];
+      } else if (board[y][x] === [`${enemyColor}-q`] &&
+        checkObstruction(x, y, piece, board)) {
+        queen = true;
+      }
+      x += step[0];
+      y += step[1];
+    }
+  });
+  //return if queen
+  if (queen) {
+    return [true, 'q'];
   }
+  //test for king
+  [[0,1],[0,-1],[-1,0],[1,0],[1,1],[1,-1],[-1,1],[-1,-1]].forEach(coord => {
+    if (board[coord[0]]) {
+      if (board[coord[0]][coord[1]] === [`${enemyColor}-k`]) {
+        return [true, 'k'];
+      }
+    }
+  });
   return false;
 }
 
@@ -205,11 +240,11 @@ function checkCastle (pos, toX, toY, pieces) {
   let color = pieces[pos[1]][pos[0]][0][0];
   if (toX === 2 && toY === pos[1] && checkObstruction(toX - 1, toY, pos, pieces) &&
       notInCheck(toX + 1, toY, pos, pieces) &&
-      !findAttackers(king, pieces, color === 'w' ? 'b' : 'w')) {
+      !findAttackers(king, pieces, color === 'w' ? 'b' : 'w')[0]) {
     return specialMoves[color].castleQueenSideStatus;
   } else if (toX === 6 && toY === pos[1] && checkObstruction(toX, toY, pos, pieces) &&
       notInCheck(toX - 1, toY, pos, pieces) &&
-      !findAttackers(king, pieces, color === 'w' ? 'b' : 'w')) {
+      !findAttackers(king, pieces, color === 'w' ? 'b' : 'w')[0]) {
     return specialMoves[color].castleKingSideStatus;
   }
 }
