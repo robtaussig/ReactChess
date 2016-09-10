@@ -325,6 +325,7 @@ function pawnMoves (toX, toY, from, pieces) {
   return (
     (dx === 0 && dy === -1) ||
     (y === 6 && dy === -2 && dx === 0 && pieces[5][x][0][0] === 'n') ||
-    (y === 1 && dy === -2 && dx === 0 && pieces[2][x][0][0] === 'n')
+    (y === 1 && dy === -2 && dx === 0 && pieces[2][x][0][0] === 'n') ||
+    checkPawnCaptures(toX, toY, from, pieces)
   );
 }
