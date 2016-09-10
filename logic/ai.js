@@ -158,7 +158,7 @@ function findAttackers (piece, board, colorToCheck, sameSide) {
     let y = piece[1] + coord[1];
     if (x >= 0 && x <= 7 && y >= 0 && y <= 7) {
       if (board[y][x][0] === `${colorToCheck}-k`) {
-        return returnResult.push([true, 'k']);
+        returnResult.push([true, 'k']);
       }
     }
   });
