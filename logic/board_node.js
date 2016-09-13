@@ -9,13 +9,14 @@ function findBestMove (board,specMoves,depth) {
 
   let bestMove = null;
   moves.forEach(move => {
-    let currentNode = new BoardNode(move,board,specMoves,depth,0,null,[]);
-    // console.log(currentNode.score);
+    let currentNode = new BoardNode(move,board,specMoves,depth);
+    if (currentNode.checkmate) {
+      return {move: currentNode.move, checkmate: true};
+    }
     bestMove = bestMove ?
       (currentNode.score > bestMove.score ?
         currentNode : bestMove) : currentNode;
   });
-  // console.log(bestMove.score);
   return {move: bestMove.move};
 }
 
@@ -120,19 +121,14 @@ const PIECE_VALUES = {
 };
 
 class BoardNode {
-  constructor(move,pieces,specialMoves,depth,score,parent = null, memo = []) {
+  constructor(move,pieces,specialMoves,depth) {
     this.move = move;
-    console.log(this.move);
     this.pieces = pieces;
     this.specialMoves = specialMoves;
     this.side = specialMoves.currentSide;
-    this.depth = depth - 1;
-    this.score = score;
-    this.parent = parent;
-    this.memo = memo;
-
-    this.evaluateMove();
-    // this.evaluateResponse();
+    this.depth = depth;
+    this.checkmate = false;
+    this.score = this.evaluateMove();
   }
 
   evaluateMove () {
@@ -141,7 +137,40 @@ class BoardNode {
     let otherPieces = findAllPieces(newBoard,this.side === 'w' ? 'b' : 'w');
     let materialScore = this.evalMaterial(newBoard, ownPieces, otherPieces);
     let positionalScore = this.evalPosition(newBoard, ownPieces);
-    this.score = materialScore + positionalScore;
+    let tacticScore = this.evalTactics(newBoard, ownPieces, otherPieces);
+    return materialScore + positionalScore + tacticScore;
+  }
+
+  evalTactics (ownPieces, otherPieces) {
+    let tacticScore = 0;
+    tacticScore += this.evalDoubleAttacks(this.pieces,otherPieces);
+    this.evalCheckmate();
+    return tacticScore;
+  }
+
+  evalCheckmate () {
+    let moves = parseMoveClusters(
+                  findAllPieces(this.pieces,this.side === 'w' ? 'b' : 'w')
+                  .map(piece=> findAllLegalMovesByPiece(piece,this.pieces,this.specialMoves))
+                );
+    if (moves.length === 0) {
+      this.checkmate = true;
+    }
+  }
+
+  evalDoubleAttacks(board,otherPieces) {
+    let attackedPieces = [];
+    otherPieces.forEach(piece => {
+      let lvA = this.leastValuableAttacker(board,piece);
+      if (lvA > 0) {
+        let defended = this.defended(board,piece);
+        let score = PIECE_VALUES[piece.type];
+          attackedPieces.push([score - lvA * defended]);
+      }
+    });
+    let sorted = attackedPieces.sort((a,b)=>b-a);
+    let secondBestAttack = sorted[1] || 0;
+    return Math.max(secondBestAttack,0);
   }
 
   evalMaterial (board, ownPieces, otherPieces) {
@@ -160,7 +189,6 @@ class BoardNode {
     let ownScore = ownPieces
                     .map(piece=> this.evalPiecePositionalValue(piece,board))
                     .reduce((sum,el) => sum + el);
-    // console.log(ownScore,otherScore);
     return ownScore;
   }
 
@@ -216,13 +244,13 @@ class BoardNode {
       value = 0;
 
     value += (
-      20 * (0.25 / (Math.abs(3.5 - posY) * (Math.abs(3.5 - posX))))
+      30 * (0.25 / (Math.abs(3.5 - posY) * (Math.abs(3.5 - posX))))
     );
     let lvA = this.leastValuableAttacker (board, pawn);
     if (lvA > 0) {
       value -= Math.max(PIECE_VALUES[pawn.type] - lvA * (this.defended(board,pawn)),0);
     }
-    // console.log(posY,posX,value);
+
     return value;
   }
 
@@ -234,7 +262,7 @@ class BoardNode {
     if (lvA > 0) {
       value -= Math.max(PIECE_VALUES[rook.type] - lvA * (this.defended(board,rook)),0);
     }
-    return moves.length * 10 + value;
+    return moves.length * 5 + value;
   }
 
   knightPositionalValue (knight,board) {
@@ -249,7 +277,9 @@ class BoardNode {
     if (lvA > 0) {
       value -= Math.max(PIECE_VALUES[knight.type] - lvA * (this.defended(board,knight)),0);
     }
-
+    if (this.defended(board,knight)) {
+      value += 25;
+    }
     return value;
   }
 
@@ -259,10 +289,11 @@ class BoardNode {
     let lvA = this.leastValuableAttacker (board, bishop);
     if (lvA > 0) {
       value -= Math.max(PIECE_VALUES[bishop.type] - lvA * (this.defended(board,bishop)),0);
-      console.log(PIECE_VALUES[bishop.type] - lvA * (this.defended(board,bishop)));
     }
-
-    return moves.length * 10 + value;
+    if (this.defended(board,bishop)) {
+      value += 25;
+    }
+    return moves.length * 8 + value;
   }
 
   queenPositionalValue (queen,board) {
@@ -273,7 +304,7 @@ class BoardNode {
       value -= Math.max(PIECE_VALUES[queen.type] - lvA * (this.defended(board,queen)),0);
     }
 
-    return moves.length + value;
+    return moves.length * 2 + value;
   }
 
   kingPositionalValue (king,board) {

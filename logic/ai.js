@@ -100,7 +100,6 @@ function findAttackers (piece, board, colorToCheck, sameSide) {
   let left = piece[0] - 1;
   let right = piece[0] + 1;
   let returnResult = [];
-  // console.log('yDir' + yDir + 'left' + left + 'right' + right)
   //test for pawns
   if (left >= 0 && left <= 7 && yDir >= 0 && yDir <= 7 &&
     board[yDir][left][0] === `${colorToCheck}-p`) {

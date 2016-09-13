@@ -28000,7 +28000,7 @@
 	        this.state = nextState;
 	      }
 	      if (specialMoves.currentSide === 'b') {
-	        MoveActions.fetchMove(board, specialMoves, 1);
+	        MoveActions.fetchMove(board, specialMoves, 2);
 	      }
 	    }
 	  }, {
