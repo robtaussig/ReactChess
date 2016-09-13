@@ -104,7 +104,7 @@ function findAttackers (piece, board, colorToCheck, sameSide) {
   //test for pawns
   if (left >= 0 && left <= 7 && yDir >= 0 && yDir <= 7 &&
     board[yDir][left][0] === `${colorToCheck}-p`) {
-    return ([true,'p']);
+    returnResult.push([true,'p']);
   } else if (right >= 0 && right <= 7 && yDir >= 0 && yDir <= 7 &&
     board[yDir][right][0] === `${colorToCheck}-p`) {
     returnResult.push([true, 'p']);

@@ -132,6 +132,7 @@ class BoardNode {
     this.memo = memo;
 
     this.evaluateMove();
+    // this.evaluateResponse();
   }
 
   evaluateMove () {
@@ -241,7 +242,7 @@ class BoardNode {
     let moves = findAllLegalMovesByPiece (knight,board,this.specialMoves);
     moves.forEach(move => {
       value += (
-        10 * (0.25 / Math.abs(3.5 - move[1][1]) * (Math.abs(3.5 - move[1][0])))
+        12 * (0.25 / Math.abs(3.5 - move[1][1]) * (Math.abs(3.5 - move[1][0])))
       );
     });
     let lvA = this.leastValuableAttacker (board, knight);
@@ -268,12 +269,11 @@ class BoardNode {
     let value = 0;
     let moves = findAllLegalMovesByPiece (queen,board,this.specialMoves);
     let lvA = this.leastValuableAttacker (board, queen);
-    if (queen.pos[0] === 5 && queen.pos[1] === 6) debugger
     if (lvA > 0) {
       value -= Math.max(PIECE_VALUES[queen.type] - lvA * (this.defended(board,queen)),0);
     }
 
-    return moves.length * 5 + value;
+    return moves.length + value;
   }
 
   kingPositionalValue (king,board) {
