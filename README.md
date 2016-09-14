@@ -16,7 +16,9 @@ Play the classic game of Chess through your browser or mobile screen!
 
 ![workers]
 
-- Written purely in JavaScript and React.js, with web workers created and communicated with through the Flux cycle.
+- Fully functional, including pawn promotion, en passant, and castling.
+
+- Written purely in JavaScript and React.js, with the web workers created and communicated with through the Flux cycle.
 
 [board]: ./docs/board.png
 [game]: ./docs/moves.gif
