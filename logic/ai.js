@@ -326,11 +326,11 @@ module.exports = {
     if (toX === 2 && toY === pos[1] && this.checkObstruction(toX - 1, toY, pos, pieces) &&
         this.notInCheck(toX + 1, toY, pos, pieces) &&
         this.findAttackers(king, pieces, color === 'w' ? 'b' : 'w',false).length === 0) {
-      return specialMoves[color].castleQueenSideStatus;
+      return this.specialMoves[color].castleQueenSideStatus;
     } else if (toX === 6 && toY === pos[1] && this.checkObstruction(toX, toY, pos, pieces) &&
         this.notInCheck(toX - 1, toY, pos, pieces) &&
         this.findAttackers(king, pieces, color === 'w' ? 'b' : 'w',false).length === 0) {
-      return specialMoves[color].castleKingSideStatus;
+      return this.specialMoves[color].castleKingSideStatus;
     }
   },
 
@@ -384,11 +384,11 @@ module.exports = {
     const oppColor = color === 'w' ? 'b' : 'w';
     const rightSide = toX < 7 ? pieces[toY][toX + 1][0] : ['n-l'];
     const leftSide = toX > 0 ? pieces[toY][toX - 1][0] : ['n-l'];
-    specialMoves[oppColor].enPassant = {status: false, pos: []};
+    this.specialMoves[oppColor].enPassant = {status: false, pos: []};
     if (leftSide[2] === 'p' && leftSide[0] === oppColor) {
-      specialMoves[oppColor].enPassant = {status: true, pos: [toX - 1, toY, 1]};
+      this.specialMoves[oppColor].enPassant = {status: true, pos: [toX - 1, toY, 1]};
     } else if (rightSide[2] === 'p' && rightSide[0] === oppColor) {
-      specialMoves[oppColor].enPassant = {status: true, pos: [toX + 1, toY, -1]};
+      this.specialMoves[oppColor].enPassant = {status: true, pos: [toX + 1, toY, -1]};
     }
   },
 
