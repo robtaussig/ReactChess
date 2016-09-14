@@ -59,8 +59,9 @@ export default class Home extends Component {
     const board = this.state.pieces;
     return (
       <div>
-        <div>
-          <div style={{
+        <div className="container">
+          <div className="title">ReactChess</div>
+          <div className="board" style={{
               width: '80vmin',
               height: '80vmin',
               border: '1px solid gray'

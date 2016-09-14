@@ -28044,10 +28044,15 @@
 	        null,
 	        _react2.default.createElement(
 	          'div',
-	          null,
+	          { className: 'container' },
 	          _react2.default.createElement(
 	            'div',
-	            { style: {
+	            { className: 'title' },
+	            'ReactChess'
+	          ),
+	          _react2.default.createElement(
+	            'div',
+	            { className: 'board', style: {
 	                width: '80vmin',
 	                height: '80vmin',
 	                border: '1px solid gray'
