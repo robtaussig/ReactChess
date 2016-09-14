@@ -1,6 +1,5 @@
 import React, { Component, PropTypes } from 'react';
 import { DragDropContext } from 'react-dnd';
-import HTML5Backend from 'react-dnd-html5-backend';
 import Square from './square';
 import Knight from './pieces/knight';
 import Bishop from './pieces/bishop';
@@ -10,6 +9,13 @@ import Queen from './pieces/queen';
 import King from './pieces/king';
 import BoardSquare from './board_square';
 import { canMove, move } from '../logic/game';
+const HTML5Backend = require('react-dnd-html5-backend');
+const TouchBackend = require('react-dnd-touch-backend');
+const Backend = isTouchScreen() ? TouchBackend : HTML5Backend;
+
+function isTouchScreen () {
+  return 'ontouchstart' in window;
+}
 
 class Board extends Component {
   renderSquare(i) {
@@ -82,4 +88,4 @@ class Board extends Component {
   }
 }
 
-export default DragDropContext(HTML5Backend)(Board);
+export default DragDropContext(Backend)(Board);
