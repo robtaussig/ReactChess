@@ -1,9 +1,10 @@
 const AppDispatcher = require('../dispatcher/dispatcher.js');
 const MoveConstants = require('../constants/move_constants.js');
+const MyWorker = require("worker!../logic/move_worker.js");
 
 module.exports = {
   fetchMove (board, specialMoves, depth) {
-    let worker = new Worker('../logic/move_worker.js');
+    let worker = new MyWorker();
     let gameInfo = {
       board: board,
       specialMoves: specialMoves,

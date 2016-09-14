@@ -30662,10 +30662,11 @@
 	
 	var AppDispatcher = __webpack_require__(336);
 	var MoveConstants = __webpack_require__(340);
+	var MyWorker = __webpack_require__(421);
 	
 	module.exports = {
 	  fetchMove: function fetchMove(board, specialMoves, depth) {
-	    var worker = new Worker('../logic/move_worker.js');
+	    var worker = new MyWorker();
 	    var gameInfo = {
 	      board: board,
 	      specialMoves: specialMoves,
@@ -43133,6 +43134,14 @@
 	
 	exports.default = (0, _createRouterHistory2.default)(_createHashHistory2.default);
 	module.exports = exports['default'];
+
+/***/ },
+/* 421 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = function() {
+		return new Worker(__webpack_require__.p + "0217e84bf1d1d45f73bd.worker.js");
+	};
 
 /***/ }
 /******/ ]);
