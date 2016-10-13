@@ -15,7 +15,6 @@ const pieceSource = {
       return;
     }
 
-    // When dropped on a compatible target, do something
     const item = monitor.getItem();
     const dropResult = monitor.getDropResult();
   }

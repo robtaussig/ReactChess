@@ -28117,19 +28117,19 @@
 	
 	var _pawn2 = _interopRequireDefault(_pawn);
 	
-	var _rook = __webpack_require__(301);
+	var _rook = __webpack_require__(331);
 	
 	var _rook2 = _interopRequireDefault(_rook);
 	
-	var _queen = __webpack_require__(302);
+	var _queen = __webpack_require__(332);
 	
 	var _queen2 = _interopRequireDefault(_queen);
 	
-	var _king = __webpack_require__(303);
+	var _king = __webpack_require__(333);
 	
 	var _king2 = _interopRequireDefault(_king);
 	
-	var _board_square = __webpack_require__(304);
+	var _board_square = __webpack_require__(334);
 	
 	var _board_square2 = _interopRequireDefault(_board_square);
 	
@@ -28143,7 +28143,7 @@
 	
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 	
-	var HTML5Backend = __webpack_require__(305);
+	var HTML5Backend = __webpack_require__(301);
 	var TouchBackend = __webpack_require__(335);
 	var Backend = isTouchScreen() ? TouchBackend : HTML5Backend;
 	
@@ -28365,6 +28365,8 @@
 	
 	var _game = __webpack_require__(294);
 	
+	var _reactDndHtml5Backend = __webpack_require__(301);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -28384,7 +28386,6 @@
 	      return;
 	    }
 	
-	    // When dropped on a compatible target, do something
 	    var item = monitor.getItem();
 	    var dropResult = monitor.getDropResult();
 	  }
@@ -28417,7 +28418,7 @@
 	
 	      return connectDragSource(_react2.default.createElement(
 	        'div',
-	        { style: {
+	        { id: 'dragging', 'class': isDragging ? 'dragging' : '', style: {
 	            opacity: isDragging ? 0.5 : 1,
 	            fontSize: '9vmin',
 	            textAlign: 'center',
@@ -28427,7 +28428,7 @@
 	            fontWeight: 'bold',
 	            cursor: 'pointer'
 	          } },
-	        this.props.color === 'white' ? '♙' : '♟'
+	        '♟'
 	      ));
 	    }
 	  }]);
@@ -28448,409 +28449,6 @@
 
 	'use strict';
 	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-	
-	var _react = __webpack_require__(1);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	var _item_types = __webpack_require__(173);
-	
-	var _reactDnd = __webpack_require__(174);
-	
-	var _game = __webpack_require__(294);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-	
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-	
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-	
-	var pieceSource = {
-	  beginDrag: function beginDrag(props) {
-	    (0, _game.setSelected)(props);
-	    var piece = { piece: props };
-	    return piece;
-	  },
-	  endDrag: function endDrag(props, monitor, component) {
-	    if (!monitor.didDrop()) {
-	      return;
-	    }
-	
-	    // When dropped on a compatible target, do something
-	    var item = monitor.getItem();
-	    var dropResult = monitor.getDropResult();
-	  }
-	};
-	
-	function collect(connect, monitor) {
-	  return {
-	    connectDragSource: connect.dragSource(),
-	    connectDragPreview: connect.dragPreview(),
-	    isDragging: monitor.isDragging()
-	  };
-	}
-	
-	var Rook = function (_Component) {
-	  _inherits(Rook, _Component);
-	
-	  function Rook() {
-	    _classCallCheck(this, Rook);
-	
-	    return _possibleConstructorReturn(this, (Rook.__proto__ || Object.getPrototypeOf(Rook)).apply(this, arguments));
-	  }
-	
-	  _createClass(Rook, [{
-	    key: 'render',
-	    value: function render() {
-	      var _props = this.props;
-	      var connectDragSource = _props.connectDragSource;
-	      var isDragging = _props.isDragging;
-	
-	      return connectDragSource(_react2.default.createElement(
-	        'div',
-	        { style: {
-	            opacity: isDragging ? 0.5 : 1,
-	            fontSize: '9vmin',
-	            textAlign: 'center',
-	            lineHeight: '10vmin',
-	            color: this.props.color,
-	            backgroundColor: 'transparent',
-	            fontWeight: 'bold',
-	            cursor: 'pointer'
-	          } },
-	        this.props.color === 'white' ? '♖' : '♜'
-	      ));
-	    }
-	  }]);
-	
-	  return Rook;
-	}(_react.Component);
-	
-	Rook.propTypes = {
-	  connectDragSource: _react.PropTypes.func.isRequired,
-	  isDragging: _react.PropTypes.bool.isRequired
-	};
-	
-	exports.default = (0, _reactDnd.DragSource)(_item_types.ItemTypes.ROOK, pieceSource, collect)(Rook);
-
-/***/ },
-/* 302 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-	
-	var _react = __webpack_require__(1);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	var _item_types = __webpack_require__(173);
-	
-	var _reactDnd = __webpack_require__(174);
-	
-	var _game = __webpack_require__(294);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-	
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-	
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-	
-	var pieceSource = {
-	  beginDrag: function beginDrag(props) {
-	    (0, _game.setSelected)(props);
-	    var piece = { piece: props };
-	    return piece;
-	  },
-	  endDrag: function endDrag(props, monitor, component) {
-	    if (!monitor.didDrop()) {
-	      return;
-	    }
-	
-	    // When dropped on a compatible target, do something
-	    var item = monitor.getItem();
-	    var dropResult = monitor.getDropResult();
-	  }
-	};
-	
-	function collect(connect, monitor) {
-	  return {
-	    connectDragSource: connect.dragSource(),
-	    connectDragPreview: connect.dragPreview(),
-	    isDragging: monitor.isDragging()
-	  };
-	}
-	
-	var Queen = function (_Component) {
-	  _inherits(Queen, _Component);
-	
-	  function Queen() {
-	    _classCallCheck(this, Queen);
-	
-	    return _possibleConstructorReturn(this, (Queen.__proto__ || Object.getPrototypeOf(Queen)).apply(this, arguments));
-	  }
-	
-	  _createClass(Queen, [{
-	    key: 'render',
-	    value: function render() {
-	      var _props = this.props;
-	      var connectDragSource = _props.connectDragSource;
-	      var isDragging = _props.isDragging;
-	
-	
-	      return connectDragSource(_react2.default.createElement(
-	        'div',
-	        { style: {
-	            opacity: isDragging ? 0.5 : 1,
-	            fontSize: '9vmin',
-	            textAlign: 'center',
-	            lineHeight: '10vmin',
-	            color: this.props.color,
-	            backgroundColor: 'transparent',
-	            fontWeight: 'bold',
-	            cursor: 'pointer'
-	          } },
-	        this.props.color === 'white' ? '♕' : '♛'
-	      ));
-	    }
-	  }]);
-	
-	  return Queen;
-	}(_react.Component);
-	
-	Queen.propTypes = {
-	  connectDragSource: _react.PropTypes.func.isRequired,
-	  isDragging: _react.PropTypes.bool.isRequired
-	};
-	
-	exports.default = (0, _reactDnd.DragSource)(_item_types.ItemTypes.QUEEN, pieceSource, collect)(Queen);
-
-/***/ },
-/* 303 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-	
-	var _react = __webpack_require__(1);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	var _item_types = __webpack_require__(173);
-	
-	var _reactDnd = __webpack_require__(174);
-	
-	var _game = __webpack_require__(294);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-	
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-	
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-	
-	var pieceSource = {
-	  beginDrag: function beginDrag(props) {
-	    (0, _game.setSelected)(props);
-	    var piece = { piece: props };
-	    return piece;
-	  },
-	  endDrag: function endDrag(props, monitor, component) {
-	    if (!monitor.didDrop()) {
-	      return;
-	    }
-	
-	    // When dropped on a compatible target, do something
-	    var item = monitor.getItem();
-	    var dropResult = monitor.getDropResult();
-	  }
-	};
-	
-	function collect(connect, monitor) {
-	  return {
-	    connectDragSource: connect.dragSource(),
-	    connectDragPreview: connect.dragPreview(),
-	    isDragging: monitor.isDragging()
-	  };
-	}
-	
-	var King = function (_Component) {
-	  _inherits(King, _Component);
-	
-	  function King() {
-	    _classCallCheck(this, King);
-	
-	    return _possibleConstructorReturn(this, (King.__proto__ || Object.getPrototypeOf(King)).apply(this, arguments));
-	  }
-	
-	  _createClass(King, [{
-	    key: 'render',
-	    value: function render() {
-	      var _props = this.props;
-	      var connectDragSource = _props.connectDragSource;
-	      var isDragging = _props.isDragging;
-	
-	
-	      return connectDragSource(_react2.default.createElement(
-	        'div',
-	        { style: {
-	            opacity: isDragging ? 0.5 : 1,
-	            fontSize: '9vmin',
-	            textAlign: 'center',
-	            lineHeight: '10vmin',
-	            color: this.props.color,
-	            backgroundColor: 'transparent',
-	            fontWeight: 'bold',
-	            cursor: 'pointer'
-	          } },
-	        this.props.color === 'white' ? '♔' : '♚'
-	      ));
-	    }
-	  }]);
-	
-	  return King;
-	}(_react.Component);
-	
-	King.propTypes = {
-	  connectDragSource: _react.PropTypes.func.isRequired,
-	  isDragging: _react.PropTypes.bool.isRequired
-	};
-	
-	exports.default = (0, _reactDnd.DragSource)(_item_types.ItemTypes.KING, pieceSource, collect)(King);
-
-/***/ },
-/* 304 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-	
-	var _react = __webpack_require__(1);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	var _square = __webpack_require__(296);
-	
-	var _square2 = _interopRequireDefault(_square);
-	
-	var _game = __webpack_require__(294);
-	
-	var _item_types = __webpack_require__(173);
-	
-	var _reactDnd = __webpack_require__(174);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-	
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-	
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-	
-	var squareTarget = {
-	  canDrop: function canDrop(props) {
-	    return (0, _game.canMove)(props.x, props.y);
-	  },
-	  drop: function drop(props) {
-	    (0, _game.move)(props.x, props.y);
-	  }
-	};
-	
-	function collect(connect, monitor) {
-	  return {
-	    connectDropTarget: connect.dropTarget(),
-	    isOver: monitor.isOver(),
-	    canDrop: monitor.canDrop()
-	  };
-	}
-	
-	var BoardSquare = function (_Component) {
-	  _inherits(BoardSquare, _Component);
-	
-	  function BoardSquare() {
-	    _classCallCheck(this, BoardSquare);
-	
-	    return _possibleConstructorReturn(this, (BoardSquare.__proto__ || Object.getPrototypeOf(BoardSquare)).apply(this, arguments));
-	  }
-	
-	  _createClass(BoardSquare, [{
-	    key: 'renderOverlay',
-	    value: function renderOverlay(color) {
-	      return _react2.default.createElement('div', { style: {
-	          position: 'absolute',
-	          top: 0,
-	          left: 0,
-	          height: '100%',
-	          width: '100%',
-	          zIndex: 1,
-	          opacity: 0.5,
-	          backgroundColor: color
-	        } });
-	    }
-	  }, {
-	    key: 'render',
-	    value: function render() {
-	      var _props = this.props;
-	      var x = _props.x;
-	      var y = _props.y;
-	      var connectDropTarget = _props.connectDropTarget;
-	      var isOver = _props.isOver;
-	      var canDrop = _props.canDrop;
-	
-	      var black = (x + y) % 2 === 1;
-	      return connectDropTarget(_react2.default.createElement(
-	        'div',
-	        { style: { position: 'relative',
-	            width: '100%',
-	            height: '100%' } },
-	        _react2.default.createElement(
-	          _square2.default,
-	          { black: black },
-	          this.props.children
-	        ),
-	        isOver && !canDrop && this.renderOverlay('red'),
-	        !isOver && canDrop && this.renderOverlay('yellow'),
-	        isOver && canDrop && this.renderOverlay('green')
-	      ));
-	    }
-	  }]);
-	
-	  return BoardSquare;
-	}(_react.Component);
-	
-	exports.default = (0, _reactDnd.DropTarget)(_item_types.ItemTypes.PIECES, squareTarget, collect)(BoardSquare);
-
-/***/ },
-/* 305 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
 	exports.__esModule = true;
 	exports['default'] = createHTML5Backend;
 	
@@ -28858,15 +28456,15 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 	
-	var _HTML5Backend = __webpack_require__(306);
+	var _HTML5Backend = __webpack_require__(302);
 	
 	var _HTML5Backend2 = _interopRequireDefault(_HTML5Backend);
 	
-	var _getEmptyImage = __webpack_require__(334);
+	var _getEmptyImage = __webpack_require__(330);
 	
 	var _getEmptyImage2 = _interopRequireDefault(_getEmptyImage);
 	
-	var _NativeTypes = __webpack_require__(333);
+	var _NativeTypes = __webpack_require__(329);
 	
 	var NativeTypes = _interopRequireWildcard(_NativeTypes);
 	
@@ -28878,7 +28476,7 @@
 	}
 
 /***/ },
-/* 306 */
+/* 302 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28891,25 +28489,25 @@
 	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
 	
-	var _lodashDefaults = __webpack_require__(307);
+	var _lodashDefaults = __webpack_require__(303);
 	
 	var _lodashDefaults2 = _interopRequireDefault(_lodashDefaults);
 	
-	var _shallowEqual = __webpack_require__(322);
+	var _shallowEqual = __webpack_require__(318);
 	
 	var _shallowEqual2 = _interopRequireDefault(_shallowEqual);
 	
-	var _EnterLeaveCounter = __webpack_require__(323);
+	var _EnterLeaveCounter = __webpack_require__(319);
 	
 	var _EnterLeaveCounter2 = _interopRequireDefault(_EnterLeaveCounter);
 	
-	var _BrowserDetector = __webpack_require__(328);
+	var _BrowserDetector = __webpack_require__(324);
 	
-	var _OffsetUtils = __webpack_require__(330);
+	var _OffsetUtils = __webpack_require__(326);
 	
-	var _NativeDragSources = __webpack_require__(332);
+	var _NativeDragSources = __webpack_require__(328);
 	
-	var _NativeTypes = __webpack_require__(333);
+	var _NativeTypes = __webpack_require__(329);
 	
 	var NativeTypes = _interopRequireWildcard(_NativeTypes);
 	
@@ -29459,12 +29057,12 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 307 */
+/* 303 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var apply = __webpack_require__(243),
-	    assignInDefaults = __webpack_require__(308),
-	    assignInWith = __webpack_require__(309),
+	    assignInDefaults = __webpack_require__(304),
+	    assignInWith = __webpack_require__(305),
 	    baseRest = __webpack_require__(242);
 	
 	/**
@@ -29497,7 +29095,7 @@
 
 
 /***/ },
-/* 308 */
+/* 304 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var eq = __webpack_require__(221);
@@ -29530,12 +29128,12 @@
 
 
 /***/ },
-/* 309 */
+/* 305 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var copyObject = __webpack_require__(310),
-	    createAssigner = __webpack_require__(312),
-	    keysIn = __webpack_require__(315);
+	var copyObject = __webpack_require__(306),
+	    createAssigner = __webpack_require__(308),
+	    keysIn = __webpack_require__(311);
 	
 	/**
 	 * This method is like `_.assignIn` except that it accepts `customizer`
@@ -29574,10 +29172,10 @@
 
 
 /***/ },
-/* 310 */
+/* 306 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var assignValue = __webpack_require__(311);
+	var assignValue = __webpack_require__(307);
 	
 	/**
 	 * Copies properties of `source` to `object`.
@@ -29611,7 +29209,7 @@
 
 
 /***/ },
-/* 311 */
+/* 307 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var eq = __webpack_require__(221);
@@ -29644,11 +29242,11 @@
 
 
 /***/ },
-/* 312 */
+/* 308 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var baseRest = __webpack_require__(242),
-	    isIterateeCall = __webpack_require__(313);
+	    isIterateeCall = __webpack_require__(309);
 	
 	/**
 	 * Creates a function like `_.assign`.
@@ -29687,12 +29285,12 @@
 
 
 /***/ },
-/* 313 */
+/* 309 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var eq = __webpack_require__(221),
 	    isArrayLike = __webpack_require__(245),
-	    isIndex = __webpack_require__(314),
+	    isIndex = __webpack_require__(310),
 	    isObject = __webpack_require__(193);
 	
 	/**
@@ -29723,7 +29321,7 @@
 
 
 /***/ },
-/* 314 */
+/* 310 */
 /***/ function(module, exports) {
 
 	/** Used as references for various `Number` constants. */
@@ -29751,11 +29349,11 @@
 
 
 /***/ },
-/* 315 */
+/* 311 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var arrayLikeKeys = __webpack_require__(316),
-	    baseKeysIn = __webpack_require__(319),
+	var arrayLikeKeys = __webpack_require__(312),
+	    baseKeysIn = __webpack_require__(315),
 	    isArrayLike = __webpack_require__(245);
 	
 	/**
@@ -29789,13 +29387,13 @@
 
 
 /***/ },
-/* 316 */
+/* 312 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var baseTimes = __webpack_require__(317),
-	    isArguments = __webpack_require__(318),
+	var baseTimes = __webpack_require__(313),
+	    isArguments = __webpack_require__(314),
 	    isArray = __webpack_require__(191),
-	    isIndex = __webpack_require__(314);
+	    isIndex = __webpack_require__(310);
 	
 	/** Used for built-in method references. */
 	var objectProto = Object.prototype;
@@ -29834,7 +29432,7 @@
 
 
 /***/ },
-/* 317 */
+/* 313 */
 /***/ function(module, exports) {
 
 	/**
@@ -29860,7 +29458,7 @@
 
 
 /***/ },
-/* 318 */
+/* 314 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var isArrayLikeObject = __webpack_require__(244);
@@ -29912,12 +29510,12 @@
 
 
 /***/ },
-/* 319 */
+/* 315 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var isObject = __webpack_require__(193),
-	    isPrototype = __webpack_require__(320),
-	    nativeKeysIn = __webpack_require__(321);
+	    isPrototype = __webpack_require__(316),
+	    nativeKeysIn = __webpack_require__(317);
 	
 	/** Used for built-in method references. */
 	var objectProto = Object.prototype;
@@ -29951,7 +29549,7 @@
 
 
 /***/ },
-/* 320 */
+/* 316 */
 /***/ function(module, exports) {
 
 	/** Used for built-in method references. */
@@ -29975,7 +29573,7 @@
 
 
 /***/ },
-/* 321 */
+/* 317 */
 /***/ function(module, exports) {
 
 	/**
@@ -30001,7 +29599,7 @@
 
 
 /***/ },
-/* 322 */
+/* 318 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -30042,7 +29640,7 @@
 	module.exports = exports["default"];
 
 /***/ },
-/* 323 */
+/* 319 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -30053,7 +29651,7 @@
 	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
 	
-	var _lodashUnion = __webpack_require__(324);
+	var _lodashUnion = __webpack_require__(320);
 	
 	var _lodashUnion2 = _interopRequireDefault(_lodashUnion);
 	
@@ -30099,10 +29697,10 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 324 */
+/* 320 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var baseFlatten = __webpack_require__(325),
+	var baseFlatten = __webpack_require__(321),
 	    baseRest = __webpack_require__(242),
 	    baseUniq = __webpack_require__(253),
 	    isArrayLikeObject = __webpack_require__(244);
@@ -30131,11 +29729,11 @@
 
 
 /***/ },
-/* 325 */
+/* 321 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var arrayPush = __webpack_require__(252),
-	    isFlattenable = __webpack_require__(326);
+	    isFlattenable = __webpack_require__(322);
 	
 	/**
 	 * The base implementation of `_.flatten` with support for restricting flattening.
@@ -30175,11 +29773,11 @@
 
 
 /***/ },
-/* 326 */
+/* 322 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var Symbol = __webpack_require__(327),
-	    isArguments = __webpack_require__(318),
+	var Symbol = __webpack_require__(323),
+	    isArguments = __webpack_require__(314),
 	    isArray = __webpack_require__(191);
 	
 	/** Built-in value references. */
@@ -30201,7 +29799,7 @@
 
 
 /***/ },
-/* 327 */
+/* 323 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var root = __webpack_require__(209);
@@ -30213,7 +29811,7 @@
 
 
 /***/ },
-/* 328 */
+/* 324 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -30222,7 +29820,7 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 	
-	var _lodashMemoize = __webpack_require__(329);
+	var _lodashMemoize = __webpack_require__(325);
 	
 	var _lodashMemoize2 = _interopRequireDefault(_lodashMemoize);
 	
@@ -30238,7 +29836,7 @@
 	exports.isSafari = isSafari;
 
 /***/ },
-/* 329 */
+/* 325 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var MapCache = __webpack_require__(199);
@@ -30317,7 +29915,7 @@
 
 
 /***/ },
-/* 330 */
+/* 326 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -30329,9 +29927,9 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 	
-	var _BrowserDetector = __webpack_require__(328);
+	var _BrowserDetector = __webpack_require__(324);
 	
-	var _MonotonicInterpolant = __webpack_require__(331);
+	var _MonotonicInterpolant = __webpack_require__(327);
 	
 	var _MonotonicInterpolant2 = _interopRequireDefault(_MonotonicInterpolant);
 	
@@ -30417,7 +30015,7 @@
 	}
 
 /***/ },
-/* 331 */
+/* 327 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -30534,7 +30132,7 @@
 	module.exports = exports["default"];
 
 /***/ },
-/* 332 */
+/* 328 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -30552,7 +30150,7 @@
 	
 	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 	
-	var _NativeTypes = __webpack_require__(333);
+	var _NativeTypes = __webpack_require__(329);
 	
 	var NativeTypes = _interopRequireWildcard(_NativeTypes);
 	
@@ -30642,7 +30240,7 @@
 	}
 
 /***/ },
-/* 333 */
+/* 329 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -30656,7 +30254,7 @@
 	exports.TEXT = TEXT;
 
 /***/ },
-/* 334 */
+/* 330 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -30675,6 +30273,408 @@
 	}
 	
 	module.exports = exports['default'];
+
+/***/ },
+/* 331 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _item_types = __webpack_require__(173);
+	
+	var _reactDnd = __webpack_require__(174);
+	
+	var _game = __webpack_require__(294);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var pieceSource = {
+	  beginDrag: function beginDrag(props) {
+	    (0, _game.setSelected)(props);
+	    var piece = { piece: props };
+	    return piece;
+	  },
+	  endDrag: function endDrag(props, monitor, component) {
+	    if (!monitor.didDrop()) {
+	      return;
+	    }
+	
+	    // When dropped on a compatible target, do something
+	    var item = monitor.getItem();
+	    var dropResult = monitor.getDropResult();
+	  }
+	};
+	
+	function collect(connect, monitor) {
+	  return {
+	    connectDragSource: connect.dragSource(),
+	    connectDragPreview: connect.dragPreview(),
+	    isDragging: monitor.isDragging()
+	  };
+	}
+	
+	var Rook = function (_Component) {
+	  _inherits(Rook, _Component);
+	
+	  function Rook() {
+	    _classCallCheck(this, Rook);
+	
+	    return _possibleConstructorReturn(this, (Rook.__proto__ || Object.getPrototypeOf(Rook)).apply(this, arguments));
+	  }
+	
+	  _createClass(Rook, [{
+	    key: 'render',
+	    value: function render() {
+	      var _props = this.props;
+	      var connectDragSource = _props.connectDragSource;
+	      var isDragging = _props.isDragging;
+	
+	      return connectDragSource(_react2.default.createElement(
+	        'div',
+	        { style: {
+	            opacity: isDragging ? 0.5 : 1,
+	            fontSize: '9vmin',
+	            textAlign: 'center',
+	            lineHeight: '10vmin',
+	            color: this.props.color,
+	            backgroundColor: 'transparent',
+	            fontWeight: 'bold',
+	            cursor: 'pointer'
+	          } },
+	        this.props.color === 'white' ? '♖' : '♜'
+	      ));
+	    }
+	  }]);
+	
+	  return Rook;
+	}(_react.Component);
+	
+	Rook.propTypes = {
+	  connectDragSource: _react.PropTypes.func.isRequired,
+	  isDragging: _react.PropTypes.bool.isRequired
+	};
+	
+	exports.default = (0, _reactDnd.DragSource)(_item_types.ItemTypes.ROOK, pieceSource, collect)(Rook);
+
+/***/ },
+/* 332 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _item_types = __webpack_require__(173);
+	
+	var _reactDnd = __webpack_require__(174);
+	
+	var _game = __webpack_require__(294);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var pieceSource = {
+	  beginDrag: function beginDrag(props) {
+	    (0, _game.setSelected)(props);
+	    var piece = { piece: props };
+	    return piece;
+	  },
+	  endDrag: function endDrag(props, monitor, component) {
+	    if (!monitor.didDrop()) {
+	      return;
+	    }
+	
+	    var item = monitor.getItem();
+	    var dropResult = monitor.getDropResult();
+	  }
+	};
+	
+	function collect(connect, monitor) {
+	  return {
+	    connectDragSource: connect.dragSource(),
+	    connectDragPreview: connect.dragPreview(),
+	    isDragging: monitor.isDragging()
+	  };
+	}
+	
+	var Queen = function (_Component) {
+	  _inherits(Queen, _Component);
+	
+	  function Queen() {
+	    _classCallCheck(this, Queen);
+	
+	    return _possibleConstructorReturn(this, (Queen.__proto__ || Object.getPrototypeOf(Queen)).apply(this, arguments));
+	  }
+	
+	  _createClass(Queen, [{
+	    key: 'render',
+	    value: function render() {
+	      var _props = this.props;
+	      var connectDragSource = _props.connectDragSource;
+	      var isDragging = _props.isDragging;
+	
+	
+	      return connectDragSource(_react2.default.createElement(
+	        'div',
+	        { style: {
+	            opacity: isDragging ? 0.5 : 1,
+	            fontSize: '9vmin',
+	            textAlign: 'center',
+	            lineHeight: '10vmin',
+	            color: this.props.color,
+	            backgroundColor: 'transparent',
+	            fontWeight: 'bold',
+	            cursor: 'pointer'
+	          } },
+	        this.props.color === 'white' ? '♕' : '♛'
+	      ));
+	    }
+	  }]);
+	
+	  return Queen;
+	}(_react.Component);
+	
+	Queen.propTypes = {
+	  connectDragSource: _react.PropTypes.func.isRequired,
+	  isDragging: _react.PropTypes.bool.isRequired
+	};
+	
+	exports.default = (0, _reactDnd.DragSource)(_item_types.ItemTypes.QUEEN, pieceSource, collect)(Queen);
+
+/***/ },
+/* 333 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _item_types = __webpack_require__(173);
+	
+	var _reactDnd = __webpack_require__(174);
+	
+	var _game = __webpack_require__(294);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var pieceSource = {
+	  beginDrag: function beginDrag(props) {
+	    (0, _game.setSelected)(props);
+	    var piece = { piece: props };
+	    return piece;
+	  },
+	  endDrag: function endDrag(props, monitor, component) {
+	    if (!monitor.didDrop()) {
+	      return;
+	    }
+	
+	    // When dropped on a compatible target, do something
+	    var item = monitor.getItem();
+	    var dropResult = monitor.getDropResult();
+	  }
+	};
+	
+	function collect(connect, monitor) {
+	  return {
+	    connectDragSource: connect.dragSource(),
+	    connectDragPreview: connect.dragPreview(),
+	    isDragging: monitor.isDragging()
+	  };
+	}
+	
+	var King = function (_Component) {
+	  _inherits(King, _Component);
+	
+	  function King() {
+	    _classCallCheck(this, King);
+	
+	    return _possibleConstructorReturn(this, (King.__proto__ || Object.getPrototypeOf(King)).apply(this, arguments));
+	  }
+	
+	  _createClass(King, [{
+	    key: 'render',
+	    value: function render() {
+	      var _props = this.props;
+	      var connectDragSource = _props.connectDragSource;
+	      var isDragging = _props.isDragging;
+	
+	
+	      return connectDragSource(_react2.default.createElement(
+	        'div',
+	        { style: {
+	            opacity: isDragging ? 0.5 : 1,
+	            fontSize: '9vmin',
+	            textAlign: 'center',
+	            lineHeight: '10vmin',
+	            color: this.props.color,
+	            backgroundColor: 'transparent',
+	            fontWeight: 'bold',
+	            cursor: 'pointer'
+	          } },
+	        this.props.color === 'white' ? '♔' : '♚'
+	      ));
+	    }
+	  }]);
+	
+	  return King;
+	}(_react.Component);
+	
+	King.propTypes = {
+	  connectDragSource: _react.PropTypes.func.isRequired,
+	  isDragging: _react.PropTypes.bool.isRequired
+	};
+	
+	exports.default = (0, _reactDnd.DragSource)(_item_types.ItemTypes.KING, pieceSource, collect)(King);
+
+/***/ },
+/* 334 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _square = __webpack_require__(296);
+	
+	var _square2 = _interopRequireDefault(_square);
+	
+	var _game = __webpack_require__(294);
+	
+	var _item_types = __webpack_require__(173);
+	
+	var _reactDnd = __webpack_require__(174);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var squareTarget = {
+	  canDrop: function canDrop(props) {
+	    return (0, _game.canMove)(props.x, props.y);
+	  },
+	  drop: function drop(props) {
+	    (0, _game.move)(props.x, props.y);
+	  }
+	};
+	
+	function collect(connect, monitor) {
+	  return {
+	    connectDropTarget: connect.dropTarget(),
+	    isOver: monitor.isOver(),
+	    canDrop: monitor.canDrop()
+	  };
+	}
+	
+	var BoardSquare = function (_Component) {
+	  _inherits(BoardSquare, _Component);
+	
+	  function BoardSquare() {
+	    _classCallCheck(this, BoardSquare);
+	
+	    return _possibleConstructorReturn(this, (BoardSquare.__proto__ || Object.getPrototypeOf(BoardSquare)).apply(this, arguments));
+	  }
+	
+	  _createClass(BoardSquare, [{
+	    key: 'renderOverlay',
+	    value: function renderOverlay(color) {
+	      return _react2.default.createElement('div', { style: {
+	          position: 'absolute',
+	          top: 0,
+	          left: 0,
+	          height: '100%',
+	          width: '100%',
+	          zIndex: 1,
+	          opacity: 0.5,
+	          backgroundColor: color
+	        } });
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      var _props = this.props;
+	      var x = _props.x;
+	      var y = _props.y;
+	      var connectDropTarget = _props.connectDropTarget;
+	      var isOver = _props.isOver;
+	      var canDrop = _props.canDrop;
+	
+	      var black = (x + y) % 2 === 1;
+	      return connectDropTarget(_react2.default.createElement(
+	        'div',
+	        { style: { position: 'relative',
+	            width: '100%',
+	            height: '100%' } },
+	        _react2.default.createElement(
+	          _square2.default,
+	          { black: black },
+	          this.props.children
+	        ),
+	        isOver && !canDrop && this.renderOverlay('red'),
+	        !isOver && canDrop && this.renderOverlay('yellow'),
+	        isOver && canDrop && this.renderOverlay('green')
+	      ));
+	    }
+	  }]);
+	
+	  return BoardSquare;
+	}(_react.Component);
+	
+	exports.default = (0, _reactDnd.DropTarget)(_item_types.ItemTypes.PIECES, squareTarget, collect)(BoardSquare);
 
 /***/ },
 /* 335 */
@@ -31479,7 +31479,7 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function() {
-		return new Worker(__webpack_require__.p + "dc651699690adcdaf2d7.worker.js");
+		return new Worker(__webpack_require__.p + "ca3c92ef76afeef3bf24.worker.js");
 	};
 
 /***/ },

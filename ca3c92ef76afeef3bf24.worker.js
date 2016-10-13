@@ -257,7 +257,7 @@
 	
 	    var dx = toX - x;
 	    var dy = toY - y;
-	    return Math.abs(dx) <= 1 && Math.abs(dy) <= 1 && Math.abs(dx) + Math.abs(dy) > 0;
+	    return Math.abs(dx) <= 1 && Math.abs(dy) <= 1 && Math.abs(dx) + Math.abs(dy) > 0 || x === 4 && toX === 6 || toX === 2;
 	  },
 	  checkPawnCaptures: function checkPawnCaptures(toX, toY, pawn, pieces) {
 	    var _pawn = _slicedToArray(pawn, 2);
@@ -770,8 +770,8 @@
 	          }
 	        }
 	      });
-	      if (king.pos[0] === 6 || king.pos[0] === 2) {
-	        value += 100;
+	      if (king.pos[0] === 6) {
+	        value += 200;
 	      }
 	      return value;
 	    }
@@ -784,4 +784,4 @@
 
 /***/ }
 /******/ ]);
-//# sourceMappingURL=dc651699690adcdaf2d7.worker.js.map
+//# sourceMappingURL=ca3c92ef76afeef3bf24.worker.js.map

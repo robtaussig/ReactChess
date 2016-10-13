@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import { ItemTypes } from '../../constants/item_types';
 import { DragSource } from 'react-dnd';
 import { setSelected } from '../../logic/game';
+import { getEmptyImage } from 'react-dnd-html5-backend';
 
 const pieceSource = {
   beginDrag(props) {
@@ -15,7 +16,6 @@ const pieceSource = {
       return;
     }
 
-    // When dropped on a compatible target, do something
     const item = monitor.getItem();
     const dropResult = monitor.getDropResult();
   }
@@ -35,7 +35,7 @@ class Pawn extends Component {
     const { connectDragSource, isDragging } = this.props;
 
     return connectDragSource(
-      <div style={{
+      <div id='dragging' class={isDragging ? 'dragging' : ''} style={{
         opacity: isDragging ? 0.5 : 1,
         fontSize: '9vmin',
         textAlign: 'center',
@@ -45,7 +45,7 @@ class Pawn extends Component {
         fontWeight: 'bold',
         cursor: 'pointer'
       }}>
-        {this.props.color === 'white' ? '♙' : '♟'}
+        ♟
       </div>
     );
   }

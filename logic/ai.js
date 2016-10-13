@@ -135,8 +135,8 @@ module.exports = {
     const [x, y] = selected;
     const dx = toX - x;
     const dy = toY - y;
-    return (Math.abs(dx) <= 1 && Math.abs(dy) <= 1) &&
-           (Math.abs(dx) + Math.abs(dy) > 0);
+    return ((Math.abs(dx) <= 1 && Math.abs(dy) <= 1) &&
+           (Math.abs(dx) + Math.abs(dy) > 0)) || (x === 4 && (toX === 6) || (toX === 2));
   },
 
   checkPawnCaptures (toX, toY, pawn, pieces) {

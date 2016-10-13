@@ -214,8 +214,8 @@ class BoardNode {
         }
       }
     });
-    if ((king.pos[0] === 6) || (king.pos[0] === 2)) {
-      value += 100;
+    if (king.pos[0] === 6) {
+      value += 200;
     }
     return value;
   }
