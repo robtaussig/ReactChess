@@ -28046,13 +28046,9 @@
 	          'div',
 	          { className: 'container' },
 	          _react2.default.createElement(
-	            'a',
-	            { id: 'linked-in', href: 'https://www.linkedin.com/in/robert-taussig-9439426' },
-	            _react2.default.createElement(
-	              'div',
-	              { className: 'title' },
-	              'ReactChess by Robert Taussig'
-	            )
+	            'div',
+	            { className: 'title' },
+	            'ReactChess by Robert Taussig'
 	          ),
 	          _react2.default.createElement(
 	            'div',

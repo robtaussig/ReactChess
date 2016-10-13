@@ -60,9 +60,7 @@ export default class Home extends Component {
     return (
       <div>
         <div className="container">
-          <a id="linked-in" href="https://www.linkedin.com/in/robert-taussig-9439426">
-            <div className="title">ReactChess by Robert Taussig</div>
-          </a>
+          <div className="title">ReactChess by Robert Taussig</div>
           <div id="git"><a href="https://github.com/robtaussig/ReactChess">
             GitHub Repo
           </a></div>
