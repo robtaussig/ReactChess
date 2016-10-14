@@ -136,7 +136,8 @@ module.exports = {
     const dx = toX - x;
     const dy = toY - y;
     return ((Math.abs(dx) <= 1 && Math.abs(dy) <= 1) &&
-           (Math.abs(dx) + Math.abs(dy) > 0)) || (x === 4 && (toX === 6) || (toX === 2));
+           (Math.abs(dx) + Math.abs(dy) > 0)) ||
+           (x === 4 && y === 0 && ((toX === 6) || (toX === 2)));
   },
 
   checkPawnCaptures (toX, toY, pawn, pieces) {
@@ -321,6 +322,7 @@ module.exports = {
   },
 
   checkCastle (pos, toX, toY, pieces) {
+    if (pos[0] !== 4) return false;
     let king = [pos[1],pos[0]];
     let color = pieces[pos[1]][pos[0]][0][0];
     if (toX === 2 && toY === pos[1] && this.checkObstruction(toX - 1, toY, pos, pieces) &&

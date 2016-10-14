@@ -257,7 +257,7 @@
 	
 	    var dx = toX - x;
 	    var dy = toY - y;
-	    return Math.abs(dx) <= 1 && Math.abs(dy) <= 1 && Math.abs(dx) + Math.abs(dy) > 0 || x === 4 && toX === 6 || toX === 2;
+	    return Math.abs(dx) <= 1 && Math.abs(dy) <= 1 && Math.abs(dx) + Math.abs(dy) > 0 || x === 4 && y === 0 && (toX === 6 || toX === 2);
 	  },
 	  checkPawnCaptures: function checkPawnCaptures(toX, toY, pawn, pieces) {
 	    var _pawn = _slicedToArray(pawn, 2);
@@ -430,6 +430,7 @@
 	    return true;
 	  },
 	  checkCastle: function checkCastle(pos, toX, toY, pieces) {
+	    if (pos[0] !== 4) return false;
 	    var king = [pos[1], pos[0]];
 	    var color = pieces[pos[1]][pos[0]][0][0];
 	    if (toX === 2 && toY === pos[1] && this.checkObstruction(toX - 1, toY, pos, pieces) && this.notInCheck(toX + 1, toY, pos, pieces) && this.findAttackers(king, pieces, color === 'w' ? 'b' : 'w', false).length === 0) {
@@ -784,4 +785,4 @@
 
 /***/ }
 /******/ ]);
-//# sourceMappingURL=ca3c92ef76afeef3bf24.worker.js.map
+//# sourceMappingURL=77681534b4f3bb6469f8.worker.js.map
