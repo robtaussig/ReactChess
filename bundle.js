@@ -31475,7 +31475,7 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function() {
-		return new Worker(__webpack_require__.p + "77681534b4f3bb6469f8.worker.js");
+		return new Worker(__webpack_require__.p + "c6cf5d75966a44b99a71.worker.js");
 	};
 
 /***/ },

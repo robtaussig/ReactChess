@@ -323,8 +323,12 @@ module.exports = {
 
   checkCastle (pos, toX, toY, pieces) {
     if (pos[0] !== 4) return false;
+
     let king = [pos[1],pos[0]];
     let color = pieces[pos[1]][pos[0]][0][0];
+    if (this.findAttackers(king,pieces,color==='w'?'b':'w',false).length > 0) {
+      return false;
+    }
     if (toX === 2 && toY === pos[1] && this.checkObstruction(toX - 1, toY, pos, pieces) &&
         this.notInCheck(toX + 1, toY, pos, pieces) &&
         this.findAttackers(king, pieces, color === 'w' ? 'b' : 'w',false).length === 0) {
