@@ -35,7 +35,7 @@ class Pawn extends Component {
     const { connectDragSource, isDragging } = this.props;
 
     return connectDragSource(
-      <div id='dragging' class={isDragging ? 'dragging' : ''} style={{
+      <div style={{
         opacity: isDragging ? 0.5 : 1,
         fontSize: '9vmin',
         textAlign: 'center',

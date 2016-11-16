@@ -28883,7 +28883,7 @@
 	
 	      return connectDragSource(_react2.default.createElement(
 	        'div',
-	        { id: 'dragging', 'class': isDragging ? 'dragging' : '', style: {
+	        { style: {
 	            opacity: isDragging ? 0.5 : 1,
 	            fontSize: '9vmin',
 	            textAlign: 'center',
@@ -32053,7 +32053,7 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function() {
-		return new Worker(__webpack_require__.p + "2a0218e6d6670b5f72af.worker.js");
+		return new Worker(__webpack_require__.p + "d176e9d936e11a8b17cc.worker.js");
 	};
 
 /***/ },
