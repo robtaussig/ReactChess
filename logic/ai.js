@@ -4,7 +4,7 @@ module.exports = {
   specialMoves: {},
 
   findAllPieces (board,color) {
-    let converted = new Ai(board);
+    let converted = new Ai(board,this.specialMoves);
     console.log(converted.bishopMoves(44));
     let returnPieces = [];
     board.forEach((row,i)=>{

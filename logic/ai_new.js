@@ -1,6 +1,6 @@
 export default class Ai {
-  constructor (board) {
-    this.specialMoves = {};
+  constructor (board,specialMoves) {
+    this.specialMoves = specialMoves;
     this.board = this.convertBoard(board);
   }
 
@@ -94,7 +94,35 @@ export default class Ai {
   }
 
   pawnMoves (position, board = this.board) {
+    let allMoves = [];
+    let color = this.color(position,board);
+    let legalDirs = [
+      10 * (color === 'w' ? - 1 : 1),
+      20 * (color === 'w' ? - 1 : 1)
+    ];
+    for (let i = 0; i < legalDirs.length; i++) {
+      let currentPos = position + legalDirs[i];
+      if (this.checkObstruction(currentPos)) {
+        allMoves.push(currentPos);
+      }
+    }
 
+    let captureDirs = [
+      11 * (color === 'w' ? - 1 : 1),
+      9 * (color === 'w' ? - 1 : 1)
+    ];
+    for (let i = 0; i < captureDirs; i++) {
+      let capturePos = position + captureDirs[i];
+      if (this.inBounds(capturePos) && this.canTake(color, capturePos)) {
+        allMoves.push(capturePos);
+      }
+    }
+    // Remember to test again for en passant
+    if (this.specialMoves.enPassant &&
+      Math.abs(this.specialMoves - position) === 1) {
+        allMoves.push(this.specialMoves.enPassant +
+          (10 * color === 'w' ? -1 : 1));
+    }
   }
 
   rookMoves (position, board = this.board) {
