@@ -56,8 +56,23 @@ export default class Ai {
 
   inCheck (move, board = this.board, color = 'b') {
     let newBoard = this.makeMove(move, board);
-    let kingPos = this.findPiece('k', color);
+    let kingPos = this.findPiece('k', color, board)[0];
     return !this.hasAttackers(kingPos, newBoard, color);
+  }
+
+  findPiece (piece, color, board = this.board) {
+    if (color === 'b') piece = piece.toUpperCase();
+    let pos = [];
+    for (let i = 0; i < 100; i++) {
+      if (board[i] === piece) {
+        if (piece === 'K' || piece === 'k' ||
+          piece === 'Q' || piece === 'q') {
+            return [i];
+          }
+        pos.push(i);
+      }
+    }
+    return pos;
   }
 
   hasAttackers (position, board = this.board, color = 'b') {
