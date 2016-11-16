@@ -211,7 +211,7 @@ export default class Ai {
       11 * (color === 'w' ? - 1 : 1),
       9 * (color === 'w' ? - 1 : 1)
     ];
-    for (let i = 0; i < captureDirs; i++) {
+    for (let i = 0; i < captureDirs.length; i++) {
       let capturePos = position + captureDirs[i];
       if (this.inBounds(capturePos) && this.canTake(color, capturePos)) {
         allMoves.push([position,capturePos]);
