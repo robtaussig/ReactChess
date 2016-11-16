@@ -1,7 +1,11 @@
+import Ai from './ai_new.js';
+
 module.exports = {
   specialMoves: {},
 
   findAllPieces (board,color) {
+    let converted = new Ai(board);
+    console.log(converted.board);
     let returnPieces = [];
     board.forEach((row,i)=>{
       row.forEach((square,j)=>{
