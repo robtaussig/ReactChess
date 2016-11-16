@@ -5,7 +5,9 @@ module.exports = {
 
   findAllPieces (board,color) {
     let converted = new Ai(board,this.specialMoves);
-    console.log(converted.bishopMoves(44));
+    let legalMoves = converted.allLegalMoves(
+      converted.findAllPieces('b')
+    );
     let returnPieces = [];
     board.forEach((row,i)=>{
       row.forEach((square,j)=>{

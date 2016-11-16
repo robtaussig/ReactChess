@@ -49,9 +49,28 @@ export default class Ai {
   allLegalMoves (positions, board = this.board) {
     let moves = [];
     for (let i = 0; i < positions.length; i++) {
-      moves.concat(this.findAllLegalMovesByPiece(positions[i],board));
+      moves = moves.concat(this.findAllLegalMovesByPiece(positions[i],board));
     }
-    return moves;
+    return moves.filter(move => !this.inCheck(move,board));
+  }
+
+  inCheck (move, board) {
+    let newBoard = this.makeMove(move,board);
+    
+  }
+
+  makeMove (move, board = this.board) {
+    let newBoard = "";
+    for (let i = 0; i < 100; i++) {
+      if (i === move[0]) {
+        newBoard += '-';
+      } else if (i === move[1]) {
+        newBoard += board[move[0]];
+      } else {
+        newBoard += board[i];
+      }
+    }
+    return newBoard;
   }
 
   findAllLegalMovesByPiece (position, board = this.board) {
@@ -89,8 +108,8 @@ export default class Ai {
     return board[pos] === '-' && this.inBounds(pos);
   }
 
-  canTake (color, pos) {
-    return this.color(pos) !== color;
+  canTake (color, pos, board = this.board) {
+    return this.inBounds(pos) && this.color(pos) !== color && board[pos] !== '-';
   }
 
   pawnMoves (position, board = this.board) {
@@ -103,7 +122,7 @@ export default class Ai {
     for (let i = 0; i < legalDirs.length; i++) {
       let currentPos = position + legalDirs[i];
       if (this.checkObstruction(currentPos)) {
-        allMoves.push(currentPos);
+        allMoves.push([position,currentPos]);
       }
     }
 
@@ -114,15 +133,16 @@ export default class Ai {
     for (let i = 0; i < captureDirs; i++) {
       let capturePos = position + captureDirs[i];
       if (this.inBounds(capturePos) && this.canTake(color, capturePos)) {
-        allMoves.push(capturePos);
+        allMoves.push([position,capturePos]);
       }
     }
     // Remember to test again for en passant
     if (this.specialMoves.enPassant &&
       Math.abs(this.specialMoves - position) === 1) {
-        allMoves.push(this.specialMoves.enPassant +
-          (10 * color === 'w' ? -1 : 1));
+        allMoves.push([position,this.specialMoves.enPassant +
+          (10 * color === 'w' ? -1 : 1)]);
     }
+    return allMoves;
   }
 
   rookMoves (position, board = this.board) {
@@ -132,11 +152,11 @@ export default class Ai {
     for (let i = 0; i < legalDirs.length; i++) {
       let currentPos = position + legalDirs[i];
       while (this.checkObstruction(currentPos)) {
-        allMoves.push(currentPos);
+        allMoves.push([position,currentPos]);
         currentPos += legalDirs[i];
       }
       if (this.inBounds(currentPos) && this.canTake(color, currentPos)) {
-        allMoves.push(currentPos);
+        allMoves.push([position,currentPos]);
       }
     }
     return allMoves;
@@ -150,7 +170,7 @@ export default class Ai {
       let currentPos = position + legalDirs[i];
       if (this.checkObstruction(currentPos) ||
         this.canTake(color, currentPos)) {
-          allMoves.push(currentPos);
+          allMoves.push([position,currentPos]);
       }
     }
     return allMoves;
@@ -163,11 +183,11 @@ export default class Ai {
     for (let i = 0; i < legalDirs.length; i++) {
       let currentPos = position + legalDirs[i];
       while (this.checkObstruction(currentPos)) {
-        allMoves.push(currentPos);
+        allMoves.push([position,currentPos]);
         currentPos += legalDirs[i];
       }
       if (this.inBounds(currentPos) && this.canTake(color, currentPos)) {
-        allMoves.push(currentPos);
+        allMoves.push([position,currentPos]);
       }
     }
     return allMoves;
@@ -181,7 +201,7 @@ export default class Ai {
       let currentPos = position + legalDirs[i];
       if (this.checkObstruction(currentPos) ||
         this.canTake(color, currentPos)) {
-          allMoves.push(currentPos);
+          allMoves.push([position,currentPos]);
       }
     }
     return allMoves;
@@ -194,11 +214,11 @@ export default class Ai {
     for (let i = 0; i < legalDirs.length; i++) {
       let currentPos = position + legalDirs[i];
       while (this.checkObstruction(currentPos)) {
-        allMoves.push(currentPos);
+        allMoves.push([position,currentPos]);
         currentPos += legalDirs[i];
       }
       if (this.inBounds(currentPos) && this.canTake(color, currentPos)) {
-        allMoves.push(currentPos);
+        allMoves.push([position,currentPos]);
       }
     }
     return allMoves;
