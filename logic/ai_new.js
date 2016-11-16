@@ -7,8 +7,9 @@ export default class Ai {
   //RNBQKBNRPPPPPPPP----------------
   //----------------pppppppprnbqkbnr
   convertBoard (board) {
-    let boardString = "";
+    let boardString = '----------';
     for (let i = 0, n = board.length; i < n; i++) {
+      boardString += '-';
       for (let j = 0, m = board[i].length; j < m; j++) {
         let piece = board[i][j][0];
         let type = piece.split('-')[1];
@@ -20,76 +21,59 @@ export default class Ai {
           boardString += type;
         }
       }
+      boardString += '-';
     }
+    boardString += '----------';
     return boardString;
   }
 
-  color (piece, color) {
-    if (color === 'w') {
-      return (/[a-z]/.test(piece));
-    } else if (color === 'b') {
-      return (/[A-Z]/.test(piece));
+  color (piece) {
+    if (/[a-z]/.test(piece)) {
+      return 'w';
+    } else {
+      return 'b';
     }
-    return false;
   }
 
-  findAllPieces (board, color) {
+  findAllPieces (color, board = this.board) {
     let positions = [];
     for (let i = 0, n = board.length; i < n; i++) {
       let piece = board[i];
-      if (piece !== '-' && this.color(piece,color)) {
+      if (piece !== '-' && this.color(piece) === color) {
         positions.push(i);
       }
     }
     return positions;
   }
 
-  allLegalMoves (board,positions) {
+  allLegalMoves (positions, board = this.board) {
     let moves = [];
     for (let i = 0; i < positions.length; i++) {
-      moves.concat(this.findAllLegalMovesByPiece(board,positions[i]));
+      moves.concat(this.findAllLegalMovesByPiece(positions[i],board));
     }
     return moves;
   }
 
-  findAllLegalMovesByPiece (board,position) {
+  findAllLegalMovesByPiece (position, board = this.board) {
     let allMoves;
-    switch (board[position]) {
-      case 'P':
-        allMoves = this.pawnMoves(board,position,'b');
-        break;
+    switch (board[position].toLowerCase()) {
       case 'p':
-        allMoves = this.pawnMoves(board,position,'w');
-        break;
-      case 'R':
-        allMoves = this.rookMoves(board,position,'b');
+        allMoves = this.pawnMoves(position, board);
         break;
       case 'r':
-        allMoves = this.rookMoves(board,position,'w');
-        break;
-      case 'N':
-        allMoves = this.knightMoves(board,position,'b');
+        allMoves = this.rookMoves(position, board);
         break;
       case 'n':
-        allMoves = this.knightMoves(board,position,'w');
-        break;
-      case 'B':
-        allMoves = this.bishopMoves(board,position,'b');
+        allMoves = this.knightMoves(position, board);
         break;
       case 'b':
-        allMoves = this.bishopMoves(board,position,'w');
-        break;
-      case 'K':
-        allMoves = this.kingMoves(board,position,'b');
+        allMoves = this.bishopMoves(position, board);
         break;
       case 'k':
-        allMoves = this.kingMoves(board,position,'w');
-        break;
-      case 'Q':
-        allMoves = this.queenMoves(board,position,'b');
+        allMoves = this.kingMoves(position, board);
         break;
       case 'q':
-        allMoves = this.queenMoves(board,position,'w');
+        allMoves = this.queenMoves(position, board);
         break;
       default:
         allMoves = [];
@@ -97,27 +81,52 @@ export default class Ai {
     return allMoves;
   }
 
-  pawnMoves (board, position, color) {
+  inBounds (pos) {
+    return (pos > 9 && pos < 90 && pos % 10 !== 0 && pos % 10 !== 9);
+  }
+
+  checkObstruction (pos, board = this.board) {
+    return board[pos] === '-' && this.inBounds(pos);
+  }
+
+  canTake (color, pos) {
+    return this.color(pos) !== color;
+  }
+
+  pawnMoves (position, board = this.board) {
 
   }
 
-  rookMoves (board, position, color) {
+  rookMoves (position, board = this.board) {
+    let allMoves = [];
+    let legalDirs = [-1,1,-10,10];
+    let color = this.color(board[position]);
+    for (let i = 0; i < 4; i++) {
+      let currentPos = position + legalDirs[i];
+      while (this.checkObstruction(currentPos)) {
+        allMoves.push(currentPos);
+        currentPos += legalDirs[i];
+      }
+      if (this.inBounds(currentPos) && this.canTake(color, currentPos)) {
+        allMoves.push(currentPos);
+      }
+    }
+    return allMoves;
+  }
+
+  knightMoves (position, board = this.board) {
 
   }
 
-  knightMoves (board, position, color) {
+  bishopMoves (position, board = this.board) {
 
   }
 
-  bishopMoves (board, position, color) {
+  kingMoves (position, board = this.board) {
 
   }
 
-  kingMoves (board, position, color) {
-
-  }
-
-  QueenMoves (board, position, color) {
+  QueenMoves (position, board = this.board) {
 
   }
 
