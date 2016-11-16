@@ -146,11 +146,34 @@ export default class Ai {
   }
 
   kingMoves (position, board = this.board) {
-
+    let allMoves = [];
+    let legalDirs = [-1,-11,-10,-9,1,11,10,9];
+    let color = this.color(position,board);
+    for (let i = 0; i < legalDirs.length; i++) {
+      let currentPos = position + legalDirs[i];
+      if (this.checkObstruction(currentPos) ||
+        this.canTake(color, currentPos)) {
+          allMoves.push(currentPos);
+      }
+    }
+    return allMoves;
   }
 
   queenMoves (position, board = this.board) {
-
+    let allMoves = [];
+    let legalDirs = [-1,1,-10,10,-11,11,-9,9];
+    let color = this.color(position,board);
+    for (let i = 0; i < legalDirs.length; i++) {
+      let currentPos = position + legalDirs[i];
+      while (this.checkObstruction(currentPos)) {
+        allMoves.push(currentPos);
+        currentPos += legalDirs[i];
+      }
+      if (this.inBounds(currentPos) && this.canTake(color, currentPos)) {
+        allMoves.push(currentPos);
+      }
+    }
+    return allMoves;
   }
 
 }
