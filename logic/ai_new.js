@@ -27,8 +27,8 @@ export default class Ai {
     return boardString;
   }
 
-  color (piece) {
-    if (/[a-z]/.test(piece)) {
+  color (pos,board = this.board) {
+    if (/[a-z]/.test(board[pos])) {
       return 'w';
     } else {
       return 'b';
@@ -39,7 +39,7 @@ export default class Ai {
     let positions = [];
     for (let i = 0, n = board.length; i < n; i++) {
       let piece = board[i];
-      if (piece !== '-' && this.color(piece) === color) {
+      if (piece !== '-' && this.color(i) === color) {
         positions.push(i);
       }
     }
@@ -100,8 +100,8 @@ export default class Ai {
   rookMoves (position, board = this.board) {
     let allMoves = [];
     let legalDirs = [-1,1,-10,10];
-    let color = this.color(board[position]);
-    for (let i = 0; i < 4; i++) {
+    let color = this.color(position,board);
+    for (let i = 0; i < legalDirs.length; i++) {
       let currentPos = position + legalDirs[i];
       while (this.checkObstruction(currentPos)) {
         allMoves.push(currentPos);
@@ -115,18 +115,41 @@ export default class Ai {
   }
 
   knightMoves (position, board = this.board) {
-
+    let allMoves = [];
+    let legalDirs = [-12,-21,-19,-8,12,21,19,8];
+    let color = this.color(position,board);
+    for (let i = 0; i < legalDirs.length; i++) {
+      let currentPos = position + legalDirs[i];
+      if (this.checkObstruction(currentPos) ||
+        this.canTake(color, currentPos)) {
+          allMoves.push(currentPos);
+      }
+    }
+    return allMoves;
   }
 
   bishopMoves (position, board = this.board) {
-
+    let allMoves = [];
+    let legalDirs = [-11,11,-9,9];
+    let color = this.color(position,board);
+    for (let i = 0; i < legalDirs.length; i++) {
+      let currentPos = position + legalDirs[i];
+      while (this.checkObstruction(currentPos)) {
+        allMoves.push(currentPos);
+        currentPos += legalDirs[i];
+      }
+      if (this.inBounds(currentPos) && this.canTake(color, currentPos)) {
+        allMoves.push(currentPos);
+      }
+    }
+    return allMoves;
   }
 
   kingMoves (position, board = this.board) {
 
   }
 
-  QueenMoves (position, board = this.board) {
+  queenMoves (position, board = this.board) {
 
   }
 

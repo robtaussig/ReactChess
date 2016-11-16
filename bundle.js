@@ -32053,7 +32053,7 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function() {
-		return new Worker(__webpack_require__.p + "9658365d4495f23cd59d.worker.js");
+		return new Worker(__webpack_require__.p + "1ae3a249735fd701c895.worker.js");
 	};
 
 /***/ },

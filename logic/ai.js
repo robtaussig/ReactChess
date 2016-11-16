@@ -5,7 +5,7 @@ module.exports = {
 
   findAllPieces (board,color) {
     let converted = new Ai(board);
-    console.log(converted.board.length);
+    console.log(converted.bishopMoves(44));
     let returnPieces = [];
     board.forEach((row,i)=>{
       row.forEach((square,j)=>{
