@@ -285,7 +285,56 @@ export default class Ai {
           allMoves.push([position,currentPos]);
       }
     }
+    allMoves = allMoves.concat(this.checkCastle(board, position));
     return allMoves;
+  }
+
+  emptyBetween (board,from, to) {
+    // Check horizontal line
+    if (Math.floor(from / 10) === Math.floor(to / 10)) {
+      for (let i = Math.min(from, to); i <= Math.max(from, to); i++) {
+        if (board[i] !== '-') return false;
+      }
+      // Check vertical line
+    } else if (from % 10 === to % 10) {
+      for (let i = Math.min(from, to); i <= Math.max(from, to); i += 10) {
+        if (board[i] !== '-') return false;
+      }
+    } else {
+      // Check diagonal
+      if (Math.abs(from - to) % 11 === 0) {
+        for (let i = Math.min(from, to); i <= Math.max(from, to); i += 11) {
+          if (board[i] !== '-') return false;
+        }
+      } else if (Math.abs(from - to) % 9 === 0) {
+        for (let i = Math.min(from, to); i <= Math.max(from, to); i += 9) {
+          if (board[i] !== '-') return false;
+        }
+      }
+    }
+
+    return true;
+  }
+
+  checkCastle (board, position) {
+    let moves = [];
+    let color = this.board[position] === 15 ? 'b' : 'w';
+    if (this.specialMoves.queenSideCastle) {
+      if (this.emptyBetween(board, position - 1, 12) && color === 'b') {
+        moves.push([position,13]);
+      } else if (this.emptyBetween(board, position - 1, 82)){
+        moves.push([position, 83]);
+      }
+    }
+
+    if (this.specialMoves.kingSideCastle) {
+      if (this.emptyBetween(board, position + 1, 17) && color === 'b') {
+        moves.push([position,17]);
+      } else if (this.emptyBetween(board, position + 1, 87)){
+        moves.push([position, 87]);
+      }
+    }
+    return moves;
   }
 
   queenMoves (position, board = this.board) {

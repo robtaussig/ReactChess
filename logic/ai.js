@@ -8,7 +8,6 @@ module.exports = {
     let legalMoves = converted.allLegalMoves(
       converted.findAllPieces('b')
     );
-    debugger
     let returnPieces = [];
     board.forEach((row,i)=>{
       row.forEach((square,j)=>{
