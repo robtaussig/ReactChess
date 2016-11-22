@@ -58,31 +58,49 @@ export default class BoardEval {
   }
 
   pawnPosition (pos, board) {
-    return this.central(pos) * MATERIAL[board[pos]];
+    let vulnerability = this.vulnerability(pos, board);
+    return this.central(pos) * MATERIAL[board[pos]] - vulnerability;
   }
 
   rookPosition (pos, board) {
-    return this.ai.rookMoves(pos, board).length * MATERIAL[board[pos]] * 0.02;
+    let vulnerability = this.vulnerability(pos, board);
+    return this.ai.rookMoves(pos, board).length *
+      MATERIAL[board[pos]] * 0.02 - vulnerability;
   }
 
-  inBounds (pos) {
-    return (pos > 9 && pos < 90 && pos % 10 !== 0 && pos % 10 !== 9);
-  }
 
   knightPosition (pos, board) {
-    return this.central(pos) * MATERIAL[board[pos]];
+    let vulnerability = this.vulnerability(pos, board);
+    return this.central(pos) * MATERIAL[board[pos]] - vulnerability;
   }
 
   bishopPosition (pos, board) {
-    return this.ai.bishopMoves(pos, board).length * MATERIAL[board[pos]] * 0.02;
+    let vulnerability = this.vulnerability(pos, board);
+    return this.ai.bishopMoves(pos, board).length *
+      MATERIAL[board[pos]] * 0.02 - vulnerability;
   }
 
   queenPosition (pos, board) {
-    return this.ai.queenMoves(pos, board).length * MATERIAL[board[pos]] * 0.02;
+    let vulnerability = this.vulnerability(pos, board);
+    return this.ai.queenMoves(pos, board).length *
+      MATERIAL[board[pos]] * 0.02 - vulnerability;
   }
 
   kingPosition (pos, board) {
     return 0;
+  }
+
+  vulnerability (pos, board) {
+    if (this.ai.color(pos, board) !== this.color) return 0;
+    let value = MATERIAL[board[pos]] * (this.ai.color(pos, board) === 'w' ? 1 : -1);
+    let color = this.ai.color(pos, board);
+    let leastValuableAttacker = this.ai.hasAttackers(pos, board, color);
+    if (leastValuableAttacker) {
+      let defended = Boolean(this.ai.hasAttackers(pos, board, color === 'w' ? 'b' : 'w'));
+      return Math.max(0, defended ? value - leastValuableAttacker : value) * (color === 'w' ? 1 : -1);
+    } else {
+      return 0;
+    }
   }
 
   piecePosition (pos, board) {

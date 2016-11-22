@@ -56,8 +56,8 @@ export default class Ai {
 
   inCheck (move, board = this.board, color = 'b') {
     let newBoard = this.makeMove(move, board);
-    let kingPos = this.findPiece('k', color, board)[0];
-    return this.hasAttackers(kingPos, newBoard, color);
+    let kingPos = this.findPiece('k', color, newBoard)[0];
+    return Boolean(this.hasAttackers(kingPos, newBoard, color));
   }
 
   findPiece (piece, color, board = this.board) {
@@ -76,6 +76,22 @@ export default class Ai {
   }
 
   hasAttackers (position, board = this.board, color = 'b') {
+
+    let queenCheck = false;
+
+    let pawnChecks = [
+      11 * (color === 'w' ? - 1 : 1),
+      9 * (color === 'w' ? - 1 : 1)
+    ];
+    for (let i = 0; i < pawnChecks.length; i++) {
+      let currentPos = position + pawnChecks[i];
+      let piece = board[currentPos] ? board[currentPos].toLowerCase() : '-';
+      if (this.inBounds(currentPos) && piece === 'p' &&
+        this.color(currentPos,board) !== color) {
+          return 100;
+      }
+    }
+
     let bishopsQueensCheck = [-11,-9,11,9];
     for (let i = 0; i < bishopsQueensCheck.length; i++) {
       let currentPos = position + bishopsQueensCheck[i];
@@ -85,7 +101,21 @@ export default class Ai {
       let piece = board[currentPos] ? board[currentPos].toLowerCase() : '-';
       if (this.inBounds(currentPos) && (piece === 'b' || piece === 'q') &&
         this.color(currentPos,board) !== color) {
-          return true;
+          if (piece === 'b') {
+            return 300;
+          } else {
+            queenCheck = true;
+          }
+      }
+    }
+
+    let knightChecks = [-12,-21,-19,-8,12,21,19,8];
+    for (let i = 0; i < knightChecks.length; i++) {
+      let currentPos = position + knightChecks[i];
+      let piece = board[currentPos] ? board[currentPos].toLowerCase() : '-';
+      if (this.inBounds(currentPos) && piece === 'n' &&
+        this.color(currentPos,board) !== color) {
+          return 300;
       }
     }
 
@@ -98,30 +128,11 @@ export default class Ai {
       let piece = board[currentPos] ? board[currentPos].toLowerCase() : '-';
       if (this.inBounds(currentPos) && (piece === 'r' || piece === 'q') &&
         this.color(currentPos,board) !== color) {
-          return true;
-      }
-    }
-
-    let knightChecks = [-12,-21,-19,-8,12,21,19,8];
-    for (let i = 0; i < knightChecks.length; i++) {
-      let currentPos = position + knightChecks[i];
-      let piece = board[currentPos] ? board[currentPos].toLowerCase() : '-';
-      if (this.inBounds(currentPos) && piece === 'n' &&
-        this.color(currentPos,board) !== color) {
-          return true;
-      }
-    }
-
-    let pawnChecks = [
-      11 * (color === 'w' ? - 1 : 1),
-      9 * (color === 'w' ? - 1 : 1)
-    ];
-    for (let i = 0; i < pawnChecks.length; i++) {
-      let currentPos = position + pawnChecks[i];
-      let piece = board[currentPos] ? board[currentPos].toLowerCase() : '-';
-      if (this.inBounds(currentPos) && piece === 'p' &&
-        this.color(currentPos,board) !== color) {
-          return true;
+          if (piece === 'r') {
+            return 500;
+          } else {
+            queenCheck = true;
+          }
       }
     }
 
@@ -131,11 +142,11 @@ export default class Ai {
       let piece = board[currentPos] ? board[currentPos].toLowerCase() : '-';
       if (this.inBounds(currentPos) && piece === 'k' &&
         this.color(currentPos,board) !== color) {
-          return true;
+          return 1000;
       }
     }
 
-    return false;
+    return queenCheck ? 900 : false;
   }
 
   makeMove (move, board = this.board) {
