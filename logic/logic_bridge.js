@@ -18,7 +18,7 @@ module.exports = {
       if (currentNode.checkmate) {
         return {move: currentNode.move, checkmate: true};
       } else {
-        bestMove = bestMove ? (currentNode.score > bestMove.score ?
+        bestMove = bestMove ? (currentNode.score < bestMove.score ?
           currentNode : bestMove) : currentNode;
       }
     }

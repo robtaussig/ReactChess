@@ -35,8 +35,8 @@ export default class BoardEval {
     let positionalScore = 0;
     for (let i = 0, n = board.length; i < n; i++) {
       let piece = board[i];
-      materialScore += (color === 'w' ? MATERIAL[piece] : -MATERIAL[piece]);
-      positionalScore += this.piecePosition(i,board) * (color === 'w' ? 1 : -1);
+      materialScore += MATERIAL[piece];
+      positionalScore += this.piecePosition(i,board);
     }
     return materialScore + positionalScore;
   }
@@ -59,31 +59,32 @@ export default class BoardEval {
 
   pawnPosition (pos, board) {
     let vulnerability = this.vulnerability(pos, board);
-    return this.central(pos) * MATERIAL[board[pos]] - vulnerability;
+    return (this.central(pos) * MATERIAL[board[pos]] * 0.3) - vulnerability;
   }
 
   rookPosition (pos, board) {
     let vulnerability = this.vulnerability(pos, board);
-    return this.ai.rookMoves(pos, board).length *
-      MATERIAL[board[pos]] * 0.02 - vulnerability;
+    return (this.ai.rookMoves(pos, board).length *
+      MATERIAL[board[pos]] * 0.05) - vulnerability;
   }
 
 
   knightPosition (pos, board) {
     let vulnerability = this.vulnerability(pos, board);
-    return this.central(pos) * MATERIAL[board[pos]] - vulnerability;
+    return (this.ai.knightMoves(pos, board).length * this.central(pos) *
+      MATERIAL[board[pos]] * 0.1) - vulnerability;
   }
 
   bishopPosition (pos, board) {
     let vulnerability = this.vulnerability(pos, board);
-    return this.ai.bishopMoves(pos, board).length *
-      MATERIAL[board[pos]] * 0.02 - vulnerability;
+    return (this.ai.bishopMoves(pos, board).length *
+      MATERIAL[board[pos]] * 0.05) - vulnerability;
   }
 
   queenPosition (pos, board) {
     let vulnerability = this.vulnerability(pos, board);
-    return this.ai.queenMoves(pos, board).length *
-      MATERIAL[board[pos]] * 0.02 - vulnerability;
+    return (this.ai.queenMoves(pos, board).length *
+      MATERIAL[board[pos]] * 0.03) - vulnerability;
   }
 
   kingPosition (pos, board) {
@@ -92,12 +93,15 @@ export default class BoardEval {
 
   vulnerability (pos, board) {
     if (this.ai.color(pos, board) !== this.color) return 0;
-    let value = MATERIAL[board[pos]] * (this.ai.color(pos, board) === 'w' ? 1 : -1);
+    let value = Math.abs(MATERIAL[board[pos]]);
     let color = this.ai.color(pos, board);
     let leastValuableAttacker = this.ai.hasAttackers(pos, board, color);
     if (leastValuableAttacker) {
-      let defended = Boolean(this.ai.hasAttackers(pos, board, color === 'w' ? 'b' : 'w'));
-      return Math.max(0, defended ? value - leastValuableAttacker : value) * (color === 'w' ? 1 : -1);
+      let defended = Boolean(
+        this.ai.hasAttackers(pos, board, color === 'w' ? 'b' : 'w')
+      );
+      return Math.max(0, defended ? value - leastValuableAttacker : value) *
+        (color === 'w' ? 1 : -1);
     } else {
       return 0;
     }
