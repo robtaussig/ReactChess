@@ -202,7 +202,7 @@ export default class Ai {
     }
     for (let i = 0; i < legalDirs.length; i++) {
       let currentPos = position + legalDirs[i];
-      if (this.checkObstruction(currentPos)) {
+      if (this.checkObstruction(currentPos, board)) {
         allMoves.push([position,currentPos]);
       }
     }
@@ -213,7 +213,7 @@ export default class Ai {
     ];
     for (let i = 0; i < captureDirs.length; i++) {
       let capturePos = position + captureDirs[i];
-      if (this.inBounds(capturePos) && this.canTake(color, capturePos)) {
+      if (this.inBounds(capturePos) && this.canTake(color, capturePos, board)) {
         allMoves.push([position,capturePos]);
       }
     }
@@ -232,11 +232,11 @@ export default class Ai {
     let color = this.color(position,board);
     for (let i = 0; i < legalDirs.length; i++) {
       let currentPos = position + legalDirs[i];
-      while (this.checkObstruction(currentPos)) {
+      while (this.checkObstruction(currentPos, board)) {
         allMoves.push([position,currentPos]);
         currentPos += legalDirs[i];
       }
-      if (this.inBounds(currentPos) && this.canTake(color, currentPos)) {
+      if (this.inBounds(currentPos) && this.canTake(color, currentPos, board)) {
         allMoves.push([position,currentPos]);
       }
     }
@@ -249,8 +249,8 @@ export default class Ai {
     let color = this.color(position,board);
     for (let i = 0; i < legalDirs.length; i++) {
       let currentPos = position + legalDirs[i];
-      if (this.checkObstruction(currentPos) ||
-        this.canTake(color, currentPos)) {
+      if (this.checkObstruction(currentPos, board) ||
+        this.canTake(color, currentPos, board)) {
           allMoves.push([position,currentPos]);
       }
     }
@@ -263,11 +263,11 @@ export default class Ai {
     let color = this.color(position,board);
     for (let i = 0; i < legalDirs.length; i++) {
       let currentPos = position + legalDirs[i];
-      while (this.checkObstruction(currentPos)) {
+      while (this.checkObstruction(currentPos, board)) {
         allMoves.push([position,currentPos]);
         currentPos += legalDirs[i];
       }
-      if (this.inBounds(currentPos) && this.canTake(color, currentPos)) {
+      if (this.inBounds(currentPos) && this.canTake(color, currentPos, board)) {
         allMoves.push([position,currentPos]);
       }
     }
@@ -280,8 +280,8 @@ export default class Ai {
     let color = this.color(position,board);
     for (let i = 0; i < legalDirs.length; i++) {
       let currentPos = position + legalDirs[i];
-      if (this.checkObstruction(currentPos) ||
-        this.canTake(color, currentPos)) {
+      if (this.checkObstruction(currentPos, board) ||
+        this.canTake(color, currentPos, board)) {
           allMoves.push([position,currentPos]);
       }
     }
@@ -343,7 +343,7 @@ export default class Ai {
     let color = this.color(position,board);
     for (let i = 0; i < legalDirs.length; i++) {
       let currentPos = position + legalDirs[i];
-      while (this.checkObstruction(currentPos)) {
+      while (this.checkObstruction(currentPos, board)) {
         allMoves.push([position,currentPos]);
         currentPos += legalDirs[i];
       }

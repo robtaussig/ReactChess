@@ -1,2 +1,4 @@
 node_modules/
 tmp/
+*worker.js
+*worker.js.map

@@ -36,7 +36,7 @@ export default class BoardEval {
     for (let i = 0, n = board.length; i < n; i++) {
       let piece = board[i];
       materialScore += (color === 'w' ? MATERIAL[piece] : -MATERIAL[piece]);
-      positionalScore += this.piecePosition(i,board);
+      positionalScore += this.piecePosition(i,board) * (color === 'w' ? 1 : -1);
     }
     return materialScore + positionalScore;
   }
