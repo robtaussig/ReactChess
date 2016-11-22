@@ -22,8 +22,13 @@ module.exports = {
           currentNode : bestMove) : currentNode;
       }
     }
+    return {move: this.convert(bestMove.move)};
+  },
 
-    return {move: bestMove.move};
+  convert (move) {
+    let from = [(move[0] % 10) - 1, Math.floor(move[0] / 10) - 1];
+    let to = [(move[1] % 10) - 1, Math.floor(move[1] / 10) - 1];
+    return [from,to];
   }
 
   // findBestMove (board,specMoves,depth) {
