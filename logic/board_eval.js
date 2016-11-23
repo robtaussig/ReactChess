@@ -59,7 +59,16 @@ export default class BoardEval {
 
   pawnPosition (pos, board) {
     let vulnerability = this.vulnerability(pos, board);
-    return (this.central(pos) * MATERIAL[board[pos]] * 0.3) - vulnerability;
+    let structureBonus = 0;
+    let connected = [-11, -9, 11, 9];
+    for (let i = 0; i < connected.length; i++) {
+      let connectedPos = pos + connected[i];
+      if (board[connectedPos] === board[pos]) {
+        structureBonus++;
+      }
+    }
+    return (Math.pow(this.central(pos),2) *
+      MATERIAL[board[pos]] * 0.15 * structureBonus) - vulnerability;
   }
 
   rookPosition (pos, board) {
@@ -84,11 +93,29 @@ export default class BoardEval {
   queenPosition (pos, board) {
     let vulnerability = this.vulnerability(pos, board);
     return (this.ai.queenMoves(pos, board).length *
-      MATERIAL[board[pos]] * 0.03) - vulnerability;
+      MATERIAL[board[pos]] * 0.002) - vulnerability;
   }
 
   kingPosition (pos, board) {
-    return 0;
+    let numPawns = 0;
+    let kingMoves, castledPos, pawn;
+    let color = this.ai.color(pos, board);
+    if (color === 'w') {
+      kingMoves = [-11,-10,-9];
+      castledPos = [83, 87];
+      pawn = 'p';
+    } else {
+      kingMoves = [11,10,9];
+      castledPos = [13, 17];
+      pawn = 'P';
+    }
+    for (let i = 0; i < kingMoves.length; i++) {
+      let pawnPos = pos + kingMoves[i];
+      if (board[pawnPos] === pawn) numPawns++;
+    }
+
+    let kingPosBonus = (pos === castledPos[0] || pos === castledPos[1]) ? 1 : 0;
+    return (numPawns * 50 + kingPosBonus * 300) * (color === 'w' ? 1 : -1);
   }
 
   vulnerability (pos, board) {

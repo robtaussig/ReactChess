@@ -149,13 +149,36 @@ export default class Ai {
     return queenCheck ? 900 : false;
   }
 
+  testCastle(move, board) {
+    let castle = {
+      17: 18,
+      13: 11,
+      87: 88,
+      83: 81
+    };
+    if (board[move[0]].toLowerCase() === 'k' && Math.abs(move[1] - move[0]) === 2) {
+      return [
+        (move[0] + move[1]) / 2,
+        this.color(move[0],board) === 'w' ? 'r' : 'R',
+        castle[move[1]]
+      ];
+    } else {
+      return false;
+    }
+  }
+
   makeMove (move, board = this.board) {
     let newBoard = "";
+    let castled = this.testCastle(move,board);
     for (let i = 0; i < 100; i++) {
       if (i === move[0]) {
         newBoard += '-';
       } else if (i === move[1]) {
         newBoard += board[move[0]];
+      } else if (i === castled[0]) {
+        newBoard += castled[1];
+      } else if (i === castled[2]) {
+        newBoard += '-';
       } else {
         newBoard += board[i];
       }
@@ -329,19 +352,20 @@ export default class Ai {
 
   checkCastle (board, position) {
     let moves = [];
-    let color = this.board[position] === 15 ? 'b' : 'w';
-    if (this.specialMoves.queenSideCastle) {
+    let color = board[position] === 'K' ? 'b' : 'w';
+    let specMoves = this.specialMoves[color];
+    if (specMoves.castleQueenSideStatus) {
       if (this.emptyBetween(board, position - 1, 12) && color === 'b') {
         moves.push([position,13]);
-      } else if (this.emptyBetween(board, position - 1, 82)){
+      } else if (this.emptyBetween(board, position - 1, 82) && color === 'w'){
         moves.push([position, 83]);
       }
     }
 
-    if (this.specialMoves.kingSideCastle) {
+    if (specMoves.castleKingSideStatus) {
       if (this.emptyBetween(board, position + 1, 17) && color === 'b') {
         moves.push([position,17]);
-      } else if (this.emptyBetween(board, position + 1, 87)){
+      } else if (this.emptyBetween(board, position + 1, 87) && color === 'w'){
         moves.push([position, 87]);
       }
     }
