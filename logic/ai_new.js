@@ -46,12 +46,12 @@ export default class Ai {
     return positions;
   }
 
-  allLegalMoves (positions, board = this.board) {
+  allLegalMoves (positions, color, board = this.board) {
     let moves = [];
     for (let i = 0; i < positions.length; i++) {
       moves = moves.concat(this.findAllLegalMovesByPiece(positions[i],board));
     }
-    return moves.filter(move => !this.inCheck(move,board));
+    return moves.filter(move => !this.inCheck(move,board, color));
   }
 
   inCheck (move, board = this.board, color = 'b') {

@@ -19,6 +19,7 @@ export default class BoardEval {
     this.ai = ai;
     this.specialMoves = ai.specialMoves;
     this.move = move;
+    this.best = null;
     this.depth = depth;
     this.checkmate = false;
     this.color = ai.color(move[0], ai.board);

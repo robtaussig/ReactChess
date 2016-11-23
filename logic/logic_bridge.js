@@ -6,7 +6,7 @@ module.exports = {
   findBestMove (board, specMoves, depth) {
     let ai = new Ai(board, specMoves);
     let moves = ai.allLegalMoves(
-      ai.findAllPieces('b')
+      ai.findAllPieces('b'), 'b'
     );
     if (moves.length === 0) return {checkmate: true, side: specMoves.currentSide};
     let bestMove = null;

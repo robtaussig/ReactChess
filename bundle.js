@@ -28486,10 +28486,8 @@
 	          this.setCheckmate();
 	          break;
 	        case move.castle:
-	          debugger;
 	          break;
 	        case move.enPassant:
-	          debugger;
 	          break;
 	        default:
 	          (0, _game.makeComputerMove)(move.move);
@@ -32053,7 +32051,7 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function() {
-		return new Worker(__webpack_require__.p + "387bb0d3f26e99145229.worker.js");
+		return new Worker(__webpack_require__.p + "569bd4d65a1b4b6a7636.worker.js");
 	};
 
 /***/ },

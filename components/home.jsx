@@ -37,10 +37,8 @@ export default class Home extends Component {
         this.setCheckmate();
         break;
       case move.castle:
-        debugger
         break;
       case move.enPassant:
-        debugger
         break;
       default:
         makeComputerMove(move.move);
